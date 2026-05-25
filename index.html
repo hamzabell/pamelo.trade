@@ -218,9 +218,40 @@ footer small{font-size:12px;color:var(--ink3)}
 .field-error{font-size:11px;color:var(--red);margin-top:4px;display:none}
 .field input.error{border-color:var(--red)}
 .ch-trust{font-size:11px;color:var(--ink3);margin-top:6px}
+
+/* SKELETON */
+#skel{position:fixed;inset:0;z-index:9999;background:#fff;pointer-events:none}
+.sk{background:linear-gradient(90deg,var(--bd) 25%,#f0f0f8 50%,var(--bd) 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:6px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+#skel-nav{border-bottom:1px solid var(--bd);padding:12px 22px;display:flex;align-items:center;justify-content:space-between;max-width:500px;margin:0 auto}
+#skel-body{max-width:500px;margin:0 auto;padding:40px 22px 0}
 </style>
 </head>
 <body>
+
+<!-- SKELETON OVERLAY (visible until variant resolved) -->
+<div id="skel">
+  <div id="skel-nav">
+    <div class="sk" style="width:110px;height:22px"></div>
+    <div class="sk" style="width:108px;height:36px;border-radius:8px"></div>
+  </div>
+  <div id="skel-body">
+    <div class="sk" style="width:68px;height:20px;border-radius:20px;margin-bottom:22px"></div>
+    <div class="sk" style="width:88%;height:38px;margin-bottom:10px"></div>
+    <div class="sk" style="width:62%;height:38px;margin-bottom:28px"></div>
+    <div class="sk" style="width:100%;height:14px;margin-bottom:10px"></div>
+    <div class="sk" style="width:92%;height:14px;margin-bottom:10px"></div>
+    <div class="sk" style="width:78%;height:14px;margin-bottom:32px"></div>
+    <div class="sk" style="width:100%;height:1px;background:var(--bd);margin-bottom:24px"></div>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:24px">
+      <div class="sk" style="width:32px;height:32px;border-radius:50%"></div>
+      <div class="sk" style="width:32px;height:32px;border-radius:50%"></div>
+      <div class="sk" style="width:32px;height:32px;border-radius:50%"></div>
+      <div class="sk" style="width:32px;height:32px;border-radius:50%"></div>
+      <div class="sk" style="width:180px;height:14px;margin-left:4px"></div>
+    </div>
+  </div>
+</div>
 
 <!-- NAV -->
 <div class="nav-shell">
@@ -600,17 +631,37 @@ function applyVariant(v) {
     : 'No spam. We\'ll only reach out when pamelo is ready.';
 }
 
-// Apply cached variant immediately to prevent flash on return visits
+var _skelDone = false;
+function hideSkeleton() {
+  if (_skelDone) return;
+  _skelDone = true;
+  var skel = document.getElementById('skel');
+  skel.style.transition = 'opacity 0.15s';
+  skel.style.opacity = '0';
+  setTimeout(function() { skel.style.display = 'none'; }, 150);
+}
+
+// Cached visitors: apply variant and hide skeleton synchronously — no flash
 var _cached = localStorage.getItem('ph_variant');
-if (_cached === 'control' || _cached === 'test') applyVariant(_cached);
+if (_cached === 'control' || _cached === 'test') {
+  applyVariant(_cached);
+  hideSkeleton();
+}
+
+// Fallback: if PostHog doesn't respond within 1.5s, default to control
+var _skelTimeout = setTimeout(function() {
+  if (!_skelDone) { applyVariant('control'); hideSkeleton(); }
+}, 1500);
 
 // PostHog feature flag is the source of truth — toggles in the dashboard take effect here
 posthog.onFeatureFlags(function() {
+  clearTimeout(_skelTimeout);
   var flag = posthog.getFeatureFlag('pamelo-customer-flag');
   var v = flag === 'test' ? 'test' : 'control';
   localStorage.setItem('ph_variant', v);
   posthog.register({ variant: v });
   applyVariant(v);
+  hideSkeleton();
 });
 
 function navCta() {
