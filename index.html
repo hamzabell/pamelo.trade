@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>pamelo.trade — Your DMs, finally organised</title>
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('YOUR_POSTHOG_API_KEY',{api_host:'https://app.posthog.com',capture_pageview:true,capture_pageleave:true});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --p:#7C5CFC;--p-dk:#6344e0;--p-lt:#F2EFFE;--p-bd:#DDD5FD;
+  --ink:#0D0D1C;--ink2:#50507A;--ink3:#9898B8;
+  --grn:#12B76A;--grn-lt:#ECFDF5;--grn-bd:#A6F4C5;
+  --amb:#F59E0B;--amb-lt:#FFFBEB;
+  --red:#F04438;--red-lt:#FEF3F2;
+  --bg:#F8F8FC;--bd:#E8E8F0;--white:#fff;
+  --r:12px;--rsm:8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.6;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
+svg{display:block}
+.w{max-width:500px;margin:0 auto;padding:0 22px}
+.div{height:1px;background:var(--bd);margin:0 22px}
+
+/* NAV */
+.nav-shell{border-bottom:1px solid var(--bd);background:var(--white);position:sticky;top:0;z-index:50}
+.nav{max-width:500px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logomark{display:flex;align-items:center;gap:8px;min-width:0;flex-shrink:1}
+.logotype{font-size:16px;font-weight:800;letter-spacing:-.4px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.logotype span{color:var(--p)}
+.btn-nav{background:var(--p);color:#fff;border:none;border-radius:var(--rsm);padding:9px 16px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s;white-space:nowrap;flex-shrink:0}
+.btn-nav:hover{background:var(--p-dk)}
+@media(max-width:360px){
+  .logotype{font-size:14px}
+  .btn-nav{padding:8px 12px;font-size:12px}
+}
+
+/* HERO */
+.hero{padding:56px 22px 52px;max-width:500px;margin:0 auto}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--p-lt);border:1px solid var(--p-bd);color:var(--p-dk);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:22px}
+.pill-dot{width:6px;height:6px;border-radius:50%;background:var(--p);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.h1{font-size:clamp(30px,8vw,40px);font-weight:800;line-height:1.1;letter-spacing:-1.2px;color:var(--ink);margin-bottom:16px}
+.h1 em{font-style:normal;color:var(--p)}
+.hero-sub{font-size:16px;color:var(--ink2);line-height:1.7;margin-bottom:36px;max-width:420px}
+
+/* FORM CARD */
+.form-card{background:var(--bg);border:1.5px solid var(--bd);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:12px;font-weight:700;color:var(--ink2);letter-spacing:.01em}
+.field input{height:46px;border:1.5px solid var(--bd);border-radius:var(--rsm);padding:0 14px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;transition:border-color .15s;background:var(--white)}
+.field input:focus{border-color:var(--p);background:var(--white)}
+.field input::placeholder{color:var(--ink3)}
+.opt-label{font-size:11px;color:var(--ink3);font-weight:400;margin-left:3px}
+.btn-cta{height:48px;background:var(--p);color:#fff;border:none;border-radius:var(--rsm);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s,transform .1s;width:100%}
+.btn-cta:hover{background:var(--p-dk)}
+.btn-cta:active{transform:scale(.99)}
+.form-note{display:flex;align-items:center;justify-content:center;gap:5px;font-size:12px;color:var(--ink3)}
+.success-box{display:none;background:var(--grn-lt);border:1.5px solid var(--grn-bd);border-radius:var(--rsm);padding:14px 16px;font-size:14px;color:#065F46;text-align:center;line-height:1.5}
+
+/* PROOF */
+.proof{padding:20px 22px;max-width:500px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.avs{display:flex}
+.av{width:27px;height:27px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;margin-left:-7px;flex-shrink:0}
+.av:first-child{margin-left:0}
+.proof-t{font-size:13px;color:var(--ink2);line-height:1.45}
+.proof-t b{color:var(--ink);font-weight:700}
+
+/* SECTIONS */
+.sec{padding:52px 22px;max-width:500px;margin:0 auto}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p);margin-bottom:10px}
+.h2{font-size:23px;font-weight:800;letter-spacing:-.6px;color:var(--ink);line-height:1.2;margin-bottom:10px}
+.sec-sub{font-size:15px;color:var(--ink2);line-height:1.7}
+
+/* PAIN GRID */
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.pain-card{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:18px}
+.pain-ico{width:34px;height:34px;border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.pain-card h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.pain-card p{font-size:12px;color:var(--ink2);line-height:1.6}
+
+/* CHANNEL CARDS */
+.ch-list{display:flex;flex-direction:column;gap:10px;margin-top:26px}
+.ch-card{background:var(--white);border:1px solid var(--bd);border-radius:var(--r);padding:20px;display:flex;gap:14px;align-items:flex-start}
+.ch-ico{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch-body h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.ch-body p{font-size:13px;color:var(--ink2);line-height:1.6}
+.ch-tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;margin-top:8px;background:var(--grn-lt);color:#065F46}
+
+/* STEPS */
+.steps{margin-top:26px;display:flex;flex-direction:column}
+.step{display:flex;gap:14px;padding-bottom:26px;position:relative}
+.step:last-child{padding-bottom:0}
+.step-rail{position:absolute;left:13px;top:30px;bottom:0;width:1px;background:var(--bd)}
+.step:last-child .step-rail{display:none}
+.step-num{width:27px;height:27px;border-radius:50%;background:var(--p-lt);border:1.5px solid var(--p-bd);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--p);flex-shrink:0;position:relative;z-index:1}
+.step-body{padding-top:2px}
+.step-body h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.step-body p{font-size:13px;color:var(--ink2);line-height:1.6}
+
+/* QUOTE */
+.quote-shell{padding:0 22px 52px;max-width:500px;margin:0 auto}
+.quote-card{background:var(--p-lt);border:1px solid var(--p-bd);border-radius:var(--r);padding:24px}
+.quote-text{font-size:15px;color:#3B2A8A;line-height:1.7;margin-bottom:18px}
+.q-row{display:flex;align-items:center;gap:12px}
+.q-av{width:38px;height:38px;border-radius:50%;background:var(--p);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+.q-name{font-size:13px;font-weight:700;color:var(--ink)}
+.q-role{font-size:12px;color:var(--ink3)}
+
+/* PRICING */
+.pricing-shell{background:var(--bg);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.plans{display:flex;flex-direction:column;gap:16px;margin-top:26px}
+.plan{background:var(--white);border:1.5px solid var(--bd);border-radius:var(--r);padding:24px;position:relative}
+.plan.hi{border-color:var(--p)}
+.plan.dim{background:var(--bg)}
+.best-tag{position:absolute;top:-11px;left:18px;background:var(--p);color:#fff;font-size:11px;font-weight:700;padding:3px 11px;border-radius:20px}
+.plan-tier{font-size:12px;font-weight:700;color:var(--ink3);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.plan-price{font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-1px;line-height:1}
+.plan-price-note{font-size:12px;color:var(--ink3);margin-top:3px}
+.plan-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;margin:10px 0 18px}
+.tag-grn{background:var(--grn-lt);color:#065F46}
+.tag-purple{background:var(--p-lt);color:var(--p-dk)}
+.tag-dim{background:var(--bd);color:var(--ink2)}
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
+.feat-list li{font-size:13px;color:var(--ink);display:flex;align-items:flex-start;gap:9px;line-height:1.45}
+.feat-list li svg{flex-shrink:0;margin-top:2px}
+.feat-list .dim-feat{color:var(--ink2)}
+.plan-btn{width:100%;height:44px;border-radius:var(--rsm);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;letter-spacing:-.1px}
+.b-out{background:var(--white);color:var(--p);border:1.5px solid var(--p)}
+.b-out:hover{background:var(--p-lt)}
+.b-fill{background:var(--p);color:#fff;border:none}
+.b-fill:hover{background:var(--p-dk)}
+.b-ghost{background:var(--white);color:var(--ink2);border:1.5px solid var(--bd)}
+.b-ghost:hover{background:var(--bg);border-color:var(--ink3)}
+.plan-foot{font-size:11px;color:var(--ink3);margin-top:10px;line-height:1.5}
+.pricing-note{font-size:12px;color:var(--ink3);margin-top:16px;text-align:center}
+
+/* FINAL */
+.final{padding:56px 22px 68px;max-width:500px;margin:0 auto;text-align:center}
+.final .h2{margin-bottom:10px}
+.final .sec-sub{margin-bottom:30px}
+.final-form-wrap{max-width:400px;margin:0 auto}
+
+/* FOOTER */
+footer{border-top:1px solid var(--bd);padding:20px 22px;max-width:500px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.foot-logo{display:flex;align-items:center;gap:8px}
+.foot-type{font-size:14px;font-weight:800;color:var(--ink);letter-spacing:-.3px}
+.foot-type span{color:var(--p)}
+footer small{font-size:12px;color:var(--ink3)}
+
+/* check icon shorthand */
+.ck-grn{display:inline-block}
+.ck-p{display:inline-block}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-shell">
+  <nav class="nav">
+    <div class="logomark">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <rect width="30" height="30" rx="9" fill="#7C5CFC"/>
+        <path d="M7 11.5C7 10.12 8.12 9 9.5 9h11C21.88 9 23 10.12 23 11.5v5C23 17.88 21.88 19 20.5 19h-2.5L14 23v-4H9.5C8.12 19 7 17.88 7 16.5v-5z" fill="white"/>
+        <circle cx="12" cy="14.5" r="1.1" fill="#7C5CFC"/>
+        <circle cx="15" cy="14.5" r="1.1" fill="#7C5CFC"/>
+        <circle cx="18" cy="14.5" r="1.1" fill="#7C5CFC"/>
+      </svg>
+      <div class="logotype">pamelo<span>.trade</span></div>
+    </div>
+    <button class="btn-nav" onclick="goSignup('nav')">Get early access</button>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="pill"><span class="pill-dot"></span>Built for Nigerian vendors</div>
+  <p class="h1">Stop losing money<br/>in your <em>DMs</em></p>
+  <p class="hero-sub">pamelo connects to WhatsApp and Instagram, reads every message, logs every order, and chases every unpaid debt — automatically, in the background.</p>
+
+  <div class="form-card" id="hero-form">
+    <div class="field">
+      <label for="h-phone">WhatsApp number</label>
+      <input id="h-phone" type="tel" placeholder="e.g. 08012345678"/>
+    </div>
+    <div class="field">
+      <label for="h-ig">Instagram handle <span class="opt-label">(optional)</span></label>
+      <input id="h-ig" type="text" placeholder="e.g. @titithe_boutique"/>
+    </div>
+    <button class="btn-cta" onclick="handleSignup('hero')">Join the waitlist — it's free</button>
+    <div class="form-note">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5.5" rx="1.5" stroke="#9898B8" stroke-width="1.2"/><path d="M4 5.5V4a2 2 0 014 0v1.5" stroke="#9898B8" stroke-width="1.2" stroke-linecap="round"/></svg>
+      14-day free trial &middot; Pay once yearly by bank transfer
+    </div>
+  </div>
+  <div id="hero-ok" class="success-box">You're on the list. We'll WhatsApp you when pamelo launches.</div>
+</section>
+
+<div class="div"></div>
+
+<!-- PROOF -->
+<div class="proof">
+  <div class="avs">
+    <div class="av" style="background:#7C5CFC">TI</div>
+    <div class="av" style="background:#F59E0B">CH</div>
+    <div class="av" style="background:#12B76A">AM</div>
+    <div class="av" style="background:#0891B2">FB</div>
+  </div>
+  <p class="proof-t"><b>300+ vendors</b> from Lagos, Abuja &amp; Port Harcourt on the waitlist</p>
+</div>
+
+<div class="div"></div>
+
+<!-- PAIN -->
+<section class="sec">
+  <div class="sec-label">The problem</div>
+  <p class="h2">Running a business from DMs costs you money</p>
+  <p class="sec-sub">Customers, orders, negotiations, payments — all scattered across two apps with no structure. Something always slips.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-ico" style="background:#FEF3F2">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#F04438" stroke-width="1.4"/><path d="M9 5.5v4M9 11.5v1" stroke="#F04438" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <h4>Lost orders</h4>
+      <p>Serious buyers get buried in 50+ daily messages. Follow-up never happens.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-ico" style="background:#FFFBEB">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#F59E0B" stroke-width="1.4"/><path d="M9 5v4l3 2" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Unpaid debts</h4>
+      <p>"I'll pay Friday" — three weeks pass, the conversation is gone, the debt forgotten.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-ico" style="background:#F2EFFE">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 5.5h10M4 9h7M4 12.5h5" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <h4>No customer history</h4>
+      <p>Every message from a returning buyer feels like the first time — you have no record of what they bought or where they live.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-ico" style="background:#ECFDF5">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14V8l5-4.5L14 8v6" stroke="#12B76A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 14v-3.5h3V14" stroke="#12B76A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Zero visibility</h4>
+      <p>You don't know your revenue for the week or which customers bring the most value.</p>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- CHANNELS -->
+<section class="sec">
+  <div class="sec-label">Channels</div>
+  <p class="h2">Works on both WhatsApp and Instagram</p>
+  <p class="sec-sub">Every message, voice note, and image that comes in is read, parsed, and logged — on both channels, for every plan.</p>
+  <div class="ch-list">
+    <div class="ch-card">
+      <div class="ch-ico" style="background:#ECFDF5">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9.5" stroke="#12B76A" stroke-width="1.4"/><path d="M7.5 11.8c.5 1.1 1.6 2.2 3.2 2.8l.4-.5c.4-.4 1.1-.3 1.6.1l.7.7c.4.4.4 1 .1 1.4-1.2 1.1-4.3.5-6.5-1.7C4.8 12.4 4.2 9.3 5.7 8.2c.4-.3 1-.3 1.4.1l.7.7c.4.4.5 1.1.1 1.5l-.4.3z" stroke="#12B76A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="ch-body">
+        <h4>WhatsApp business line</h4>
+        <p>Your customers message your pamelo number. You reply from your personal WhatsApp as normal. Text, voice notes, images — all captured and logged automatically.</p>
+        <span class="ch-tag">All plans</span>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-ico" style="background:#F2EFFE">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="5" stroke="#7C5CFC" stroke-width="1.4"/><circle cx="11" cy="11" r="3.5" stroke="#7C5CFC" stroke-width="1.4"/><circle cx="15.8" cy="6.2" r="1.1" fill="#7C5CFC"/></svg>
+      </div>
+      <div class="ch-body">
+        <h4>Instagram DM sync</h4>
+        <p>Connect your IG Business account once via a simple login. Every DM creates or updates a customer profile in the background. You reply in Instagram as normal.</p>
+        <span class="ch-tag">All plans</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- HOW IT WORKS -->
+<section class="sec" style="background:var(--bg);max-width:100%;padding:52px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)">
+  <div class="w">
+    <div class="sec-label">How it works</div>
+    <p class="h2">Set up in 5 minutes, then it runs itself</p>
+    <div class="steps">
+      <div class="step">
+        <div style="position:relative;flex-shrink:0"><div class="step-num">1</div><div class="step-rail"></div></div>
+        <div class="step-body">
+          <h4>Connect your channels</h4>
+          <p>Get your pamelo WhatsApp number and link your Instagram account. Takes under 5 minutes. Your customers keep messaging you the same way they always have.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div style="position:relative;flex-shrink:0"><div class="step-num">2</div><div class="step-rail"></div></div>
+        <div class="step-body">
+          <h4>Every conversation is read and logged</h4>
+          <p>Text messages, voice notes, images — everything that comes in on WhatsApp or Instagram is parsed by AI. Customer names, items, prices, addresses and balances are all extracted automatically.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div style="position:relative;flex-shrink:0"><div class="step-num">3</div><div class="step-rail"></div></div>
+        <div class="step-body">
+          <h4>Customer profiles build themselves</h4>
+          <p>Every buyer gets a profile: what they ordered, what they owe, where they live, how much they've spent. Returning customers are recognised instantly.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div style="position:relative;flex-shrink:0"><div class="step-num">4</div><div class="step-rail"></div></div>
+        <div class="step-body">
+          <h4>Debts are chased for you</h4>
+          <p>Log an outstanding balance and pamelo sends a polite WhatsApp reminder on the schedule you set — professional tone, your name, no awkward typing from you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-shell" style="padding-top:52px">
+  <div class="quote-card">
+    <p class="quote-text">"pamelo showed me 3 customers I never followed up with. That was over &#8358;180,000 sitting in my DMs that I would never have chased."</p>
+    <div class="q-row">
+      <div class="q-av">TI</div>
+      <div>
+        <div class="q-name">Titilayo I.</div>
+        <div class="q-role">IG boutique owner &middot; Lagos Island</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- PRICING -->
+<div class="pricing-shell">
+<section class="sec">
+  <div class="sec-label">Pricing</div>
+  <p class="h2">One bank transfer a year</p>
+  <p class="sec-sub">No monthly card charges. No failed debits. WhatsApp and Instagram included on every plan.</p>
+
+  <div class="plans">
+
+    <!-- SOLO -->
+    <div class="plan">
+      <div class="plan-tier">Solo</div>
+      <div class="plan-price">&#8358;48,000</div>
+      <div class="plan-price-note">per year &middot; 1 user</div>
+      <div class="plan-tag tag-grn">&#8358;4,000 / month</div>
+      <ul class="feat-list">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          WhatsApp business line
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Instagram DM sync
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          AI message parsing (text, voice, images)
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          500 customer profiles
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Debt tracker &amp; manual reminders
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Daily sales ledger
+        </li>
+      </ul>
+      <button class="plan-btn b-out" onclick="handleSignup('solo')">Start free trial</button>
+      <p class="plan-foot">Less than the cost of one lost sale per month</p>
+    </div>
+
+    <!-- BUSINESS -->
+    <div class="plan hi">
+      <div class="best-tag">Best value</div>
+      <div class="plan-tier">Business</div>
+      <div class="plan-price">&#8358;120,000</div>
+      <div class="plan-price-note">per year &middot; up to 3 users</div>
+      <div class="plan-tag tag-purple">&#8358;40,000 per user &mdash; save &#8358;24,000</div>
+      <ul class="feat-list">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Everything in Solo
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Unlimited customer profiles
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Automated debt reminders
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Up to 3 team members
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Priority support
+        </li>
+      </ul>
+      <button class="plan-btn b-fill" onclick="handleSignup('business')">Start free trial</button>
+      <p class="plan-foot">&#8358;40,000 per user/year vs &#8358;48,000 on Solo</p>
+    </div>
+
+    <!-- CUSTOM -->
+    <div class="plan dim">
+      <div class="plan-tier">Custom</div>
+      <div class="plan-price" style="font-size:24px;color:var(--ink2)">Let's talk</div>
+      <div class="plan-price-note">for growing teams &amp; large shops</div>
+      <div class="plan-tag tag-dim">Flexible team size &middot; Volume pricing</div>
+      <ul class="feat-list">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="dim-feat">Everything in Business</span>
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="dim-feat">Custom number of team members</span>
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="dim-feat">Negotiated annual pricing per seat</span>
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="dim-feat">Dedicated onboarding &amp; account manager</span>
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="dim-feat">SLA &amp; custom contract</span>
+        </li>
+      </ul>
+      <button class="plan-btn b-ghost" onclick="talkToSales()">
+        <span style="display:flex;align-items:center;justify-content:center;gap:7px">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 4C2.5 3.17 3.17 2.5 4 2.5h7c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5H8.5L6 13v-2.5H4C3.17 10.5 2.5 9.83 2.5 9V4z" stroke="#50507A" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          Talk to sales
+        </span>
+      </button>
+      <p class="plan-foot">We'll get back to you on WhatsApp within 24 hours</p>
+    </div>
+
+  </div>
+  <p class="pricing-note">14-day free trial on Solo &amp; Business &middot; Paystack or bank transfer</p>
+</section>
+</div>
+
+<div class="div"></div>
+
+<!-- FINAL CTA -->
+<section class="final" id="signup">
+  <p class="h2">Start your free trial</p>
+  <p class="sec-sub">14 days, no card needed. Be first in when we launch.</p>
+  <div class="final-form-wrap" id="final-form">
+    <div class="form-card" style="text-align:left">
+      <div class="field">
+        <label for="f-phone">WhatsApp number</label>
+        <input id="f-phone" type="tel" placeholder="e.g. 08012345678"/>
+      </div>
+      <div class="field">
+        <label for="f-ig">Instagram handle <span class="opt-label">(optional)</span></label>
+        <input id="f-ig" type="text" placeholder="e.g. @titithe_boutique"/>
+      </div>
+      <button class="btn-cta" onclick="handleSignup('final')">Join the waitlist</button>
+      <div class="form-note">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5.5" rx="1.5" stroke="#9898B8" stroke-width="1.2"/><path d="M4 5.5V4a2 2 0 014 0v1.5" stroke="#9898B8" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Only used for pamelo.trade updates
+      </div>
+    </div>
+  </div>
+  <div id="final-ok" class="success-box" style="max-width:400px;margin:0 auto">You're on the list. We'll WhatsApp you when pamelo launches.</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">
+    <svg width="24" height="24" viewBox="0 0 30 30" fill="none"><rect width="30" height="30" rx="9" fill="#7C5CFC"/><path d="M7 11.5C7 10.12 8.12 9 9.5 9h11C21.88 9 23 10.12 23 11.5v5C23 17.88 21.88 19 20.5 19h-2.5L14 23v-4H9.5C8.12 19 7 17.88 7 16.5v-5z" fill="white"/><circle cx="12" cy="14.5" r="1.1" fill="#7C5CFC"/><circle cx="15" cy="14.5" r="1.1" fill="#7C5CFC"/><circle cx="18" cy="14.5" r="1.1" fill="#7C5CFC"/></svg>
+    <div class="foot-type">pamelo<span>.trade</span></div>
+  </div>
+  <small>Lagos, Nigeria &middot; 2025</small>
+</footer>
+
+<script>
+function goSignup(src){
+  posthog.capture('nav_cta_clicked',{source:src});
+  document.getElementById('signup').scrollIntoView({behavior:'smooth'});
+}
+
+function handleSignup(src){
+  var p=(document.getElementById('f-phone')||{value:''}).value.trim()||
+         (document.getElementById('h-phone')||{value:''}).value.trim();
+  var ig=(document.getElementById('f-ig')||{value:''}).value.trim()||
+          (document.getElementById('h-ig')||{value:''}).value.trim();
+  posthog.capture('waitlist_signup',{source:src,has_phone:p.length>0,has_ig:ig.length>0});
+  if(p) posthog.identify(p,{whatsapp:p,instagram:ig||null,source:src,date:new Date().toISOString()});
+  if(src==='hero'){
+    document.getElementById('hero-form').style.display='none';
+    document.getElementById('hero-ok').style.display='block';
+  } else if(src==='final'){
+    document.getElementById('final-form').style.display='none';
+    document.getElementById('final-ok').style.display='block';
+  } else {
+    document.getElementById('signup').scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function talkToSales(){
+  posthog.capture('talk_to_sales_clicked');
+  var wa='https://wa.me/234XXXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20the%20pamelo.trade%20Custom%20plan';
+  window.open(wa,'_blank');
+}
+
+var _sd={25:0,50:0,75:0,90:0};
+window.addEventListener('scroll',function(){
+  var pct=Math.round(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100);
+  for(var d in _sd){if(!_sd[d]&&pct>=+d){_sd[d]=1;posthog.capture('scroll_depth',{pct:+d});}}
+});
+var _t=Date.now();
+window.addEventListener('beforeunload',function(){
+  posthog.capture('page_exit',{secs:Math.round((Date.now()-_t)/1000)});
+});
+</script>
+</body>
+</html>
