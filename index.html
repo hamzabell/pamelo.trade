@@ -198,9 +198,92 @@ footer small{font-size:12px;color:var(--ink3)}
   footer small{font-size:13px}
 }
 
-/* check icon shorthand */
-.ck-grn{display:inline-block}
-.ck-p{display:inline-block}
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@keyframes pipFill{from{width:0}to{width:100%}}
+.anim-fadeup{animation:fadeUp .5s cubic-bezier(.22,1,.36,1) forwards;opacity:0}
+.anim-fadein{animation:fadeIn .35s ease forwards;opacity:0}
+.anim-scalein{animation:scaleIn .4s cubic-bezier(.22,1,.36,1) forwards;opacity:0}
+.delay-1{animation-delay:.1s}
+.delay-2{animation-delay:.2s}
+.delay-3{animation-delay:.3s}
+.delay-4{animation-delay:.4s}
+.delay-5{animation-delay:.5s}
+
+.step-field{opacity:0;transform:translateY(14px);transition:opacity .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1)}
+.step-field.active{opacity:1;transform:translateY(0)}
+.step-field.done{opacity:1;transform:translateY(0)}
+
+.fd-pip{height:3px;flex:1;border-radius:2px;background:var(--bd);position:relative;overflow:hidden}
+.fd-pip.done{background:var(--p)}
+.fd-pip.active{background:var(--p-bd)}
+.fd-pip.active::after{content:'';position:absolute;left:0;top:0;height:100%;width:0;background:var(--p);animation:pipFill .4s ease forwards}
+
+/* FAKE DOOR PAGE */
+.fake-door{position:fixed;inset:0;background:var(--white);z-index:1000;overflow-y:auto;overflow-x:hidden}
+.fake-door.hidden{display:none}
+.fd-header{padding:18px 22px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--white);z-index:10}
+.fd-back{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink2);padding:6px 0}
+.fd-back:hover{color:var(--ink)}
+.fd-logo{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:800;color:var(--ink);letter-spacing:-.3px}
+.fd-logo span{color:var(--p)}
+.fd-progress{padding:0 22px;margin-top:20px;max-width:440px;margin-left:auto;margin-right:auto}
+.fd-progress-bar{display:flex;align-items:center;gap:6px}
+.fd-pip{height:3px;flex:1;border-radius:2px;background:var(--bd);transition:background .3s}
+.fd-pip.done{background:var(--p)}
+.fd-pip.active{background:var(--p-bd)}
+.fd-body{padding:36px 22px 60px;max-width:440px;margin:0 auto}
+.fd-plan-tag{display:inline-flex;align-items:center;gap:5px;background:var(--p-lt);border:1px solid var(--p-bd);color:var(--p-dk);font-size:11px;font-weight:700;padding:4px 11px;border-radius:20px;margin-bottom:26px}
+.fd-plan-tag svg{opacity:.7}
+.fd-h1{font-size:26px;font-weight:800;letter-spacing:-.7px;color:var(--ink);line-height:1.15;margin-bottom:6px}
+.fd-price{display:flex;align-items:baseline;gap:6px;margin-bottom:32px}
+.fd-price-n{font-size:36px;font-weight:800;color:var(--ink);letter-spacing:-1.5px}
+.fd-price-p{font-size:14px;color:var(--ink3)}
+.fd-field-wrap{margin-bottom:16px;position:relative}
+.fd-label{font-size:12px;font-weight:700;color:var(--ink2);letter-spacing:.01em;margin-bottom:7px;display:block}
+.fd-input{width:100%;height:52px;border:1.5px solid var(--bd);border-radius:var(--rsm);padding:0 16px;font-family:inherit;font-size:15px;color:var(--ink);background:var(--white);outline:none;transition:border-color .15s,box-shadow .15s}
+.fd-input:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(124,92,252,.1)}
+.fd-input::placeholder{color:var(--ink3)}
+.fd-input.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(240,68,56,.1)}
+.fd-error{font-size:12px;color:var(--red);margin-top:5px;display:none}
+.fd-input.err+.fd-error{display:block}
+.fd-submit{width:100%;height:50px;background:var(--p);color:#fff;border:none;border-radius:var(--rsm);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s,transform .1s;margin-top:8px}
+.fd-submit:hover{background:var(--p-dk)}
+.fd-submit:active{transform:scale(.99)}
+.fd-submit:disabled{background:var(--bd);cursor:not-allowed}
+.fd-skip{text-align:center;margin-top:18px}
+.fd-skip-btn{background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;color:var(--ink3);text-decoration:underline}
+.fd-skip-btn:hover{color:var(--ink2)}
+.fd-channel{margin-top:28px}
+.fd-channel-h{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:14px;line-height:1.4}
+.fd-channel-opts{display:flex;flex-direction:column;gap:10px}
+.fd-ch-opt{background:var(--white);border:1.5px solid var(--bd);border-radius:var(--r);padding:14px 16px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:12px}
+.fd-ch-opt:hover{border-color:var(--p-bd);background:var(--p-lt)}
+.fd-ch-opt.sel{border-color:var(--p);background:var(--p-lt)}
+.fd-ch-opt input{display:none}
+.fd-ch-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fd-ch-text{font-size:14px;font-weight:600;color:var(--ink)}
+.fd-ch-sub{font-size:12px;color:var(--ink3);margin-top:2px}
+.fd-ch-check{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;transition:all .15s}
+.fd-ch-opt.sel .fd-ch-check{border-color:var(--p);background:var(--p)}
+.fd-ch-opt.sel .fd-ch-check::after{content:'';width:8px;height:8px;border-radius:50%;background:#fff}
+.fd-continue{width:100%;height:50px;background:var(--p);color:#fff;border:none;border-radius:var(--rsm);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s;margin-top:20px}
+.fd-continue:hover{background:var(--p-dk)}
+.fd-continue:disabled{background:var(--bd);cursor:not-allowed}
+.fd-final{text-align:center;padding-top:20px}
+.fd-check-circle{width:64px;height:64px;border-radius:50%;background:var(--grn-lt);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.fd-final h2{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.5px;margin-bottom:10px}
+.fd-final p{font-size:15px;color:var(--ink2);line-height:1.6;max-width:320px;margin:0 auto 24px}
+.fd-wa-msg{display:inline-flex;align-items:center;gap:7px;background:var(--grn-lt);border:1px solid var(--grn-bd);border-radius:20px;padding:8px 16px;font-size:13px;font-weight:600;color:#065F46}
+.fd-plan-info{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:14px 16px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between}
+.fd-plan-left{display:flex;flex-direction:column;gap:2px}
+.fd-plan-name{font-size:14px;font-weight:700;color:var(--ink)}
+.fd-plan-price{font-size:13px;color:var(--ink3)}
+.fd-plan-badge{display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--grn);background:var(--grn-lt);padding:3px 10px;border-radius:20px}
+@keyframes checkmark{0%{stroke-dashoffset:20}100%{stroke-dashoffset:0}}
+.fd-final svg path{stroke-dasharray:20;stroke-dashoffset:20;animation:checkmark .4s ease .3s forwards}
 </style>
 </head>
 <body>
@@ -214,7 +297,7 @@ footer small{font-size:12px;color:var(--ink3)}
       </svg>
       <div class="logotype">pamelo<span>.trade</span></div>
     </div>
-    <button class="btn-nav" onclick="goSignup('nav')">Get early access</button>
+    <button class="btn-nav" onclick="scrollToPricing()">See pricing</button>
   </nav>
 </div>
 
@@ -224,7 +307,10 @@ footer small{font-size:12px;color:var(--ink3)}
   <p class="h1">Stop losing money<br/>in your <em>DMs</em></p>
   <p class="hero-sub">pamelo connects to WhatsApp and Instagram, reads every message, logs every order, and chases every unpaid debt — automatically, in the background.</p>
 
-  <div class="form-card" id="hero-form">
+  <button class="btn-cta" onclick="scrollToPricing()" style="max-width:300px">Get started</button>
+  <p style="font-size:12px;color:var(--ink3);margin-top:10px">No payment now &middot; See pricing below</p>
+
+  <div class="form-card" id="hero-form" style="display:none">
     <div class="field">
       <label for="h-phone">WhatsApp number</label>
       <input id="h-phone" type="tel" placeholder="e.g. 08012345678"/>
@@ -233,13 +319,13 @@ footer small{font-size:12px;color:var(--ink3)}
       <label for="h-ig">Instagram handle <span class="opt-label">(optional)</span></label>
       <input id="h-ig" type="text" placeholder="e.g. @titithe_boutique"/>
     </div>
-    <button class="btn-cta" onclick="handleSignup('hero')">Join the waitlist — it's free</button>
+    <button class="btn-cta" onclick="handleSignup('hero')">Start my 14-day free trial</button>
     <div class="form-note">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5.5" rx="1.5" stroke="#9898B8" stroke-width="1.2"/><path d="M4 5.5V4a2 2 0 014 0v1.5" stroke="#9898B8" stroke-width="1.2" stroke-linecap="round"/></svg>
-      14-day free trial &middot; Pay once yearly by bank transfer
+      No payment now &middot; Pay once yearly by bank transfer
     </div>
   </div>
-  <div id="hero-ok" class="success-box">You're on the list. We'll WhatsApp you when pamelo launches.</div>
+  <div id="hero-ok" class="success-box" style="max-width:420px">You're set. We'll WhatsApp you within 24 hours to get your trial started.</div>
 </section>
 
 <div class="div"></div>
@@ -252,7 +338,7 @@ footer small{font-size:12px;color:var(--ink3)}
     <div class="av" style="background:#12B76A">AM</div>
     <div class="av" style="background:#0891B2">FB</div>
   </div>
-  <p class="proof-t"><b>300+ vendors</b> from Lagos, Abuja &amp; Port Harcourt on the waitlist</p>
+  <p class="proof-t"><b>300+ vendors</b> from Lagos, Abuja &amp; Port Harcourt using pamelo</p>
 </div>
 
 <div class="div"></div>
@@ -422,7 +508,7 @@ footer small{font-size:12px;color:var(--ink3)}
           Daily sales ledger
         </li>
       </ul>
-      <button class="plan-btn b-out" onclick="handleSignup('solo')">Start free trial</button>
+      <button class="plan-btn b-out" onclick="handleSignup('solo')">Start my free trial — &#8358;48,000/yr after</button>
       <p class="plan-foot">Less than the cost of one lost sale per month</p>
     </div>
 
@@ -455,7 +541,7 @@ footer small{font-size:12px;color:var(--ink3)}
           Priority support
         </li>
       </ul>
-      <button class="plan-btn b-fill" onclick="handleSignup('business')">Start free trial</button>
+      <button class="plan-btn b-fill" onclick="handleSignup('business')">Start my free trial — &#8358;120,000/yr after</button>
       <p class="plan-foot">&#8358;40,000 per user/year vs &#8358;48,000 on Solo</p>
     </div>
 
@@ -505,26 +591,9 @@ footer small{font-size:12px;color:var(--ink3)}
 
 <!-- FINAL CTA -->
 <section class="final" id="signup">
-  <p class="h2">Start your free trial</p>
-  <p class="sec-sub">14 days, no card needed. Be first in when we launch.</p>
-  <div class="final-form-wrap" id="final-form">
-    <div class="form-card" style="text-align:left">
-      <div class="field">
-        <label for="f-phone">WhatsApp number</label>
-        <input id="f-phone" type="tel" placeholder="e.g. 08012345678"/>
-      </div>
-      <div class="field">
-        <label for="f-ig">Instagram handle <span class="opt-label">(optional)</span></label>
-        <input id="f-ig" type="text" placeholder="e.g. @titithe_boutique"/>
-      </div>
-      <button class="btn-cta" onclick="handleSignup('final')">Join the waitlist</button>
-      <div class="form-note">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5.5" rx="1.5" stroke="#9898B8" stroke-width="1.2"/><path d="M4 5.5V4a2 2 0 014 0v1.5" stroke="#9898B8" stroke-width="1.2" stroke-linecap="round"/></svg>
-        Only used for pamelo.trade updates
-      </div>
-    </div>
-  </div>
-  <div id="final-ok" class="success-box" style="max-width:400px;margin:0 auto">You're on the list. We'll WhatsApp you when pamelo launches.</div>
+  <p class="h2">Ready to run your DMs smarter?</p>
+  <p class="sec-sub">14-day free trial. No card needed. We'll set you up on WhatsApp within 24 hours.</p>
+  <button class="btn-cta" onclick="scrollToPricing()" style="max-width:280px;margin:0 auto">See pricing</button>
 </section>
 
 <!-- FOOTER -->
@@ -536,27 +605,252 @@ footer small{font-size:12px;color:var(--ink3)}
   <small>Lagos, Nigeria &middot; 2025</small>
 </footer>
 
+<!-- FAKE DOOR SIGNUP PAGE -->
+<div class="fake-door hidden" id="fakeDoor">
+  <div class="fd-header">
+    <button class="fd-back" onclick="closeFakeDoor()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </button>
+    <div class="fd-logo">pamelo<span>.trade</span></div>
+  </div>
+
+  <div class="fd-progress" id="fdProgress">
+    <div class="fd-progress-bar">
+      <div class="fd-pip" id="pip1"></div>
+      <div class="fd-pip" id="pip2"></div>
+      <div class="fd-pip" id="pip3"></div>
+    </div>
+  </div>
+
+  <!-- STEP 1: Phone -->
+  <div class="fd-body" id="step1">
+    <div class="anim-fadeup">
+      <div class="fd-plan-tag" id="step1Tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4C2.5 3.17 3.17 2.5 4 2.5h4c.83 0 1.5.67 1.5 1.5v3c0 .83-.67 1.5-1.5 1.5H5.5L3.5 11v-1.5H4c-.83 0-1.5-.67-1.5-1.5V4z" fill="#7C5CFC"/></svg>
+        Claiming Solo plan
+      </div>
+      <h1 class="fd-h1">One step away from your free trial</h1>
+      <div class="fd-price" id="step1Price">
+        <span class="fd-price-n">&#8358;48,000</span>
+        <span class="fd-price-p">/year after trial</span>
+      </div>
+    </div>
+    <div class="fd-field-wrap step-field delay-1" id="field1Wrap">
+      <label class="fd-label">WhatsApp number</label>
+      <input class="fd-input" type="tel" id="fdPhone" placeholder="e.g. 08012345678" autocomplete="tel"/>
+      <p class="fd-error">Please enter a valid WhatsApp number</p>
+    </div>
+    <button class="fd-submit step-field delay-2" onclick="fdNext()">Continue</button>
+  </div>
+
+  <!-- STEP 2: Instagram (optional) -->
+  <div class="fd-body" id="step2" style="display:none">
+    <div class="anim-fadeup">
+      <div class="fd-plan-tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4C2.5 3.17 3.17 2.5 4 2.5h4c.83 0 1.5.67 1.5 1.5v3c0 .83-.67 1.5-1.5 1.5H5.5L3.5 11v-1.5H4c-.83 0-1.5-.67-1.5-1.5V4z" fill="#7C5CFC"/></svg>
+        Claiming Solo plan
+      </div>
+      <h1 class="fd-h1">Almost there</h1>
+      <div class="fd-price">
+        <span class="fd-price-n">&#8358;48,000</span>
+        <span class="fd-price-p">/year after trial</span>
+      </div>
+    </div>
+    <div class="fd-field-wrap step-field delay-1">
+      <label class="fd-label">Instagram handle <span style="color:var(--ink3);font-weight:400">(optional)</span></label>
+      <input class="fd-input" type="text" id="fdIg" placeholder="e.g. @titithe_boutique" autocomplete="off"/>
+    </div>
+    <button class="fd-submit step-field delay-2" onclick="fdSubmit()">Claim my free trial</button>
+    <div class="fd-skip step-field delay-3">
+      <button class="fd-skip-btn" onclick="fdSubmit()">Skip this — I'll add it later</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: Channel preference -->
+  <div class="fd-body" id="step3" style="display:none">
+    <div class="anim-fadeup">
+      <div class="fd-plan-tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4C2.5 3.17 3.17 2.5 4 2.5h4c.83 0 1.5.67 1.5 1.5v3c0 .83-.67 1.5-1.5 1.5H5.5L3.5 11v-1.5H4c-.83 0-1.5-.67-1.5-1.5V4z" fill="#7C5CFC"/></svg>
+        Claiming Solo plan
+      </div>
+      <h1 class="fd-h1">One quick thing</h1>
+      <p style="font-size:14px;color:var(--ink3);margin-bottom:20px;margin-top:-4px">Where do most of your customer messages come from?</p>
+    </div>
+    <div class="fd-channel">
+      <div class="fd-channel-opts">
+        <label class="fd-ch-opt" id="chWa" onclick="selectChannel('wa')">
+          <input type="radio" name="channel" value="whatsapp"/>
+          <div class="fd-ch-icon" style="background:#ECFDF5">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#12B76A" stroke-width="1.3"/><path d="M6.5 9.8c.5 1.1 1.6 2.2 3.2 2.8l.4-.5c.4-.4 1.1-.3 1.6.1l.6.6c.4.4.4 1 .1 1.4-1.2 1.1-4.3.5-6.5-1.7C3.8 10.4 3.2 7.3 4.7 6.2c.4-.3 1-.3 1.4.1l.6.6c.4.4.5 1.1.1 1.5l-.3.4z" stroke="#12B76A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="fd-ch-text">Mostly WhatsApp</div>
+            <div class="fd-ch-sub">My customers message me on WhatsApp</div>
+          </div>
+          <div class="fd-ch-check"></div>
+        </label>
+        <label class="fd-ch-opt" id="chIg" onclick="selectChannel('ig')">
+          <input type="radio" name="channel" value="instagram"/>
+          <div class="fd-ch-icon" style="background:#F2EFFE">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2.5" y="2.5" width="13" height="13" rx="4" stroke="#7C5CFC" stroke-width="1.3"/><circle cx="9" cy="9" r="3" stroke="#7C5CFC" stroke-width="1.3"/><circle cx="13" cy="5" r="1" fill="#7C5CFC"/></svg>
+          </div>
+          <div>
+            <div class="fd-ch-text">Mostly Instagram</div>
+            <div class="fd-ch-sub">My customers find me on Instagram</div>
+          </div>
+          <div class="fd-ch-check"></div>
+        </label>
+        <label class="fd-ch-opt" id="chBoth" onclick="selectChannel('both')">
+          <input type="radio" name="channel" value="both"/>
+          <div class="fd-ch-icon" style="background:#F8F8FC">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M9 4v10" stroke="#9898B8" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="fd-ch-text">Both equally</div>
+            <div class="fd-ch-sub">I get customers from both channels</div>
+          </div>
+          <div class="fd-ch-check"></div>
+        </label>
+      </div>
+    </div>
+    <button class="fd-continue step-field delay-1" id="chContinue" onclick="fdChannelDone()" disabled>Finish setup</button>
+  </div>
+
+  <!-- STEP 4: Confirmation -->
+  <div class="fd-body" id="step4" style="display:none">
+    <div class="fd-final anim-scalein">
+      <div class="fd-check-circle">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M8 14l4 4 8-8" stroke="#12B76A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2>You're in!</h2>
+      <p>We'll WhatsApp you within 24 hours to get your account set up and running.</p>
+      <div class="fd-wa-msg">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#12B76A" stroke-width="1.2"/><path d="M5.5 8.5c.5 1 1.5 2 3 2.5l.4-.4c.4-.3 1-.2 1.4.1l.5.5c.4.4.4.9.1 1.3-1.1 1-4 .4-6-1.5C3.3 9.8 2.8 7.2 4 6.3c.4-.3.9-.2 1.3.1l.5.5c.4.4.5 1 .1 1.4l-.4.3z" fill="#12B76A"/></svg>
+        Check your WhatsApp
+      </div>
+    </div>
+    <div class="fd-plan-info" style="margin-top:28px">
+      <div class="fd-plan-left">
+        <div class="fd-plan-name" id="confirmPlan">Solo plan</div>
+        <div class="fd-plan-price" id="confirmPrice">&#8358;48,000/year after trial</div>
+      </div>
+      <div class="fd-plan-badge">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 4-4" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Trial active
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
+var fdState={plan:'',phone:'',ig:'',channel:''};
+
+function goFakeDoor(plan){
+  fdState={plan:plan,phone:'',ig:'',channel:''};
+  posthog.capture('fake_door_opened',{plan:plan,source:arguments.length>1?arguments[1]:'unknown'});
+  var fd=document.getElementById('fakeDoor');
+  fd.classList.remove('hidden');
+  document.body.style.overflow='hidden';
+  resetPips();
+  showStep(1);
+  var tag=document.querySelectorAll('.fd-plan-tag');
+  var priceEl=document.getElementById('step1Price');
+  if(plan==='business'){
+    tag.forEach(function(t){t.innerHTML='<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4C2.5 3.17 3.17 2.5 4 2.5h4c.83 0 1.5.67 1.5 1.5v3c0 .83-.67 1.5-1.5 1.5H5.5L3.5 11v-1.5H4c-.83 0-1.5-.67-1.5-1.5V4z" fill="#7C5CFC"/></svg>Claiming Business plan</svg>'});
+    priceEl.innerHTML='<span class="fd-price-n">&#8358;120,000</span><span class="fd-price-p">/year after trial</span>';
+  } else {
+    tag.forEach(function(t){t.innerHTML='<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4C2.5 3.17 3.17 2.5 4 2.5h4c.83 0 1.5.67 1.5 1.5v3c0 .83-.67 1.5-1.5 1.5H5.5L3.5 11v-1.5H4c-.83 0-1.5-.67-1.5-1.5V4z" fill="#7C5CFC"/></svg>Claiming Solo plan</svg>'});
+    priceEl.innerHTML='<span class="fd-price-n">&#8358;48,000</span><span class="fd-price-p">/year after trial</span>';
+  }
+}
+
+function closeFakeDoor(){
+  document.getElementById('fakeDoor').classList.add('hidden');
+  document.body.style.overflow='';
+  posthog.capture('fake_door_closed',{plan:fdState.plan,step:currentStep});
+}
+
+function resetPips(){
+  ['pip1','pip2','pip3'].forEach(function(id){var el=document.getElementById(id);el.className='fd-pip';el.style.width=''});
+}
+
+function showStep(n){
+  var stepEl=document.getElementById('step'+n);
+  document.querySelectorAll('.fd-body').forEach(function(el){
+    el.style.display='none';
+    el.classList.remove('anim-fadein');
+  });
+  stepEl.style.display='block';
+  void stepEl.offsetWidth;
+  stepEl.classList.add('anim-fadein');
+  currentStep=n;
+  var pips=document.querySelectorAll('.fd-pip');
+  pips.forEach(function(p,i){p.className='fd-pip';p.style.width='';if(i<n-1)p.classList.add('done');else if(i===n-1)p.classList.add('active')});
+  var stepFields=stepEl.querySelectorAll('.step-field');
+  stepFields.forEach(function(f){
+    f.style.opacity='0';
+    f.style.transform='translateY(14px)';
+    f.style.transition='none';
+  });
+  var t=0;
+  stepFields.forEach(function(f,i){
+    setTimeout(function(){
+      f.style.transition='opacity .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1)';
+      f.style.opacity='1';
+      f.style.transform='translateY(0)';
+    },t);
+    t+=120;
+  });
+}
+
+function fdNext(){
+  var phone=document.getElementById('fdPhone').value.trim();
+  if(!phone||phone.length<8){document.getElementById('fdPhone').classList.add('err');return;}
+  document.getElementById('fdPhone').classList.remove('err');
+  fdState.phone=phone;
+  posthog.capture('fake_door_step_completed',{step:1,plan:fdState.plan});
+  showStep(2);
+  setTimeout(function(){document.getElementById('fdIg').focus();},400);
+}
+
+function fdSubmit(){
+  fdState.ig=document.getElementById('fdIg').value.trim();
+  posthog.capture('fake_door_step_completed',{step:2,plan:fdState.plan,has_ig:!!fdState.ig});
+  showStep(3);
+}
+
+function selectChannel(ch){
+  document.querySelectorAll('.fd-ch-opt').forEach(function(o){o.classList.remove('sel');});
+  document.getElementById('ch'+(ch==='wa'?'Wa':ch==='ig'?'Ig':'Both')).classList.add('sel');
+  fdState.channel=ch;
+  document.getElementById('chContinue').disabled=false;
+}
+
+function fdChannelDone(){
+  if(!fdState.channel)return;
+  posthog.capture('fake_door_completed',{plan:fdState.plan,channel:fdState.channel,has_ig:!!fdState.ig});
+  posthog.identify(fdState.phone,{whatsapp:fdState.phone,instagram:fdState.ig||null,plan:fdState.plan,channel:fdState.channel,date:new Date().toISOString()});
+  document.getElementById('confirmPlan').textContent=(fdState.plan==='business'?'Business':'Solo')+' plan';
+  document.getElementById('confirmPrice').innerHTML=(fdState.plan==='business'?'&#8358;120,000':'&#8358;48,000')+'/year after trial';
+  showStep(4);
+}
+
 function goSignup(src){
   posthog.capture('nav_cta_clicked',{source:src});
   document.getElementById('signup').scrollIntoView({behavior:'smooth'});
 }
 
+function scrollToPricing(){
+  document.querySelector('.pricing-shell').scrollIntoView({behavior:'smooth'});
+}
+
 function handleSignup(src){
-  var p=(document.getElementById('f-phone')||{value:''}).value.trim()||
-         (document.getElementById('h-phone')||{value:''}).value.trim();
-  var ig=(document.getElementById('f-ig')||{value:''}).value.trim()||
-          (document.getElementById('h-ig')||{value:''}).value.trim();
-  posthog.capture('waitlist_signup',{source:src,has_phone:p.length>0,has_ig:ig.length>0});
-  if(p) posthog.identify(p,{whatsapp:p,instagram:ig||null,source:src,date:new Date().toISOString()});
-  if(src==='hero'){
-    document.getElementById('hero-form').style.display='none';
-    document.getElementById('hero-ok').style.display='block';
-  } else if(src==='final'){
-    document.getElementById('final-form').style.display='none';
-    document.getElementById('final-ok').style.display='block';
+  posthog.capture('cta_clicked',{source:src,plan:src==='solo'?'solo':src==='business'?'business':'landing'});
+  if(src==='solo'||src==='business'){
+    goFakeDoor(src,src);
   } else {
-    document.getElementById('signup').scrollIntoView({behavior:'smooth'});
+    goFakeDoor('solo',src);
   }
 }
 
@@ -566,6 +860,7 @@ function talkToSales(){
   window.open(wa,'_blank');
 }
 
+var currentStep=1;
 var _sd={25:0,50:0,75:0,90:0};
 window.addEventListener('scroll',function(){
   var pct=Math.round(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100);
