@@ -639,7 +639,7 @@ footer small{font-size:12px;color:var(--ink3)}
     <div class="fd-field-wrap step-field delay-1" id="field1Wrap">
       <label class="fd-label">WhatsApp number</label>
       <input class="fd-input" type="tel" id="fdPhone" placeholder="e.g. 08012345678" autocomplete="tel"/>
-      <p class="fd-error">Please enter a valid WhatsApp number</p>
+      <p class="fd-error">Enter a valid WhatsApp number</p>
     </div>
     <button class="fd-submit step-field delay-2" onclick="fdNext()">Continue</button>
   </div>
@@ -806,7 +806,8 @@ function showStep(n){
 
 function fdNext(){
   var phone=document.getElementById('fdPhone').value.trim();
-  if(!phone||phone.length<8){document.getElementById('fdPhone').classList.add('err');return;}
+  var cleanPhone=phone.replace(/\D/g,'');
+  if(!cleanPhone||cleanPhone.length!==11){document.getElementById('fdPhone').classList.add('err');return;}
   document.getElementById('fdPhone').classList.remove('err');
   fdState.phone=phone;
   posthog.capture('fake_door_step_completed',{step:1,plan:fdState.plan});
