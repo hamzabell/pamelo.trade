@@ -544,7 +544,7 @@ footer small{font-size:12px;color:var(--ink3)}
       <button class="btn-cta" id="fd-btn" onclick="submitFakeDoor()">Join the waitlist — it's free</button>
       <div class="form-note" id="fd-note">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5.5" rx="1.5" stroke="#9898B8" stroke-width="1.2"/><path d="M4 5.5V4a2 2 0 014 0v1.5" stroke="#9898B8" stroke-width="1.2" stroke-linecap="round"/></svg>
-        No spam. We'll only reach out when pamelo is ready.
+        <span id="fd-note-text">No spam. We'll only reach out when pamelo is ready.</span>
       </div>
     </div>
   </div>
@@ -595,17 +595,23 @@ function applyVariant(v) {
   document.getElementById('fd-btn').textContent = isTest
     ? 'Reserve my founding member spot — \u20a630,000/yr'
     : 'Join the waitlist — it\'s free';
-  document.getElementById('fd-note').querySelector('svg').nextSibling.textContent = isTest
-    ? ' No payment today. Your price locks in when we launch. No spam.'
-    : ' No spam. We\'ll only reach out when pamelo is ready.';
+  document.getElementById('fd-note-text').textContent = isTest
+    ? 'No payment today. Your price locks in when we launch. No spam.'
+    : 'No spam. We\'ll only reach out when pamelo is ready.';
 }
 
-// Assign variant via random 50/50, persisted in localStorage
-// Registers on PostHog so every event carries the variant property
-var _v = localStorage.getItem('ph_variant');
-if (!_v) { _v = Math.random() < 0.5 ? 'control' : 'test'; localStorage.setItem('ph_variant', _v); }
-posthog.register({ variant: _v });
-applyVariant(_v);
+// Apply cached variant immediately to prevent flash on return visits
+var _cached = localStorage.getItem('ph_variant');
+if (_cached === 'control' || _cached === 'test') applyVariant(_cached);
+
+// PostHog feature flag is the source of truth — toggles in the dashboard take effect here
+posthog.onFeatureFlags(function() {
+  var flag = posthog.getFeatureFlag('pamelo-customer-flag');
+  var v = flag === 'test' ? 'test' : 'control';
+  localStorage.setItem('ph_variant', v);
+  posthog.register({ variant: v });
+  applyVariant(v);
+});
 
 function navCta() {
   posthog.capture('nav_cta_clicked', { variant: currentVariant });
