@@ -224,7 +224,28 @@ footer small{font-size:12px;color:var(--ink3)}
 .sk{background:linear-gradient(90deg,var(--bd) 25%,#f0f0f8 50%,var(--bd) 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:6px}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 #skel-nav{border-bottom:1px solid var(--bd);padding:12px 22px;display:flex;align-items:center;justify-content:space-between;max-width:500px;margin:0 auto}
-#skel-body{max-width:500px;margin:0 auto;padding:40px 22px 0}
+#skel-body{max-width:500px;margin:0 auto;padding:56px 22px 0}
+.sk-h1{height:clamp(33px,8.8vw,44px)}
+.sk-sub{height:27px}
+#skel-div{height:1px;background:var(--bd);margin:0 22px}
+#skel-proof{max-width:500px;margin:0 auto;padding:20px 22px;display:flex;align-items:center;gap:12px}
+#skel-avs{display:flex}
+@media(min-width:640px){
+  #skel-nav{max-width:660px;padding:14px 28px}
+  #skel-body{max-width:660px;padding:72px 36px 0}
+  .sk-h1{height:clamp(40px,6.6vw,51px)}
+  .sk-sub{height:29px}
+  #skel-div{margin:0 36px}
+  #skel-proof{max-width:660px;padding:24px 36px}
+}
+@media(min-width:1024px){
+  #skel-nav{max-width:920px;padding:16px 48px}
+  #skel-body{max-width:920px;padding:100px 48px 0}
+  .sk-h1{height:clamp(46px,5.5vw,64px)}
+  .sk-sub{height:31px}
+  #skel-div{margin:0 48px}
+  #skel-proof{max-width:920px;padding:28px 48px}
+}
 </style>
 </head>
 <body>
@@ -236,20 +257,23 @@ footer small{font-size:12px;color:var(--ink3)}
     <div class="sk" style="width:108px;height:36px;border-radius:8px"></div>
   </div>
   <div id="skel-body">
-    <div class="sk" style="width:68px;height:20px;border-radius:20px;margin-bottom:22px"></div>
-    <div class="sk" style="width:88%;height:38px;margin-bottom:10px"></div>
-    <div class="sk" style="width:62%;height:38px;margin-bottom:28px"></div>
-    <div class="sk" style="width:100%;height:14px;margin-bottom:10px"></div>
-    <div class="sk" style="width:92%;height:14px;margin-bottom:10px"></div>
-    <div class="sk" style="width:78%;height:14px;margin-bottom:32px"></div>
-    <div class="sk" style="width:100%;height:1px;background:var(--bd);margin-bottom:24px"></div>
-    <div style="display:flex;gap:10px;align-items:center;margin-bottom:24px">
-      <div class="sk" style="width:32px;height:32px;border-radius:50%"></div>
-      <div class="sk" style="width:32px;height:32px;border-radius:50%"></div>
-      <div class="sk" style="width:32px;height:32px;border-radius:50%"></div>
-      <div class="sk" style="width:32px;height:32px;border-radius:50%"></div>
-      <div class="sk" style="width:180px;height:14px;margin-left:4px"></div>
+    <div class="sk" style="width:172px;height:24px;border-radius:20px;margin-bottom:22px"></div>
+    <div class="sk sk-h1" style="width:88%;margin-bottom:6px"></div>
+    <div class="sk sk-h1" style="width:60%;margin-bottom:20px"></div>
+    <div class="sk sk-sub" style="width:100%;margin-bottom:8px"></div>
+    <div class="sk sk-sub" style="width:96%;margin-bottom:8px"></div>
+    <div class="sk sk-sub" style="width:86%;margin-bottom:8px"></div>
+    <div class="sk sk-sub" style="width:72%;margin-bottom:36px"></div>
+  </div>
+  <div id="skel-div"></div>
+  <div id="skel-proof">
+    <div id="skel-avs">
+      <div class="sk" style="width:27px;height:27px;border-radius:50%"></div>
+      <div class="sk" style="width:27px;height:27px;border-radius:50%;margin-left:-7px"></div>
+      <div class="sk" style="width:27px;height:27px;border-radius:50%;margin-left:-7px"></div>
+      <div class="sk" style="width:27px;height:27px;border-radius:50%;margin-left:-7px"></div>
     </div>
+    <div class="sk" style="width:220px;height:13px"></div>
   </div>
 </div>
 
