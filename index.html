@@ -271,6 +271,17 @@ footer small{font-size:12px;color:var(--ink3)}
 .feat-tile p{font-size:12px;color:var(--ink2);line-height:1.6}
 @media(min-width:640px){.feat-grid{grid-template-columns:repeat(3,1fr)}}
 
+/* FEATURE CAROUSEL — mobile only */
+@media(max-width:639px){
+  .feat-grid{display:flex!important;overflow-x:scroll;scroll-snap-type:x mandatory;gap:12px;margin:26px -22px 0;padding:2px 22px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .feat-grid::-webkit-scrollbar{display:none}
+  .feat-tile{flex:0 0 82vw;max-width:290px;scroll-snap-align:start}
+}
+.feat-dots{display:none;justify-content:center;align-items:center;gap:7px;margin-top:16px}
+@media(max-width:639px){.feat-dots{display:flex}}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--bd);border:none;padding:0;cursor:pointer;transition:width .25s ease,background .25s ease,border-radius .25s ease;flex-shrink:0;-webkit-appearance:none}
+.dot.active{background:var(--p);width:20px;border-radius:3px}
+
 /* CHANNEL PILLS */
 .pill-group{display:flex;gap:8px;flex-wrap:wrap}
 .pill-opt{display:flex;align-items:center;gap:6px;border:1.5px solid var(--bd);border-radius:20px;padding:8px 14px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink2);background:var(--bg);cursor:pointer;transition:all .15s;user-select:none}
@@ -387,7 +398,8 @@ footer small{font-size:12px;color:var(--ink3)}
 <section class="sec">
   <div class="sec-label">What pamelo does</div>
   <p class="h2">Six tools. One inbox.<br/>Zero switching between apps.</p>
-  <div class="feat-grid">
+  <div class="feat-carousel-wrap">
+  <div class="feat-grid" id="feat-grid">
     <div class="feat-tile">
       <div class="feat-ico" style="background:#ECFDF5">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9.5" cy="9.5" r="7.5" stroke="#12B76A" stroke-width="1.4"/><path d="M6.5 10.3c.4.9 1.3 1.8 2.7 2.3l.3-.4c.3-.4.9-.3 1.3.1l.6.6c.3.3.3.8 0 1.1-1 .9-3.4.4-5.2-1.5-1.8-1.9-2.3-4.3-1.2-5.2.3-.3.8-.3 1.1 0l.6.6c.3.3.4.9.1 1.2l-.3.2z" stroke="#12B76A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="12.5" y="3" width="5" height="5" rx="1.5" stroke="#12B76A" stroke-width="1.2"/><circle cx="15" cy="5.5" r="1" fill="#12B76A"/></svg>
@@ -430,6 +442,15 @@ footer small{font-size:12px;color:var(--ink3)}
       <h4>Cross-platform ad campaigns <span class="new-badge">Coming soon</span></h4>
       <p>Run ads on Instagram, Facebook and TikTok from pamelo. Every lead that responds is auto-captured as a customer — same inbox, same AI.</p>
     </div>
+  </div>
+  <div class="feat-dots" id="feat-dots">
+    <button class="dot active" aria-label="Feature 1"></button>
+    <button class="dot" aria-label="Feature 2"></button>
+    <button class="dot" aria-label="Feature 3"></button>
+    <button class="dot" aria-label="Feature 4"></button>
+    <button class="dot" aria-label="Feature 5"></button>
+    <button class="dot" aria-label="Feature 6"></button>
+  </div>
   </div>
 </section>
 
@@ -859,6 +880,82 @@ var _t = Date.now();
 window.addEventListener('beforeunload', function() {
   posthog.capture('page_exit', { secs: Math.round((Date.now() - _t) / 1000), variant: currentVariant });
 });
+
+// Feature carousel — mobile only
+(function(){
+  function init(){
+    if(window.innerWidth >= 640) return;
+    var grid = document.getElementById('feat-grid');
+    var dotEls = document.querySelectorAll('#feat-dots .dot');
+    var tiles = document.querySelectorAll('.feat-tile');
+    var total = tiles.length;
+    var cur = 0;
+    var timer = null;
+    var paused = false;
+    var INTERVAL = 3200;
+
+    function tileW(){ return tiles[0].offsetWidth + 12; }
+
+    function setDot(idx){
+      cur = idx;
+      dotEls.forEach(function(d,i){ d.classList.toggle('active', i === idx); });
+    }
+
+    function goTo(idx, instant){
+      var n = (idx + total) % total;
+      if(instant){
+        grid.scrollLeft = n * tileW();
+      } else {
+        grid.scrollTo({ left: n * tileW(), behavior: 'smooth' });
+      }
+      setDot(n);
+    }
+
+    function advance(){
+      if(paused) return;
+      if(cur >= total - 1){
+        // Instant wrap back to start, then continue cycling
+        grid.scrollLeft = 0;
+        setDot(0);
+      } else {
+        goTo(cur + 1, false);
+      }
+    }
+
+    function startTimer(){
+      clearInterval(timer);
+      timer = setInterval(advance, INTERVAL);
+    }
+
+    // Dot clicks for manual nav
+    dotEls.forEach(function(d, i){
+      d.addEventListener('click', function(){ goTo(i, false); startTimer(); });
+    });
+
+    // Hold finger to pause; release to resume + sync dot position
+    grid.addEventListener('touchstart', function(){
+      paused = true;
+      clearInterval(timer);
+    }, { passive: true });
+
+    grid.addEventListener('touchend', function(){
+      paused = false;
+      setTimeout(function(){
+        var idx = Math.round(grid.scrollLeft / tileW());
+        setDot(Math.min(Math.max(idx, 0), total - 1));
+        startTimer();
+      }, 400);
+    }, { passive: true });
+
+    startTimer();
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 </script>
 </body>
 </html>
