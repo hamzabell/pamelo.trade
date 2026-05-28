@@ -263,6 +263,14 @@ footer small{font-size:12px;color:var(--ink3)}
   .privacy-grid{grid-template-columns:repeat(4,1fr)}
 }
 
+/* FEATURE GRID */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.feat-tile{background:var(--white);border:1px solid var(--bd);border-radius:var(--r);padding:18px}
+.feat-ico{width:36px;height:36px;border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.feat-tile h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.35}
+.feat-tile p{font-size:12px;color:var(--ink2);line-height:1.6}
+@media(min-width:640px){.feat-grid{grid-template-columns:repeat(3,1fr)}}
+
 /* CHANNEL PILLS */
 .pill-group{display:flex;gap:8px;flex-wrap:wrap}
 .pill-opt{display:flex;align-items:center;gap:6px;border:1.5px solid var(--bd);border-radius:20px;padding:8px 14px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink2);background:var(--bg);cursor:pointer;transition:all .15s;user-select:none}
@@ -356,7 +364,7 @@ footer small{font-size:12px;color:var(--ink3)}
 <section class="hero">
   <div class="pill"><span class="pill-dot"></span>Built for Nigerian vendors</div>
   <p class="h1">Stop losing money<br/>in your <em>DMs</em></p>
-  <p class="hero-sub">pamelo connects to WhatsApp and Instagram, reads every message, logs every order, confirms every payment, chases every unpaid debt, and turns your ad spend into real customers — automatically, in the background.</p>
+  <p class="hero-sub">pamelo reads your WhatsApp and Instagram DMs, builds your customer records, confirms every payment, and chases every debt — automatically.</p>
 
 </section>
 
@@ -375,124 +383,52 @@ footer small{font-size:12px;color:var(--ink3)}
 
 <div class="div"></div>
 
-<!-- PAIN -->
+<!-- FEATURES -->
 <section class="sec">
-  <div class="sec-label">The problem</div>
-  <p class="h2">Running a business from DMs costs you money</p>
-  <p class="sec-sub">Customers, orders, negotiations, payments — all scattered across two apps with no structure. Something always slips.</p>
-  <p style="font-size:13px;color:var(--ink3);margin-top:16px;line-height:1.6">Google Sheets won't read your voice notes, remember your customers, or chase your debtors at 9am on Friday.</p>
-  <div class="pain-grid">
-    <div class="pain-card">
-      <div class="pain-ico" style="background:#FEF3F2">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#F04438" stroke-width="1.4"/><path d="M9 5.5v4M9 11.5v1" stroke="#F04438" stroke-width="1.8" stroke-linecap="round"/></svg>
+  <div class="sec-label">What pamelo does</div>
+  <p class="h2">Six tools. One inbox.<br/>Zero switching between apps.</p>
+  <div class="feat-grid">
+    <div class="feat-tile">
+      <div class="feat-ico" style="background:#ECFDF5">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9.5" cy="9.5" r="7.5" stroke="#12B76A" stroke-width="1.4"/><path d="M6.5 10.3c.4.9 1.3 1.8 2.7 2.3l.3-.4c.3-.4.9-.3 1.3.1l.6.6c.3.3.3.8 0 1.1-1 .9-3.4.4-5.2-1.5-1.8-1.9-2.3-4.3-1.2-5.2.3-.3.8-.3 1.1 0l.6.6c.3.3.4.9.1 1.2l-.3.2z" stroke="#12B76A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="12.5" y="3" width="5" height="5" rx="1.5" stroke="#12B76A" stroke-width="1.2"/><circle cx="15" cy="5.5" r="1" fill="#12B76A"/></svg>
       </div>
-      <h4>Lost orders</h4>
-      <p>Serious buyers get buried in 50+ daily messages. Follow-up never happens.</p>
+      <h4>WhatsApp &amp; Instagram inbox</h4>
+      <p>Your customers message you as normal. pamelo reads every text, voice note and image on both channels and logs it automatically.</p>
     </div>
-    <div class="pain-card">
-      <div class="pain-ico" style="background:#FFFBEB">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#F59E0B" stroke-width="1.4"/><path d="M9 5v4l3 2" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="feat-tile">
+      <div class="feat-ico" style="background:#F2EFFE">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="7" r="3.5" stroke="#7C5CFC" stroke-width="1.4"/><path d="M2 17c0-3.3 2.7-6 6-6" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/><path d="M13 12l1.5 1.5L17 10" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <h4>Unpaid debts</h4>
-      <p>"I'll pay Friday" — three weeks pass, the conversation is gone, the debt forgotten.</p>
+      <h4>Customer profiles that build themselves</h4>
+      <p>Names, orders, amounts, addresses, what they owe — all extracted from your DMs. Every returning customer recognised instantly.</p>
     </div>
-    <div class="pain-card">
-      <div class="pain-ico" style="background:#F2EFFE">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 5.5h10M4 9h7M4 12.5h5" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <div class="feat-tile">
+      <div class="feat-ico" style="background:#FFFBEB">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2.5a5.5 5.5 0 015.5 5.5c0 3.5-5.5 9.5-5.5 9.5S4.5 11.5 4.5 8A5.5 5.5 0 0110 2.5z" stroke="#F59E0B" stroke-width="1.4"/><circle cx="10" cy="8" r="1.8" fill="#F59E0B"/></svg>
       </div>
-      <h4>No customer history</h4>
-      <p>Every message from a returning buyer feels like the first time — you have no record of what they bought or where they live.</p>
+      <h4>Debt chasing on autopilot</h4>
+      <p>Log an unpaid balance and pamelo sends polite, scheduled WhatsApp reminders under your name. No awkward follow-ups from you.</p>
     </div>
-    <div class="pain-card">
-      <div class="pain-ico" style="background:#ECFDF5">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 14V8l5-4.5L14 8v6" stroke="#12B76A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 14v-3.5h3V14" stroke="#12B76A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="feat-tile">
+      <div class="feat-ico" style="background:#F2EFFE">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 9h9M3 13h6" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/><circle cx="15.5" cy="13.5" r="3" stroke="#7C5CFC" stroke-width="1.4"/><path d="M14.2 13.5l1 1 1.8-1.8" stroke="#7C5CFC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <h4>Zero visibility</h4>
-      <p>You don't know your revenue for the week or which customers bring the most value.</p>
+      <h4>Automated follow-up sequences</h4>
+      <p>Delivery confirmations, feedback requests, re-engagement nudges — set up once, runs in your tone, on your schedule.</p>
     </div>
-    <div class="pain-card">
-      <div class="pain-ico" style="background:#FFFBEB">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="6" width="14" height="9" rx="1.5" stroke="#F59E0B" stroke-width="1.4"/><path d="M2 9h14" stroke="#F59E0B" stroke-width="1.4"/><path d="M5.5 6V5a3.5 3.5 0 017 0v1" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/><path d="M5.5 12h2M9 12h3.5" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <div class="feat-tile">
+      <div class="feat-ico" style="background:#FFFBEB">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="16" height="10" rx="2" stroke="#F59E0B" stroke-width="1.4"/><path d="M2 10h16" stroke="#F59E0B" stroke-width="1.4"/><path d="M5.5 13.5h2M9.5 13.5h4" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/><path d="M7 6V4.5a3 3 0 016 0V6" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/></svg>
       </div>
-      <h4>Payment confirmation loops</h4>
-      <p>Check banking app → open DMs → type "received" → mark order paid. Thirty times a day, on two separate apps.</p>
+      <h4>In-chat payment confirmation <span class="new-badge">Coming soon</span></h4>
+      <p>Customer sends a screenshot or types "sent" — pamelo verifies the transfer and replies "Payment received ✓" in the same thread. Bank app stays closed.</p>
     </div>
-    <div class="pain-card">
-      <div class="pain-ico" style="background:#F2EFFE">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#7C5CFC" stroke-width="1.4"/><path d="M6 9h6M9 6v6" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <div class="feat-tile">
+      <div class="feat-ico" style="background:#F2EFFE">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3.5 14.5l2-2m0 0l1.3-4 4-1.3-1.3 4-4 1.3z" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="5" r="2.5" stroke="#7C5CFC" stroke-width="1.4"/></svg>
       </div>
-      <h4>No reach beyond your DMs</h4>
-      <p>New customers only come through word-of-mouth. You have no way to run structured campaigns from the same place you manage orders.</p>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- CHANNELS -->
-<section class="sec">
-  <div class="sec-label">Channels</div>
-  <p class="h2">Works on both WhatsApp and Instagram</p>
-  <p class="sec-sub">Every message, voice note, and image that comes in is read, parsed, and logged — on both channels, for every plan.</p>
-  <div class="ch-list">
-    <div class="ch-card">
-      <div class="ch-ico" style="background:#ECFDF5">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9.5" stroke="#12B76A" stroke-width="1.4"/><path d="M7.5 11.8c.5 1.1 1.6 2.2 3.2 2.8l.4-.5c.4-.4 1.1-.3 1.6.1l.7.7c.4.4.4 1 .1 1.4-1.2 1.1-4.3.5-6.5-1.7C4.8 12.4 4.2 9.3 5.7 8.2c.4-.3 1-.3 1.4.1l.7.7c.4.4.5 1.1.1 1.5l-.4.3z" stroke="#12B76A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="ch-body">
-        <h4>WhatsApp business line</h4>
-        <p>Your customers message your pamelo number. You reply from your personal WhatsApp as normal. Text, voice notes, images — all captured and logged automatically.</p>
-        <span class="ch-tag">All plans</span>
-      </div>
-    </div>
-    <div class="ch-card">
-      <div class="ch-ico" style="background:#F2EFFE">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="5" stroke="#7C5CFC" stroke-width="1.4"/><circle cx="11" cy="11" r="3.5" stroke="#7C5CFC" stroke-width="1.4"/><circle cx="15.8" cy="6.2" r="1.1" fill="#7C5CFC"/></svg>
-      </div>
-      <div class="ch-body">
-        <h4>Instagram DM sync</h4>
-        <p>Connect your IG Business account once via a simple login. Every DM creates or updates a customer profile in the background. You reply in Instagram as normal.</p>
-        <span class="ch-tag">All plans</span>
-        <p class="ch-trust">Connected via official Meta Business API</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<!-- SMART PAYMENTS -->
-<section class="sec">
-  <div class="sec-label">Smart payments <span class="new-badge">Coming soon</span></div>
-  <p class="h2">Customer sends a screenshot.<br/>pamelo confirms it. Done.</p>
-  <p class="sec-sub">The moment a customer says "I've sent it" — or attaches a transfer screenshot — pamelo's AI reads it, verifies the credit on their unique virtual account, and replies to them in the same chat thread. You open the conversation and the payment is already resolved. You never opened your banking app.</p>
-  <div class="ch-list">
-    <div class="ch-card">
-      <div class="ch-ico" style="background:#FFFBEB">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <rect x="2" y="6" width="18" height="13" rx="2" stroke="#F59E0B" stroke-width="1.4"/>
-          <path d="M2 10h18" stroke="#F59E0B" stroke-width="1.4"/>
-          <path d="M6 14.5h2M11 14.5h5" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M7 6V4.5a4 4 0 018 0V6" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="ch-body">
-        <h4>AI reads the message or screenshot</h4>
-        <p>Customer types "sent ₦18,500" or drops a transfer screenshot. pamelo's AI picks it up, ties it to their open order, and triggers the payment check against their unique virtual account number — without you lifting a finger.</p>
-        <span class="ch-tag" style="background:var(--amb-lt);color:#92400e">One account per order · Via licensed Nigerian bank</span>
-      </div>
-    </div>
-    <div class="ch-card">
-      <div class="ch-ico" style="background:#ECFDF5">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <path d="M3 12l5 5 11-11" stroke="#12B76A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="ch-body">
-        <h4>Confirmation goes back in the same chat</h4>
-        <p>Credit verified — pamelo replies to your customer: "Payment received ✓ — your order is confirmed." The order status updates in your dashboard. You just see a clean, closed conversation. No switching apps. No manual typing.</p>
-        <span class="ch-tag">Via pamelo BSP · in-chat confirmation</span>
-      </div>
+      <h4>Cross-platform ad campaigns <span class="new-badge">Coming soon</span></h4>
+      <p>Run ads on Instagram, Facebook and TikTok from pamelo. Every lead that responds is auto-captured as a customer — same inbox, same AI.</p>
     </div>
   </div>
 </section>
@@ -509,83 +445,22 @@ footer small{font-size:12px;color:var(--ink3)}
         <div style="position:relative;flex-shrink:0"><div class="step-num">1</div><div class="step-rail"></div></div>
         <div class="step-body">
           <h4>Connect your channels</h4>
-          <p>Get your pamelo WhatsApp number and link your Instagram account. Takes under 5 minutes. Your customers keep messaging you the same way they always have.</p>
+          <p>Get your pamelo WhatsApp number and link your Instagram account in under 5 minutes. Your customers keep messaging you the same way they always have.</p>
         </div>
       </div>
       <div class="step">
         <div style="position:relative;flex-shrink:0"><div class="step-num">2</div><div class="step-rail"></div></div>
         <div class="step-body">
-          <h4>Every conversation is read and logged</h4>
-          <p>Text messages, voice notes, images — everything that comes in on WhatsApp or Instagram is parsed by AI. Customer names, items, prices, addresses and balances are all extracted automatically.</p>
+          <h4>AI reads and organises everything</h4>
+          <p>Every message, voice note and image is parsed automatically. Names, orders, prices, addresses and balances are extracted — customer profiles build themselves without you touching anything.</p>
         </div>
       </div>
       <div class="step">
         <div style="position:relative;flex-shrink:0"><div class="step-num">3</div><div class="step-rail"></div></div>
         <div class="step-body">
-          <h4>Customer profiles build themselves</h4>
-          <p>Every buyer gets a profile: what they ordered, what they owe, where they live, how much they've spent. Returning customers are recognised instantly.</p>
+          <h4>Everything else runs itself</h4>
+          <p>Payments confirmed in the chat thread. Debts chased on schedule. Follow-ups sent under your name. You just sell — pamelo handles the rest.</p>
         </div>
-      </div>
-      <div class="step">
-        <div style="position:relative;flex-shrink:0"><div class="step-num">4</div><div class="step-rail"></div></div>
-        <div class="step-body">
-          <h4>Payments confirm themselves <span class="new-badge">Coming soon</span></h4>
-          <p>When a customer is ready to pay, pamelo shares a unique virtual account number in the chat. They transfer the money and send a screenshot or just type "done". pamelo's AI reads it, verifies the credit, and replies to your customer directly: "Payment received ✓ — your order is confirmed." You open the chat and it's already resolved. Your bank app stays closed.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div style="position:relative;flex-shrink:0"><div class="step-num">5</div><div class="step-rail"></div></div>
-        <div class="step-body">
-          <h4>Debts are chased for you</h4>
-          <p>Log an outstanding balance and pamelo sends a polite WhatsApp reminder on the schedule you set — professional tone, your name, no awkward typing from you.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div style="position:relative;flex-shrink:0"><div class="step-num">6</div><div class="step-rail"></div></div>
-        <div class="step-body">
-          <h4>Automated follow-ups, your way</h4>
-          <p>Set up message sequences once — pamelo handles the rest. Send a delivery confirmation when an order ships, request quality feedback 48 hours later, or nudge a quiet customer after two weeks. Every message goes out under your name, in your tone, on your schedule. Customers who opt out are never messaged again.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AD CAMPAIGNS -->
-<section class="sec">
-  <div class="sec-label">Ad campaigns <span class="new-badge">Coming soon</span></div>
-  <p class="h2">Run ads. Manage replies.<br/>Close orders. All in one place.</p>
-  <p class="sec-sub">Soon you'll launch campaigns on Instagram, Facebook, TikTok and WhatsApp directly from pamelo — without opening a separate Ads Manager. Every lead that responds gets the same AI treatment as your organic DMs: profile created, order logged, follow-up scheduled. Paid and organic customers. One inbox.</p>
-  <div class="ch-list">
-    <div class="ch-card">
-      <div class="ch-ico" style="background:#F2EFFE">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <rect x="2" y="5" width="18" height="14" rx="2" stroke="#7C5CFC" stroke-width="1.4"/>
-          <path d="M2 9h18" stroke="#7C5CFC" stroke-width="1.4"/>
-          <path d="M6 13.5h3M11.5 13.5h4.5" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M6 16h2" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="ch-body">
-        <h4>One dashboard for all your campaigns</h4>
-        <p>Create and manage ads across Instagram, Facebook, TikTok and WhatsApp from pamelo. No juggling between Ads Manager, Business Suite and TikTok Ads — set your budget, audience and creative, launch, done.</p>
-        <span class="ch-tag" style="background:var(--p-lt);color:var(--p-dk)">Instagram · Facebook · TikTok · WhatsApp</span>
-      </div>
-    </div>
-    <div class="ch-card">
-      <div class="ch-ico" style="background:#ECFDF5">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <circle cx="17" cy="5" r="3" stroke="#12B76A" stroke-width="1.4"/>
-          <path d="M14.5 6.5L7 11" stroke="#12B76A" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M7 11l-4 2 1.5-4.5L7 11z" stroke="#12B76A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M8 14l6 3" stroke="#12B76A" stroke-width="1.4" stroke-linecap="round"/>
-          <circle cx="17" cy="17" r="3" stroke="#12B76A" stroke-width="1.4"/>
-        </svg>
-      </div>
-      <div class="ch-body">
-        <h4>Every ad lead becomes a tracked customer</h4>
-        <p>When someone replies to your ad, pamelo creates their profile, logs the enquiry, and kicks off the same follow-up flow as your organic DMs. Paid leads, same intelligence, zero extra effort.</p>
-        <span class="ch-tag">AI-powered lead capture</span>
       </div>
     </div>
   </div>
@@ -624,44 +499,9 @@ footer small{font-size:12px;color:var(--ink3)}
   </div>
 </div>
 
-<!-- PRIVACY -->
-<div class="privacy-section">
-  <div class="w">
-    <div class="sec-label">Privacy &amp; data</div>
-    <p class="h2">Your data. Your customers.<br/><em style="font-style:italic;color:var(--p)">Your control.</em></p>
-    <p class="sec-sub" style="color:var(--ink2)">pamelo connects via official Meta Business APIs — not screen scraping. Your messages are processed to extract order information, stored securely, and never sold.</p>
-    <div class="privacy-grid">
-      <div class="priv-item">
-        <div class="priv-icon-wrap">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-        </div>
-        <h4>What we store</h4>
-        <p>Customer names, order details, balances, and addresses collected through your DMs. Nothing else.</p>
-      </div>
-      <div class="priv-item">
-        <div class="priv-icon-wrap">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
-        </div>
-        <h4>What we never do</h4>
-        <p>We never sell your data. We never share customer information with third parties. Ever.</p>
-      </div>
-      <div class="priv-item">
-        <div class="priv-icon-wrap">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-        </div>
-        <h4>Customer opt-out</h4>
-        <p>Any customer can reply "STOP" to opt out of automated messages instantly. We honour every opt-out permanently.</p>
-      </div>
-      <div class="priv-item">
-        <div class="priv-icon-wrap">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </div>
-        <h4>You can leave anytime</h4>
-        <p>Export your full customer and order history as a spreadsheet for free. Data deleted within 14 days of closing your account.</p>
-      </div>
-    </div>
-    <p class="privacy-email">Questions? Email <a href="mailto:privacy@pamelo.trade">privacy@pamelo.trade</a> — we respond within 24 hours.</p>
-  </div>
+<div class="w" style="padding-top:20px;padding-bottom:20px;display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink3)">
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+  Connected via official Meta Business APIs &middot; Your data is never sold &middot; Export everything and leave anytime &middot; <a href="mailto:privacy@pamelo.trade" style="color:var(--ink3);text-decoration:none;margin-left:2px">privacy@pamelo.trade</a>
 </div>
 
 <div class="div"></div>
