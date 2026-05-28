@@ -273,7 +273,7 @@ footer small{font-size:12px;color:var(--ink3)}
 
 /* FEATURE CAROUSEL — mobile only */
 @media(max-width:639px){
-  .feat-grid{display:flex!important;overflow-x:scroll;scroll-snap-type:x mandatory;gap:12px;margin:26px -22px 0;padding:2px 22px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .feat-grid{display:flex!important;overflow-x:scroll;scroll-snap-type:x mandatory;scroll-padding-left:22px;gap:12px;margin:26px -22px 0;padding:2px 22px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .feat-grid::-webkit-scrollbar{display:none}
   .feat-tile{flex:0 0 82vw;max-width:290px;scroll-snap-align:start}
 }
@@ -520,9 +520,8 @@ footer small{font-size:12px;color:var(--ink3)}
   </div>
 </div>
 
-<div class="w" style="padding-top:20px;padding-bottom:20px;display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink3)">
-  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-  Connected via official Meta Business APIs &middot; Your data is never sold &middot; Export everything and leave anytime &middot; <a href="mailto:privacy@pamelo.trade" style="color:var(--ink3);text-decoration:none;margin-left:2px">privacy@pamelo.trade</a>
+<div class="w" style="padding-top:22px;padding-bottom:22px;font-size:12px;color:var(--ink3);line-height:2;text-align:center">
+  Official Meta Business APIs &middot; Data never sold &middot; Export &amp; leave anytime &middot; <a href="privacy.html" style="color:var(--ink3);text-decoration:underline">Privacy Policy</a>
 </div>
 
 <div class="div"></div>
@@ -886,53 +885,62 @@ window.addEventListener('beforeunload', function() {
   function init(){
     if(window.innerWidth >= 640) return;
     var grid = document.getElementById('feat-grid');
+    if(!grid) return;
     var dotEls = document.querySelectorAll('#feat-dots .dot');
-    var tiles = document.querySelectorAll('.feat-tile');
+    var tiles = document.querySelectorAll('#feat-grid .feat-tile');
     var total = tiles.length;
-    var cur = 0;
-    var timer = null;
-    var paused = false;
+    if(!total) return;
+    var cur = 0, timer = null, paused = false;
     var INTERVAL = 3200;
+    var SNAP_OFFSET = 22; // matches scroll-padding-left and grid padding-left
 
-    function tileW(){ return tiles[0].offsetWidth + 12; }
+    // Scroll so tile[idx]'s left edge sits at SNAP_OFFSET from the visible grid left
+    function scrollToTile(idx, smooth){
+      var gRect = grid.getBoundingClientRect();
+      var tRect = tiles[idx].getBoundingClientRect();
+      var target = Math.max(0, grid.scrollLeft + (tRect.left - gRect.left) - SNAP_OFFSET);
+      if(smooth){
+        grid.scrollTo({ left: target, behavior: 'smooth' });
+      } else {
+        grid.scrollLeft = target;
+      }
+    }
 
     function setDot(idx){
       cur = idx;
       dotEls.forEach(function(d,i){ d.classList.toggle('active', i === idx); });
     }
 
-    function goTo(idx, instant){
-      var n = (idx + total) % total;
-      if(instant){
-        grid.scrollLeft = n * tileW();
-      } else {
-        grid.scrollTo({ left: n * tileW(), behavior: 'smooth' });
-      }
-      setDot(n);
-    }
-
     function advance(){
       if(paused) return;
-      if(cur >= total - 1){
-        // Instant wrap back to start, then continue cycling
-        grid.scrollLeft = 0;
+      var next = (cur + 1) % total;
+      if(next === 0){
+        grid.scrollLeft = 0; // instant wrap back to start
         setDot(0);
       } else {
-        goTo(cur + 1, false);
+        scrollToTile(next, true);
+        setDot(next);
       }
     }
 
-    function startTimer(){
-      clearInterval(timer);
-      timer = setInterval(advance, INTERVAL);
-    }
+    function startTimer(){ clearInterval(timer); timer = setInterval(advance, INTERVAL); }
 
-    // Dot clicks for manual nav
+    // Dot taps — handle both touch and click
     dotEls.forEach(function(d, i){
-      d.addEventListener('click', function(){ goTo(i, false); startTimer(); });
+      d.addEventListener('touchend', function(e){
+        e.preventDefault();
+        scrollToTile(i, true);
+        setDot(i);
+        startTimer();
+      });
+      d.addEventListener('click', function(){
+        scrollToTile(i, true);
+        setDot(i);
+        startTimer();
+      });
     });
 
-    // Hold finger to pause; release to resume + sync dot position
+    // Hold to pause, release to resume and sync dot to settled tile
     grid.addEventListener('touchstart', function(){
       paused = true;
       clearInterval(timer);
@@ -941,8 +949,13 @@ window.addEventListener('beforeunload', function() {
     grid.addEventListener('touchend', function(){
       paused = false;
       setTimeout(function(){
-        var idx = Math.round(grid.scrollLeft / tileW());
-        setDot(Math.min(Math.max(idx, 0), total - 1));
+        var gLeft = grid.getBoundingClientRect().left + SNAP_OFFSET;
+        var closest = 0, minDist = Infinity;
+        for(var i = 0; i < total; i++){
+          var dist = Math.abs(tiles[i].getBoundingClientRect().left - gLeft);
+          if(dist < minDist){ minDist = dist; closest = i; }
+        }
+        setDot(closest);
         startTimer();
       }, 400);
     }, { passive: true });
@@ -950,11 +963,7 @@ window.addEventListener('beforeunload', function() {
     startTimer();
   }
 
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  window.addEventListener('load', init);
 })();
 </script>
 </body>
