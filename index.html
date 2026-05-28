@@ -87,8 +87,8 @@ svg{display:block}
 
 /* PAIN GRID */
 .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
-.pain-card{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:18px}
-.pain-ico{width:34px;height:34px;border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.pain-card{background:var(--white);border:1px solid var(--bd);border-radius:var(--r);padding:18px}
+.pain-ico{width:36px;height:36px;border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .pain-card h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px}
 .pain-card p{font-size:12px;color:var(--ink2);line-height:1.6}
 
@@ -155,20 +155,55 @@ svg{display:block}
 .final-form-wrap{max-width:400px;margin:0 auto}
 
 /* FOOTER */
-footer{border-top:1px solid var(--bd);padding:20px 22px;max-width:500px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+footer{border-top:1px solid var(--bd);padding:24px 22px;max-width:500px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
 .foot-logo{display:flex;align-items:center;gap:8px}
 .foot-type{font-size:14px;font-weight:800;color:var(--ink);letter-spacing:-.3px}
 .foot-type span{color:var(--p)}
 footer small{font-size:12px;color:var(--ink3)}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.foot-links a{font-size:12px;color:var(--ink3);text-decoration:none;transition:color .15s}
+.foot-links a:hover{color:var(--ink)}
 
 /* check icon shorthand */
 .ck-grn{display:inline-block}
 .ck-p{display:inline-block}
 
+/* FULL-BLEED SECTION (how-it-works, etc.) */
+.sec-full{background:var(--bg);max-width:100%;padding:52px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+
+/* NEW BADGE */
+.new-badge{display:inline-block;background:var(--amb-lt);color:#92400e;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle;margin-left:6px}
+
+/* PARTNERS SECTION */
+.partners-section{background:var(--ink);padding:52px 0}
+.partners-section .sec-label{color:var(--grn-bd)}
+.partners-section .h2{color:var(--white)}
+.partners-section .sec-sub{color:rgba(255,255,255,0.5)}
+.partner-cards{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.partner-card-dark{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r);padding:24px}
+.partner-avatar{width:44px;height:44px;border-radius:50%;background:var(--p);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;margin-bottom:18px;flex-shrink:0}
+.partner-quote-text{font-family:var(--ff-display);font-size:16px;font-style:italic;font-weight:400;line-height:1.65;color:var(--white);margin-bottom:18px}
+.partner-name-dark{font-size:13px;font-weight:700;color:var(--white)}
+.partner-role-dark{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
+.partner-ig-link{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:var(--grn-bd);font-size:12px;font-weight:500;text-decoration:none}
+.partner-ig-link:hover{opacity:.7}
+
+/* PRIVACY SECTION */
+.privacy-section{background:var(--p-lt);border-top:1px solid var(--p-bd);border-bottom:1px solid var(--p-bd);padding:52px 0}
+.privacy-section .sec-label{color:var(--p-dk)}
+.privacy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.priv-item h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.priv-item p{font-size:12px;color:var(--ink2);line-height:1.6}
+.priv-icon-wrap{width:38px;height:38px;background:var(--white);border:1px solid var(--p-bd);border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.privacy-email{font-size:13px;color:var(--ink2);margin-top:28px}
+.privacy-email a{color:var(--p);text-decoration:none}
+.privacy-email a:hover{text-decoration:underline}
+
 /* RESPONSIVE — tablet ≥640px */
 @media(min-width:640px){
   .w,.nav,.hero,.sec,.proof,.quote-shell,.final{max-width:660px}
   footer{max-width:660px}
+  .w{padding:0 36px}
   .nav{padding:14px 28px}
   .hero{padding:72px 36px 64px}
   .sec{padding:64px 36px}
@@ -181,12 +216,22 @@ footer small{font-size:12px;color:var(--ink3)}
   .hero-sub{font-size:17px}
   .final-form-wrap{max-width:480px}
   .pain-grid{grid-template-columns:repeat(4,1fr)}
+  /* Full-bleed sections scale */
+  .sec-full{padding:64px 0}
+  .partners-section{padding:64px 0}
+  .privacy-section{padding:64px 0}
+  /* Partners cards side by side */
+  .partner-cards{flex-direction:row}
+  .partner-card-dark{flex:1}
+  /* Privacy grid 4 cols */
+  .privacy-grid{grid-template-columns:repeat(4,1fr)}
 }
 
 /* RESPONSIVE — desktop ≥1024px */
 @media(min-width:1024px){
   .w,.nav,.hero,.sec,.proof,.quote-shell,.final{max-width:920px}
   footer{max-width:920px}
+  .w{padding:0 48px}
   .nav{padding:16px 48px}
   .hero{padding:100px 48px 80px}
   .sec{padding:80px 48px}
@@ -202,12 +247,20 @@ footer small{font-size:12px;color:var(--ink3)}
   /* Channel cards: side by side */
   .ch-list{flex-direction:row}
   .ch-card{flex:1}
-  /* Pricing: Solo + Business side by side, Custom full-width below */
+  /* Pricing: side by side */
   .plans{flex-direction:row;flex-wrap:wrap;gap:16px}
-  .plan:not(.dim){flex:1;min-width:280px}
-  .plan.dim{flex:0 0 100%}
+  .plan{flex:1;min-width:280px}
   /* Form */
   .final-form-wrap{max-width:560px}
+  /* Full-bleed sections scale */
+  .sec-full{padding:80px 0}
+  .partners-section{padding:80px 0}
+  .privacy-section{padding:80px 0}
+  /* Partners cards side by side */
+  .partner-cards{flex-direction:row}
+  .partner-card-dark{flex:1}
+  /* Privacy grid 4 cols */
+  .privacy-grid{grid-template-columns:repeat(4,1fr)}
 }
 
 /* CHANNEL PILLS */
@@ -395,7 +448,7 @@ footer small{font-size:12px;color:var(--ink3)}
 <div class="div"></div>
 
 <!-- HOW IT WORKS -->
-<section class="sec" style="background:var(--bg);max-width:100%;padding:52px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)">
+<section class="sec-full">
   <div class="w">
     <div class="sec-label">How it works</div>
     <p class="h2">Set up in 5 minutes, then it runs itself</p>
@@ -428,21 +481,85 @@ footer small{font-size:12px;color:var(--ink3)}
           <p>Log an outstanding balance and pamelo sends a polite WhatsApp reminder on the schedule you set — professional tone, your name, no awkward typing from you.</p>
         </div>
       </div>
+      <div class="step">
+        <div style="position:relative;flex-shrink:0"><div class="step-num">5</div><div class="step-rail"></div></div>
+        <div class="step-body">
+          <h4>Automated follow-ups, your way </h4>
+          <p>Set up message sequences once — pamelo handles the rest. Send a delivery confirmation when an order ships, request quality feedback 48 hours later, or nudge a quiet customer after two weeks. Every message goes out under your name, in your tone, on your schedule. Customers who opt out are never messaged again.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- QUOTE -->
-<div class="quote-shell" style="padding-top:52px">
-  <div class="quote-card">
-    <p class="quote-text">"pamelo showed me 3 customers I never followed up with. That was over &#8358;180,000 sitting in my DMs that I would never have chased."</p>
-    <div class="q-row">
-      <div class="q-av">TI</div>
-      <div>
-        <div class="q-name">Titilayo I.</div>
-        <div class="q-role">IG boutique owner &middot; Lagos Island</div>
+<!-- VENDOR PARTNERS -->
+<div class="partners-section">
+  <div class="w">
+    <div class="sec-label">Vendor partners</div>
+    <p class="h2">Why vendors <em style="font-style:italic;color:#86efac">trust</em> pamelo</p>
+    <p class="sec-sub">We didn't build pamelo in isolation. Two Lagos-based vendors helped shape every feature — from how orders are logged to how reminders are worded.</p>
+    <div class="partner-cards">
+      <div class="partner-card-dark">
+        <div class="partner-avatar">TI</div>
+        <p class="partner-quote-text">"pamelo showed me 3 customers I never followed up with. That was over &#8358;180,000 sitting in my DMs that I would never have chased."</p>
+        <div class="partner-name-dark">[Partner 1 Name] &middot; Fashion vendor</div>
+        <div class="partner-role-dark">Lagos Island</div>
+        <a href="https://instagram.com/" target="_blank" class="partner-ig-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          @[her_ig_handle]
+        </a>
+      </div>
+      <div class="partner-card-dark">
+        <div class="partner-avatar">CH</div>
+        <p class="partner-quote-text">"The automated follow-ups changed everything. My customers think I have a whole team. I'm running the whole thing from my phone."</p>
+        <div class="partner-name-dark">[Partner 2 Name] &middot; Skincare vendor</div>
+        <div class="partner-role-dark">Lekki, Lagos</div>
+        <a href="https://instagram.com/" target="_blank" class="partner-ig-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          @[her_ig_handle]
+        </a>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- PRIVACY -->
+<div class="privacy-section">
+  <div class="w">
+    <div class="sec-label">Privacy &amp; data</div>
+    <p class="h2">Your data. Your customers.<br/><em style="font-style:italic;color:var(--p)">Your control.</em></p>
+    <p class="sec-sub" style="color:var(--ink2)">pamelo connects via official Meta Business APIs — not screen scraping. Your messages are processed to extract order information, stored securely, and never sold.</p>
+    <div class="privacy-grid">
+      <div class="priv-item">
+        <div class="priv-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h4>What we store</h4>
+        <p>Customer names, order details, balances, and addresses collected through your DMs. Nothing else.</p>
+      </div>
+      <div class="priv-item">
+        <div class="priv-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        </div>
+        <h4>What we never do</h4>
+        <p>We never sell your data. We never share customer information with third parties. Ever.</p>
+      </div>
+      <div class="priv-item">
+        <div class="priv-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <h4>Customer opt-out</h4>
+        <p>Any customer can reply "STOP" to opt out of automated messages instantly. We honour every opt-out permanently.</p>
+      </div>
+      <div class="priv-item">
+        <div class="priv-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h4>You can leave anytime</h4>
+        <p>Export your full customer and order history as a spreadsheet for free. Data deleted within 14 days of closing your account.</p>
+      </div>
+    </div>
+    <p class="privacy-email">Questions? Email <a href="mailto:privacy@pamelo.trade">privacy@pamelo.trade</a> — we respond within 24 hours.</p>
   </div>
 </div>
 
@@ -487,6 +604,10 @@ footer small{font-size:12px;color:var(--ink3)}
         </li>
         <li>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Automated follow-up sequences
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Daily sales ledger
         </li>
       </ul>
@@ -516,6 +637,14 @@ footer small{font-size:12px;color:var(--ink3)}
         </li>
         <li>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Custom follow-up sequences (delivery, feedback, re-engagement)
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Message opt-out management
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Up to 3 team members
         </li>
         <li>
@@ -525,43 +654,6 @@ footer small{font-size:12px;color:var(--ink3)}
       </ul>
       <button class="plan-btn b-fill" id="btn-business" onclick="pricingCta('business')">Start free trial</button>
       <p class="plan-foot">&#8358;40,000 per user/year vs &#8358;48,000 on Solo</p>
-    </div>
-
-    <!-- CUSTOM -->
-    <div class="plan dim" style="display:none">
-      <div class="plan-tier">Custom</div>
-      <div class="plan-price" style="font-size:24px;color:var(--ink2)">Let's talk</div>
-      <div class="plan-price-note">for growing teams &amp; large shops</div>
-      <div class="plan-tag tag-dim">Flexible team size &middot; Volume pricing</div>
-      <ul class="feat-list">
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="dim-feat">Everything in Business</span>
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="dim-feat">Custom number of team members</span>
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="dim-feat">Negotiated annual pricing per seat</span>
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="dim-feat">Dedicated onboarding &amp; account manager</span>
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#E8E8F0"/><path d="M4.5 7l2 2 3-3" stroke="#50507A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="dim-feat">SLA &amp; custom contract</span>
-        </li>
-      </ul>
-      <button class="plan-btn b-ghost" onclick="talkToSales()">
-        <span style="display:flex;align-items:center;justify-content:center;gap:7px">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 4C2.5 3.17 3.17 2.5 4 2.5h7c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5H8.5L6 13v-2.5H4C3.17 10.5 2.5 9.83 2.5 9V4z" stroke="#50507A" stroke-width="1.3" stroke-linejoin="round"/></svg>
-          Talk to sales
-        </span>
-      </button>
-      <p class="plan-foot">We'll get back to you on WhatsApp within 24 hours</p>
     </div>
 
   </div>
@@ -627,6 +719,10 @@ footer small{font-size:12px;color:var(--ink3)}
       </defs>
     </svg>
     <div class="foot-type">pame<em>lo</em></div>
+  </div>
+  <div class="foot-links">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="mailto:privacy@pamelo.trade">Contact</a>
   </div>
   <small>Lagos, Nigeria &middot; 2025</small>
 </footer>
