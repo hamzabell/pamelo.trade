@@ -379,7 +379,6 @@ footer small{font-size:12px;color:var(--ink3)}
   <div class="pill"><span class="pill-dot"></span>Built for Nigerian vendors</div>
   <p class="h1">Stop losing money<br/>in your <em>DMs</em></p>
   <p class="hero-sub">pamelo reads your WhatsApp and Instagram DMs, builds your customer records, confirms every payment, and chases every debt — automatically.</p>
-  <button class="btn-cta" style="margin-top:4px" onclick="heroCta()">Get early access</button>
   <p class="hero-trust">Official Meta Business APIs &middot; We never read or sell your data &middot; Export and leave anytime</p>
 
 </section>
@@ -755,11 +754,6 @@ posthog.onFeatureFlags(function() {
 
 function navCta() {
   posthog.capture('nav_cta_clicked', { variant: currentVariant });
-  document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
-}
-
-function heroCta() {
-  posthog.capture('hero_cta_clicked', { variant: currentVariant });
   document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
 }
 
