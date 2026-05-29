@@ -130,7 +130,8 @@ svg{display:block}
 .plan-tier{font-size:12px;font-weight:700;color:var(--ink3);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
 .plan-price{font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-1px;line-height:1}
 .plan-price-note{font-size:12px;color:var(--ink3);margin-top:3px}
-.plan-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;margin:10px 0 18px}
+.plan-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;margin:10px 0 18px;white-space:nowrap}
+@media(max-width:639px){.plan-tag{white-space:normal;display:block;border-radius:var(--rsm);padding:6px 10px;text-align:center}}
 .tag-grn{background:var(--grn-lt);color:#065F46}
 .tag-purple{background:var(--p-lt);color:var(--p-dk)}
 .tag-dim{background:var(--bd);color:var(--ink2)}
