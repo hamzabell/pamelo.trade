@@ -654,6 +654,11 @@ footer small{font-size:12px;color:var(--ink3)}
         <span class="field-error" id="email-error">Please enter a valid email address</span>
       </div>
       <div class="field">
+        <label for="f-phone">WhatsApp number</label>
+        <input id="f-phone" type="tel" placeholder="08012345678" autocomplete="tel"/>
+        <span class="field-error" id="phone-error">Please enter a valid Nigerian phone number</span>
+      </div>
+      <div class="field">
         <label>Where do your customers message you?</label>
         <div class="pill-group" id="channel-group">
           <label class="pill-opt" id="pill-wa">
@@ -670,6 +675,24 @@ footer small{font-size:12px;color:var(--ink3)}
           </label>
         </div>
         <span class="field-error" id="channel-error">Please select a channel</span>
+      </div>
+      <div class="field">
+        <label>How many orders do you handle per week?</label>
+        <div class="pill-group" id="orders-group">
+          <label class="pill-opt" id="pill-ord-low">
+            <input type="radio" name="orders" value="1-10"/>
+            1–10
+          </label>
+          <label class="pill-opt" id="pill-ord-mid">
+            <input type="radio" name="orders" value="10-50"/>
+            10–50
+          </label>
+          <label class="pill-opt" id="pill-ord-high">
+            <input type="radio" name="orders" value="50+"/>
+            50+
+          </label>
+        </div>
+        <span class="field-error" id="orders-error">Please select your order volume</span>
       </div>
       <button class="btn-cta" id="fd-btn" onclick="submitFakeDoor()">Join the waitlist — it's free</button>
       <div class="form-note" id="fd-note">
@@ -773,24 +796,42 @@ function getSelectedChannel() {
   return null;
 }
 
-// Channel pill selection highlight
+function getSelectedOrders() {
+  var radios = document.querySelectorAll('input[name="orders"]');
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) return radios[i].value;
+  }
+  return null;
+}
+
+// Pill selection highlight — scoped per group to avoid cross-group deselection
 document.addEventListener('DOMContentLoaded', function() {
-  var pills = document.querySelectorAll('.pill-opt');
-  pills.forEach(function(pill) {
-    pill.addEventListener('click', function() {
-      pills.forEach(function(p) { p.classList.remove('selected'); });
-      pill.classList.add('selected');
-      document.getElementById('channel-error').style.display = 'none';
+  ['channel-group', 'orders-group'].forEach(function(groupId) {
+    var group = document.getElementById(groupId);
+    if (!group) return;
+    var pills = group.querySelectorAll('.pill-opt');
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        pills.forEach(function(p) { p.classList.remove('selected'); });
+        pill.classList.add('selected');
+        var errorId = groupId === 'channel-group' ? 'channel-error' : 'orders-error';
+        document.getElementById(errorId).style.display = 'none';
+      });
     });
   });
 });
 
 function submitFakeDoor() {
   var emailInput = document.getElementById('f-email');
+  var phoneInput = document.getElementById('f-phone');
   var emailError = document.getElementById('email-error');
+  var phoneError = document.getElementById('phone-error');
   var channelError = document.getElementById('channel-error');
+  var ordersError = document.getElementById('orders-error');
   var email = emailInput.value.trim();
+  var phone = phoneInput.value.trim();
   var channel = getSelectedChannel();
+  var orders = getSelectedOrders();
   var valid = true;
 
   // Validate email
@@ -804,6 +845,18 @@ function submitFakeDoor() {
     emailError.style.display = 'none';
   }
 
+  // Validate phone — Nigerian formats: 08xx, 07xx, 09xx, +234xx, 234xx
+  var phoneRe = /^(\+?234|0)[789]\d{9}$/;
+  var phoneClean = phone.replace(/[\s\-()]/g, '');
+  if (!phoneClean || !phoneRe.test(phoneClean)) {
+    phoneInput.classList.add('error');
+    phoneError.style.display = 'block';
+    valid = false;
+  } else {
+    phoneInput.classList.remove('error');
+    phoneError.style.display = 'none';
+  }
+
   // Validate channel
   if (!channel) {
     channelError.style.display = 'block';
@@ -812,14 +865,24 @@ function submitFakeDoor() {
     channelError.style.display = 'none';
   }
 
+  // Validate orders
+  if (!orders) {
+    ordersError.style.display = 'block';
+    valid = false;
+  } else {
+    ordersError.style.display = 'none';
+  }
+
   if (!valid) return;
 
-  posthog.identify(email, { email: email, plan: selectedPlan, channel: channel, variant: currentVariant });
+  posthog.identify(email, { email: email, phone: phone, plan: selectedPlan, channel: channel, orders_per_week: orders, variant: currentVariant });
   posthog.capture('signup_submitted', {
     email: email,
+    phone: phone,
     plan: selectedPlan,
     plan_selected: selectedPlan !== null,
     channel: channel,
+    orders_per_week: orders,
     variant: currentVariant
   });
 
