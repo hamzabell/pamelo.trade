@@ -282,6 +282,9 @@ footer small{font-size:12px;color:var(--ink3)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--bd);border:none;padding:0;cursor:pointer;transition:width .25s ease,background .25s ease,border-radius .25s ease;flex-shrink:0;-webkit-appearance:none}
 .dot.active{background:var(--p);width:20px;border-radius:3px}
 
+/* HERO TRUST STRIP */
+.hero-trust{font-size:12px;color:var(--ink3);line-height:1.9;margin-top:12px}
+
 /* CHANNEL PILLS */
 .pill-group{display:flex;gap:8px;flex-wrap:wrap}
 .pill-opt{display:flex;align-items:center;gap:6px;border:1.5px solid var(--bd);border-radius:20px;padding:8px 14px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink2);background:var(--bg);cursor:pointer;transition:all .15s;user-select:none}
@@ -376,6 +379,8 @@ footer small{font-size:12px;color:var(--ink3)}
   <div class="pill"><span class="pill-dot"></span>Built for Nigerian vendors</div>
   <p class="h1">Stop losing money<br/>in your <em>DMs</em></p>
   <p class="hero-sub">pamelo reads your WhatsApp and Instagram DMs, builds your customer records, confirms every payment, and chases every debt — automatically.</p>
+  <button class="btn-cta" style="margin-top:4px" onclick="heroCta()">Get early access</button>
+  <p class="hero-trust">Official Meta Business APIs &middot; We never read or sell your data &middot; Export and leave anytime</p>
 
 </section>
 
@@ -389,7 +394,7 @@ footer small{font-size:12px;color:var(--ink3)}
     <div class="av" style="background:#12B76A">AM</div>
     <div class="av" style="background:#0891B2">FB</div>
   </div>
-  <p class="proof-t"><b>300+ vendors</b> from Lagos, Abuja &amp; Port Harcourt on the waitlist</p>
+  <p class="proof-t">Vendors from Lagos, Abuja &amp; Port Harcourt on the waitlist</p>
 </div>
 
 <div class="div"></div>
@@ -520,14 +525,10 @@ footer small{font-size:12px;color:var(--ink3)}
   </div>
 </div>
 
-<div class="w" style="padding-top:22px;padding-bottom:22px;font-size:12px;color:var(--ink3);line-height:2;text-align:center">
-  Official Meta Business APIs &middot; Data never sold &middot; Export &amp; leave anytime &middot; <a href="privacy.html" style="color:var(--ink3);text-decoration:underline">Privacy Policy</a>
-</div>
-
 <div class="div"></div>
 
 <!-- PRICING -->
-<div id="pricing-wrap" style="display:none">
+<div id="pricing-wrap">
 <div class="pricing-shell">
 <section class="sec">
   <div class="sec-label">Pricing</div>
@@ -580,17 +581,17 @@ footer small{font-size:12px;color:var(--ink3)}
           Cross-platform ad campaigns <span class="new-badge">Coming soon</span>
         </li>
       </ul>
-      <button class="plan-btn b-out" id="btn-solo" onclick="pricingCta('solo')">Start free trial</button>
-      <p class="plan-foot">Less than the cost of one lost sale per month</p>
+      <button class="plan-btn b-out" id="btn-solo" onclick="pricingCta('solo')">Get early access</button>
+      <p class="plan-foot">Less than the cost of one lost sale a month</p>
     </div>
 
     <!-- BUSINESS -->
     <div class="plan hi">
-      <div class="best-tag">Best value</div>
+      <div class="best-tag">Best value for teams</div>
       <div class="plan-tier">Business</div>
       <div class="plan-price">&#8358;120,000</div>
       <div class="plan-price-note">per year &middot; up to 3 users</div>
-      <div class="plan-tag tag-purple">&#8358;40,000 per user &mdash; save &#8358;24,000</div>
+      <div class="plan-tag tag-purple">&#8358;40,000 per user &mdash; for vendors with staff or partners</div>
       <ul class="feat-list">
         <li>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -629,12 +630,12 @@ footer small{font-size:12px;color:var(--ink3)}
           Cross-platform ad campaigns with AI lead capture <span class="new-badge">Coming soon</span>
         </li>
       </ul>
-      <button class="plan-btn b-fill" id="btn-business" onclick="pricingCta('business')">Start free trial</button>
-      <p class="plan-foot">&#8358;40,000 per user/year vs &#8358;48,000 on Solo</p>
+      <button class="plan-btn b-fill" id="btn-business" onclick="pricingCta('business')">Get early access</button>
+      <p class="plan-foot">&#8358;40,000 per seat vs &#8358;48,000 solo &mdash; only worth it if you have a team</p>
     </div>
 
   </div>
-  <p class="pricing-note" id="pricing-note">14-day free trial on Solo &amp; Business &middot; Paystack or bank transfer</p>
+  <p class="pricing-note" id="pricing-note">Pay once a year by Paystack or bank transfer</p>
 </section>
 </div>
 </div>
@@ -643,7 +644,7 @@ footer small{font-size:12px;color:var(--ink3)}
 
 <!-- FINAL CTA -->
 <section class="final" id="signup">
-  <p class="h2" id="fd-heading">Join the waitlist</p>
+  <p class="h2" id="fd-heading">Get early access</p>
   <p class="sec-sub" id="fd-subtext">No spam. We'll only reach out when pamelo is ready.</p>
   <div class="final-form-wrap" id="final-form">
     <div class="form-card" style="text-align:left">
@@ -677,7 +678,7 @@ footer small{font-size:12px;color:var(--ink3)}
       </div>
     </div>
   </div>
-  <div id="final-ok" class="success-box" style="max-width:400px;margin:0 auto;display:none">You're on the list. We'll email you when pamelo launches.</div>
+  <div id="final-ok" class="success-box" style="max-width:400px;margin:0 auto;display:none">You're on the list. We'll email you the moment pamelo launches.</div>
 </section>
 
 <!-- FOOTER -->
@@ -701,47 +702,22 @@ footer small{font-size:12px;color:var(--ink3)}
     <a href="/privacy.html">Privacy Policy</a>
     <a href="mailto:privacy@pamelo.trade">Contact</a>
   </div>
-  <small>Lagos, Nigeria &middot; 2025</small>
+  <small>Lagos, Nigeria &middot; 2026</small>
 </footer>
 
 <script>
 var currentVariant = 'control';
 var selectedPlan = null;
 
+// Headline A/B test — control: pain-focused, test: solution-focused
 function applyVariant(v) {
   currentVariant = v;
-  var isTest = v === 'test';
-
-  // Nav button
-  var navBtn = document.getElementById('nav-cta');
-  if (isTest) {
-    navBtn.textContent = 'View pricing';
-  } else {
-    navBtn.textContent = 'Get early access';
+  var h1 = document.querySelector('.h1');
+  if (h1) {
+    h1.innerHTML = v === 'test'
+      ? 'Your WhatsApp and Instagram,<br/>finally <em>organised</em>'
+      : 'Stop losing money<br/>in your <em>DMs</em>';
   }
-
-  // Pricing section visibility
-  var pricingWrap = document.getElementById('pricing-wrap');
-  if (pricingWrap) pricingWrap.style.display = isTest ? '' : 'none';
-
-  // Pricing button labels (test only)
-  if (isTest) {
-    document.getElementById('btn-solo').textContent = 'Reserve Solo — founding price';
-    document.getElementById('btn-business').textContent = 'Reserve Business — founding price';
-    document.getElementById('pricing-note').textContent = 'Founding price locks in at signup · No payment today';
-  }
-
-  // Fake door heading, subtext, CTA, note
-  document.getElementById('fd-heading').textContent = isTest ? 'Reserve your founding member spot' : 'Join the waitlist';
-  document.getElementById('fd-subtext').textContent = isTest
-    ? 'No payment today. Your founding price covers everything as we launch — smart payments, ad campaigns and every feature after.'
-    : 'No spam. We\'ll only reach out when pamelo is ready — smart payments and ad campaigns included.';
-  document.getElementById('fd-btn').textContent = isTest
-    ? 'Reserve my founding member spot — \u20a630,000/yr'
-    : 'Join the waitlist — it\'s free';
-  document.getElementById('fd-note-text').textContent = isTest
-    ? 'No payment today. Founding price locks in at signup. No spam.'
-    : 'No spam. We\'ll only reach out when pamelo is ready.';
 }
 
 var _skelDone = false;
@@ -755,7 +731,7 @@ function hideSkeleton() {
 }
 
 // Cached visitors: apply variant and hide skeleton synchronously — no flash
-var _cached = localStorage.getItem('ph_variant');
+var _cached = localStorage.getItem('ph_headline_variant');
 if (_cached === 'control' || _cached === 'test') {
   applyVariant(_cached);
   hideSkeleton();
@@ -766,12 +742,12 @@ var _skelTimeout = setTimeout(function() {
   if (!_skelDone) { applyVariant('control'); hideSkeleton(); }
 }, 1500);
 
-// PostHog feature flag is the source of truth — toggles in the dashboard take effect here
+// PostHog feature flag — uses existing 'pamelo-customer-flag'
 posthog.onFeatureFlags(function() {
   clearTimeout(_skelTimeout);
   var flag = posthog.getFeatureFlag('pamelo-customer-flag');
   var v = flag === 'test' ? 'test' : 'control';
-  localStorage.setItem('ph_variant', v);
+  localStorage.setItem('ph_headline_variant', v);
   posthog.register({ variant: v });
   applyVariant(v);
   hideSkeleton();
@@ -779,12 +755,14 @@ posthog.onFeatureFlags(function() {
 
 function navCta() {
   posthog.capture('nav_cta_clicked', { variant: currentVariant });
-  if (currentVariant === 'test') {
-    document.getElementById('pricing-wrap').scrollIntoView({ behavior: 'smooth' });
-  } else {
-    document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
-  }
+  document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
 }
+
+function heroCta() {
+  posthog.capture('hero_cta_clicked', { variant: currentVariant });
+  document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+}
+
 
 function pricingCta(plan) {
   selectedPlan = plan;
@@ -852,9 +830,7 @@ function submitFakeDoor() {
 
   document.getElementById('final-form').style.display = 'none';
   var okBox = document.getElementById('final-ok');
-  okBox.textContent = currentVariant === 'test'
-    ? 'Spot reserved. You\'ll get founding member pricing across every feature — smart payments, ad campaigns and everything after. We\'ll email you before launch.'
-    : 'You\'re on the list. We\'ll email you when pamelo launches — including smart payments and ad campaigns.';
+  okBox.textContent = 'You\'re on the list. We\'ll email you the moment pamelo launches.';
   okBox.style.display = 'block';
 }
 
