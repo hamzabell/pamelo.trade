@@ -177,7 +177,7 @@ footer small{font-size:12px;color:var(--ink3)}
 
 /* PARTNERS SECTION */
 .partners-section{background:var(--ink);padding:52px 0}
-.partners-section .sec-label{color:var(--grn-bd)}
+.partners-section .sec-label{color:rgba(255,255,255,0.4)}
 .partners-section .h2{color:var(--white)}
 .partners-section .sec-sub{color:rgba(255,255,255,0.5)}
 .partner-cards{display:flex;flex-direction:column;gap:14px;margin-top:28px}
@@ -190,11 +190,17 @@ footer small{font-size:12px;color:var(--ink3)}
 .partner-ig-link:hover{opacity:.7}
 
 /* SCENARIO SECTION */
-.scenario-text{font-family:var(--ff-display);font-size:clamp(18px,4vw,24px);font-style:italic;font-weight:300;line-height:1.75;color:var(--white);margin-top:24px;margin-bottom:28px}
-.scenario-break{font-size:16px;font-weight:600;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:6px}
-.scenario-break + .scenario-break{margin-bottom:0}
-.stat-hl{color:#86efac}
-.scenario-util{margin-top:28px;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.75;max-width:480px;border-top:1px solid rgba(255,255,255,0.1);padding-top:24px}
+.scenario-text{font-family:var(--ff-display);font-size:clamp(18px,3.5vw,26px);font-style:italic;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.85);margin:22px 0 40px}
+.scenario-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:40px}
+.scenario-stat{padding-left:16px;border-left:1px solid rgba(255,255,255,0.1)}
+.scenario-stat:first-child{padding-left:0;border-left:none}
+.stat-num{display:block;font-size:clamp(28px,7vw,56px);font-weight:800;color:#86efac;line-height:1;letter-spacing:-1px;margin-bottom:6px}
+.stat-desc{display:block;font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5}
+.scenario-util{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;border-top:1px solid rgba(255,255,255,0.1);padding-top:28px}
+@media(min-width:640px){
+  .scenario-stat{padding-left:32px}
+  .stat-desc{font-size:13px}
+}
 
 /* PRIVACY SECTION */
 .privacy-section{background:var(--p-lt);border-top:1px solid var(--p-bd);border-bottom:1px solid var(--p-bd);padding:52px 0}
@@ -504,10 +510,23 @@ footer small{font-size:12px;color:var(--ink3)}
 <!-- SCENARIO SECTION -->
 <div class="partners-section">
   <div class="w">
-    <div class="sec-label">Sound familiar?</div>
+    <div class="sec-label">The daily reality</div>
+    <p class="h2">Sound familiar?</p>
     <p class="scenario-text">She sends: <em>"I've transferred."</em> You close WhatsApp. Open your bank app. Nothing yet. You go back: <em>"Let me check, it hasn't landed."</em> She replies: <em>"I sent it o."</em> You wait. Check again. It's there.</p>
-    <p class="scenario-break">That was <span class="stat-hl">9 messages</span> and <span class="stat-hl">3 app switches</span> for one order.</p>
-    <p class="scenario-break">You have <span class="stat-hl">11 more customers</span> today.</p>
+    <div class="scenario-stats-row">
+      <div class="scenario-stat">
+        <span class="stat-num">9</span>
+        <span class="stat-desc">messages for one payment</span>
+      </div>
+      <div class="scenario-stat">
+        <span class="stat-num">3</span>
+        <span class="stat-desc">app switches</span>
+      </div>
+      <div class="scenario-stat">
+        <span class="stat-num">11</span>
+        <span class="stat-desc">more customers still waiting</span>
+      </div>
+    </div>
     <p class="scenario-util">pamelo confirms the payment in the chat the moment it lands — and sends your follow-ups automatically, so you never have to be the one asking.</p>
   </div>
 </div>
