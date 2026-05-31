@@ -189,6 +189,13 @@ footer small{font-size:12px;color:var(--ink3)}
 .partner-ig-link{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:var(--grn-bd);font-size:12px;font-weight:500;text-decoration:none}
 .partner-ig-link:hover{opacity:.7}
 
+/* SCENARIO SECTION */
+.scenario-text{font-family:var(--ff-display);font-size:clamp(18px,4vw,24px);font-style:italic;font-weight:300;line-height:1.75;color:var(--white);margin-top:24px;margin-bottom:28px}
+.scenario-break{font-size:16px;font-weight:600;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:6px}
+.scenario-break + .scenario-break{margin-bottom:0}
+.stat-hl{color:#86efac}
+.scenario-util{margin-top:28px;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.75;max-width:480px;border-top:1px solid rgba(255,255,255,0.1);padding-top:24px}
+
 /* PRIVACY SECTION */
 .privacy-section{background:var(--p-lt);border-top:1px solid var(--p-bd);border-bottom:1px solid var(--p-bd);padding:52px 0}
 .privacy-section .sec-label{color:var(--p-dk)}
@@ -494,34 +501,14 @@ footer small{font-size:12px;color:var(--ink3)}
 
 <div class="div"></div>
 
-<!-- VENDOR PARTNERS -->
+<!-- SCENARIO SECTION -->
 <div class="partners-section">
   <div class="w">
-    <div class="sec-label">Vendor partners</div>
-    <p class="h2">Why vendors <em style="font-style:italic;color:#86efac">trust</em> pamelo</p>
-    <p class="sec-sub">We didn't build pamelo in isolation. Two Lagos-based vendors helped shape every feature — from how orders are logged to how reminders are worded.</p>
-    <div class="partner-cards">
-      <div class="partner-card-dark">
-        <div class="partner-avatar">TI</div>
-        <p class="partner-quote-text">"pamelo showed me 3 customers I never followed up with. That was over &#8358;180,000 sitting in my DMs that I would never have chased."</p>
-        <div class="partner-name-dark">[Partner 1 Name] &middot; Fashion vendor</div>
-        <div class="partner-role-dark">Lagos Island</div>
-        <a href="https://instagram.com/" target="_blank" class="partner-ig-link">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          @[her_ig_handle]
-        </a>
-      </div>
-      <div class="partner-card-dark">
-        <div class="partner-avatar">CH</div>
-        <p class="partner-quote-text">"The automated follow-ups changed everything. My customers think I have a whole team. I'm running the whole thing from my phone."</p>
-        <div class="partner-name-dark">[Partner 2 Name] &middot; Skincare vendor</div>
-        <div class="partner-role-dark">Lekki, Lagos</div>
-        <a href="https://instagram.com/" target="_blank" class="partner-ig-link">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          @[her_ig_handle]
-        </a>
-      </div>
-    </div>
+    <div class="sec-label">Sound familiar?</div>
+    <p class="scenario-text">She sends: <em>"I've transferred."</em> You close WhatsApp. Open your bank app. Nothing yet. You go back: <em>"Let me check, it hasn't landed."</em> She replies: <em>"I sent it o."</em> You wait. Check again. It's there.</p>
+    <p class="scenario-break">That was <span class="stat-hl">9 messages</span> and <span class="stat-hl">3 app switches</span> for one order.</p>
+    <p class="scenario-break">You have <span class="stat-hl">11 more customers</span> today.</p>
+    <p class="scenario-util">pamelo confirms the payment in the chat the moment it lands — and sends your follow-ups automatically, so you never have to be the one asking.</p>
   </div>
 </div>
 
