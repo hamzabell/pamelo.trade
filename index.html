@@ -103,6 +103,18 @@ svg{display:block}
 .h2{font-size:23px;font-weight:800;letter-spacing:-.6px;color:var(--ink);line-height:1.2;margin-bottom:10px}
 .sec-sub{font-size:15px;color:var(--ink2);line-height:1.7}
 
+/* FAQ ACCORDION */
+.faq-list{border:1.5px solid var(--bd);border-radius:var(--r);overflow:hidden;margin-top:16px}
+.faq-item{border-bottom:1px solid var(--bd)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{width:100%;background:none;border:none;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--ink);text-align:left;line-height:1.4}
+.faq-q:hover{background:var(--bg)}
+.faq-chevron{flex-shrink:0;transition:transform .25s ease;color:var(--ink3)}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+.faq-item.open .faq-a{max-height:200px}
+.faq-a-inner{padding:0 18px 16px;font-size:14px;color:var(--ink2);line-height:1.65}
+
 /* PAIN GRID */
 .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
 .pain-card{background:var(--white);border:1px solid var(--bd);border-radius:var(--r);padding:18px}
@@ -667,14 +679,33 @@ footer small{font-size:12px;color:var(--ink3)}
 <!-- PRIVACY FAQ -->
 <section class="w" style="padding:36px 0 32px">
   <p class="sec-label">Privacy</p>
-  <div style="display:flex;flex-direction:column;gap:20px">
-    <div>
-      <p style="font-weight:600;color:var(--ink);margin-bottom:6px;font-size:15px">Will pamelo read my private messages?</p>
-      <p style="color:var(--ink2);font-size:14px;line-height:1.65">No. pamelo only reads messages in your business inbox via the official Meta Business API. Your personal WhatsApp and DMs are never touched.</p>
+  <div class="faq-list">
+    <div class="faq-item open">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="true">
+        Will pamelo read my private messages?
+        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="faq-a" style="max-height:200px">
+        <p class="faq-a-inner">No. pamelo only reads messages in your business inbox via the official Meta Business API. Your personal WhatsApp and DMs are never touched.</p>
+      </div>
     </div>
-    <div>
-      <p style="font-weight:600;color:var(--ink);margin-bottom:6px;font-size:15px">Is my data safe?</p>
-      <p style="color:var(--ink2);font-size:14px;line-height:1.65">Yes. All data is encrypted in transit and at rest. We never sell or share your customer data with third parties.</p>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        Is my data safe?
+        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="faq-a">
+        <p class="faq-a-inner">Yes. All data is encrypted in transit and at rest. We never sell or share your customer data with third parties.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+        Do I need to install anything?
+        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="faq-a">
+        <p class="faq-a-inner">No downloads or app installs required. pamelo connects to your existing WhatsApp Business or Instagram accounts through official APIs — nothing changes on your end.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -925,6 +956,13 @@ function submitFakeDoor() {
   });
 
   window.location.href = 'thank-you.html';
+}
+
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  item.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', !isOpen);
 }
 
 function talkToSales() {
