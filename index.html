@@ -14,6 +14,23 @@
         person_profiles: 'identified_only',
     })
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2579396672508135');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2579396672508135&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
@@ -646,6 +663,23 @@ footer small{font-size:12px;color:var(--ink3)}
 
 <div class="div"></div>
 
+<!-- PRIVACY FAQ -->
+<section class="w" style="padding:36px 0 32px">
+  <p class="sec-label">Privacy</p>
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <div>
+      <p style="font-weight:600;color:var(--ink);margin-bottom:6px;font-size:15px">Will pamelo read my private messages?</p>
+      <p style="color:var(--ink2);font-size:14px;line-height:1.65">No. pamelo only reads messages in your business inbox via the official Meta Business API. Your personal WhatsApp and DMs are never touched.</p>
+    </div>
+    <div>
+      <p style="font-weight:600;color:var(--ink);margin-bottom:6px;font-size:15px">Is my data safe?</p>
+      <p style="color:var(--ink2);font-size:14px;line-height:1.65">Yes. All data is encrypted in transit and at rest. We never sell or share your customer data with third parties.</p>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
 <!-- FINAL CTA -->
 <section class="final" id="signup">
   <p class="h2" id="fd-heading">Get early access</p>
@@ -705,7 +739,6 @@ footer small{font-size:12px;color:var(--ink3)}
       </div>
     </div>
   </div>
-  <div id="final-ok" class="success-box" style="max-width:400px;margin:0 auto;display:none">You're on the list. We'll email you the moment pamelo launches.</div>
 </section>
 
 <!-- FOOTER -->
@@ -890,10 +923,7 @@ function submitFakeDoor() {
     variant: currentVariant
   });
 
-  document.getElementById('final-form').style.display = 'none';
-  var okBox = document.getElementById('final-ok');
-  okBox.textContent = 'You\'re on the list. We\'ll email you the moment pamelo launches.';
-  okBox.style.display = 'block';
+  window.location.href = 'thank-you.html';
 }
 
 function talkToSales() {
