@@ -34,7 +34,8 @@ src="https://www.facebook.com/tr?id=2579396672508135&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"/></noscript>
 <style>
 :root{
   --ff-display:'Cormorant Garamond',serif;--ff-body:'DM Sans',sans-serif;
@@ -61,6 +62,8 @@ svg{display:block}
 .logotype em{font-style:italic;color:var(--p)}
 .btn-nav{background:var(--p);color:#fff;border:none;border-radius:var(--rsm);padding:9px 16px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s;white-space:nowrap;flex-shrink:0}
 .btn-nav:hover{background:var(--p-dk)}
+#nav-cta{transition:opacity .2s,visibility .2s}
+#nav-cta.nav-cta-hidden{opacity:0;visibility:hidden}
 @media(max-width:360px){
   .logotype{font-size:14px}
   .btn-nav{padding:8px 12px;font-size:12px}
@@ -420,10 +423,11 @@ footer small{font-size:12px;color:var(--ink3)}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="pill"><span class="pill-dot"></span>Built for Nigerian vendors</div>
-  <p class="h1">Your WhatsApp and Instagram,<br/>finally <em>organised</em></p>
-  <p class="hero-sub">Connect your WhatsApp and Instagram. pamelo builds your customer records, confirms every payment, and chases every debt — automatically.</p>
-  <p class="hero-trust">Official Meta Business APIs &middot; We never read or sell your data &middot; Export and leave anytime</p>
+  <div class="pill" id="hero-pill"><span class="pill-dot"></span>Built for Nigerian vendors</div>
+  <p class="h1" id="hero-h1">Your WhatsApp and Instagram,<br/>finally <em>organised</em></p>
+  <p class="hero-sub" id="hero-sub">Connect your WhatsApp and Instagram. pamelo builds your customer records, confirms every payment, and chases every debt — automatically.</p>
+  <button class="btn-cta" id="hero-cta" onclick="heroCta()" style="margin-top:28px">Get early access</button>
+  <p class="hero-trust" style="margin-top:12px">Official Meta Business APIs &middot; We never read or sell your data &middot; Export and leave anytime</p>
 
 </section>
 
@@ -437,7 +441,7 @@ footer small{font-size:12px;color:var(--ink3)}
     <div class="av" style="background:#12B76A">AM</div>
     <div class="av" style="background:#0891B2">FB</div>
   </div>
-  <p class="proof-t">Vendors from Lagos, Abuja &amp; Port Harcourt on the waitlist</p>
+  <p class="proof-t" id="proof-t">Vendors from Lagos, Abuja &amp; Port Harcourt on the waitlist</p>
 </div>
 
 <div class="div"></div>
@@ -445,45 +449,45 @@ footer small{font-size:12px;color:var(--ink3)}
 <!-- FEATURES -->
 <section class="sec">
   <div class="sec-label">What pamelo does</div>
-  <p class="h2">Six tools. One inbox.<br/>Zero switching between apps.</p>
+  <p class="h2" id="feat-heading">Six tools. One inbox.<br/>Zero switching between apps.</p>
   <div class="feat-carousel-wrap">
   <div class="feat-grid" id="feat-grid">
-    <div class="feat-tile">
+    <div class="feat-tile" data-feat="inbox">
       <div class="feat-ico" style="background:#ECFDF5">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9.5" cy="9.5" r="7.5" stroke="#12B76A" stroke-width="1.4"/><path d="M6.5 10.3c.4.9 1.3 1.8 2.7 2.3l.3-.4c.3-.4.9-.3 1.3.1l.6.6c.3.3.3.8 0 1.1-1 .9-3.4.4-5.2-1.5-1.8-1.9-2.3-4.3-1.2-5.2.3-.3.8-.3 1.1 0l.6.6c.3.3.4.9.1 1.2l-.3.2z" stroke="#12B76A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="12.5" y="3" width="5" height="5" rx="1.5" stroke="#12B76A" stroke-width="1.2"/><circle cx="15" cy="5.5" r="1" fill="#12B76A"/></svg>
       </div>
       <h4>WhatsApp &amp; Instagram inbox</h4>
       <p>Your customers message you as normal. pamelo reads every text, voice note and image on both channels and logs it automatically.</p>
     </div>
-    <div class="feat-tile">
+    <div class="feat-tile" data-feat="profiles">
       <div class="feat-ico" style="background:#F2EFFE">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="7" r="3.5" stroke="#7C5CFC" stroke-width="1.4"/><path d="M2 17c0-3.3 2.7-6 6-6" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/><path d="M13 12l1.5 1.5L17 10" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <h4>Customer profiles that build themselves</h4>
       <p>Names, orders, amounts, addresses, what they owe — all extracted from your DMs. Every returning customer recognised instantly.</p>
     </div>
-    <div class="feat-tile">
+    <div class="feat-tile" data-feat="debt">
       <div class="feat-ico" style="background:#FFFBEB">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2.5a5.5 5.5 0 015.5 5.5c0 3.5-5.5 9.5-5.5 9.5S4.5 11.5 4.5 8A5.5 5.5 0 0110 2.5z" stroke="#F59E0B" stroke-width="1.4"/><circle cx="10" cy="8" r="1.8" fill="#F59E0B"/></svg>
       </div>
       <h4>Debt chasing on autopilot</h4>
       <p>Log an unpaid balance and pamelo sends polite, scheduled WhatsApp reminders under your name. No awkward follow-ups from you.</p>
     </div>
-    <div class="feat-tile">
+    <div class="feat-tile" data-feat="followup">
       <div class="feat-ico" style="background:#F2EFFE">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 9h9M3 13h6" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/><circle cx="15.5" cy="13.5" r="3" stroke="#7C5CFC" stroke-width="1.4"/><path d="M14.2 13.5l1 1 1.8-1.8" stroke="#7C5CFC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <h4>Automated follow-up sequences</h4>
       <p>Delivery confirmations, feedback requests, re-engagement nudges — set up once, runs in your tone, on your schedule.</p>
     </div>
-    <div class="feat-tile">
+    <div class="feat-tile" data-feat="payment">
       <div class="feat-ico" style="background:#FFFBEB">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="16" height="10" rx="2" stroke="#F59E0B" stroke-width="1.4"/><path d="M2 10h16" stroke="#F59E0B" stroke-width="1.4"/><path d="M5.5 13.5h2M9.5 13.5h4" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/><path d="M7 6V4.5a3 3 0 016 0V6" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/></svg>
       </div>
       <h4>In-chat payment confirmation</h4>
       <p>Customer sends a screenshot or types "sent" — pamelo verifies the transfer and replies "Payment received ✓" in the same thread. Bank app stays closed.</p>
     </div>
-    <div class="feat-tile">
+    <div class="feat-tile" data-feat="ads">
       <div class="feat-ico" style="background:#F2EFFE">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3.5 14.5l2-2m0 0l1.3-4 4-1.3-1.3 4-4 1.3z" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="5" r="2.5" stroke="#7C5CFC" stroke-width="1.4"/></svg>
       </div>
@@ -508,27 +512,27 @@ footer small{font-size:12px;color:var(--ink3)}
 <section class="sec-full">
   <div class="w">
     <div class="sec-label">How it works</div>
-    <p class="h2">Set up in 5 minutes, then it runs itself</p>
+    <p class="h2" id="hiw-heading">Set up in 5 minutes, then it runs itself</p>
     <div class="steps">
       <div class="step">
         <div style="position:relative;flex-shrink:0"><div class="step-num">1</div><div class="step-rail"></div></div>
         <div class="step-body">
-          <h4>Connect your channels</h4>
-          <p>Get your pamelo WhatsApp number and link your Instagram account in under 5 minutes. Your customers keep messaging you the same way they always have.</p>
+          <h4 id="hiw-1-h4">Connect your channels</h4>
+          <p id="hiw-1-p">Get your pamelo WhatsApp number and link your Instagram account in under 5 minutes. Your customers keep messaging you the same way they always have.</p>
         </div>
       </div>
       <div class="step">
         <div style="position:relative;flex-shrink:0"><div class="step-num">2</div><div class="step-rail"></div></div>
         <div class="step-body">
-          <h4>AI reads and organises everything</h4>
-          <p>Every message, voice note and image is parsed automatically. Names, orders, prices, addresses and balances are extracted — customer profiles build themselves without you touching anything.</p>
+          <h4 id="hiw-2-h4">AI reads and organises everything</h4>
+          <p id="hiw-2-p">Every message, voice note and image is parsed automatically. Names, orders, prices, addresses and balances are extracted — customer profiles build themselves without you touching anything.</p>
         </div>
       </div>
       <div class="step">
         <div style="position:relative;flex-shrink:0"><div class="step-num">3</div><div class="step-rail"></div></div>
         <div class="step-body">
-          <h4>Everything else runs itself</h4>
-          <p>Payments confirmed in the chat thread. Debts chased on schedule. Follow-ups sent under your name. You just sell — pamelo handles the rest.</p>
+          <h4 id="hiw-3-h4">Everything else runs itself</h4>
+          <p id="hiw-3-p">Payments confirmed in the chat thread. Debts chased on schedule. Follow-ups sent under your name. You just sell — pamelo handles the rest.</p>
         </div>
       </div>
     </div>
@@ -541,23 +545,23 @@ footer small{font-size:12px;color:var(--ink3)}
 <div class="partners-section">
   <div class="w">
     <div class="sec-label">The daily reality</div>
-    <p class="h2">Sound familiar?</p>
-    <p class="scenario-text">She sends: <em>"I've transferred."</em> You close WhatsApp. Open your bank app. Nothing yet. You go back: <em>"Let me check, it hasn't landed."</em> She replies: <em>"I sent it o."</em> You wait. Check again. It's there.</p>
+    <p class="h2" id="scenario-h2">Sound familiar?</p>
+    <p class="scenario-text" id="scenario-text">She sends: <em>"I've transferred."</em> You close WhatsApp. Open your bank app. Nothing yet. You go back: <em>"Let me check, it hasn't landed."</em> She replies: <em>"I sent it o."</em> You wait. Check again. It's there.</p>
     <div class="scenario-stats-row">
       <div class="scenario-stat">
-        <span class="stat-num">9</span>
-        <span class="stat-desc">messages for one payment</span>
+        <span class="stat-num" id="stat-1-num">9</span>
+        <span class="stat-desc" id="stat-1-desc">messages for one payment</span>
       </div>
       <div class="scenario-stat">
-        <span class="stat-num">3</span>
-        <span class="stat-desc">app switches</span>
+        <span class="stat-num" id="stat-2-num">3</span>
+        <span class="stat-desc" id="stat-2-desc">app switches</span>
       </div>
       <div class="scenario-stat">
-        <span class="stat-num">11</span>
-        <span class="stat-desc">more customers still waiting</span>
+        <span class="stat-num" id="stat-3-num">11</span>
+        <span class="stat-desc" id="stat-3-desc">more customers still waiting</span>
       </div>
     </div>
-    <p class="scenario-util">pamelo confirms the payment in the chat the moment it lands — and sends your follow-ups automatically, so you never have to be the one asking.</p>
+    <p class="scenario-util" id="scenario-util">pamelo confirms the payment in the chat the moment it lands — and sends your follow-ups automatically, so you never have to be the one asking.</p>
   </div>
 </div>
 
@@ -798,7 +802,7 @@ footer small{font-size:12px;color:var(--ink3)}
 </footer>
 
 <script>
-var currentVariant = 'test';
+var currentVariant = 'default';
 var selectedPlan = null;
 
 var _skelDone = false;
@@ -811,10 +815,201 @@ function hideSkeleton() {
   setTimeout(function() { skel.style.display = 'none'; }, 150);
 }
 
-hideSkeleton();
+// ── AD GROUP DETECTION & VARIANT ────────────────────────────────────
+var _LS_KEY = 'pamelo_ad_group';
+
+var _VARIANTS = {
+  side_hustle: {
+    pill: '<span class="pill-dot"></span>Built for side hustlers',
+    h1: 'Your side hustle keeps running,<br/>even during your <em>9–5</em>',
+    sub: "Customers message while you're in meetings or commuting. pamelo handles replies, confirms every payment, and follows up — so you never lose a sale because you were busy.",
+    proofText: "Side hustlers & entrepreneurs from Lagos, Abuja & Port Harcourt on the waitlist",
+    heroCta: "Keep my side hustle running",
+    featHeading: 'Four tools. Built around your schedule.',
+    feats: ['inbox','payment','debt','followup'],
+    featCopy: {
+      inbox:    { h4: 'Never miss a customer message',            p: "Customers message on WhatsApp and Instagram while you're at work. pamelo logs every text, voice note and image — you catch up when you're free." },
+      payment:  { h4: 'Get paid without touching your bank app', p: 'Customer sends a screenshot or types "sent" — pamelo confirms the payment in the same chat thread. No app switching needed.' },
+      debt:     { h4: 'Track who owes you, automatically',       p: 'Log an unpaid balance and pamelo sends polite, scheduled reminders under your name. No awkward follow-ups from you.' },
+      followup: { h4: 'Follow up automatically',                 p: "Delivery confirmations, re-engagement nudges — set up once, runs in your tone while you're busy." }
+    },
+    scenarioText: "You're in a meeting. Three customers message — two orders, one payment. You can't look. An hour later you reply. Two of them have already moved on.",
+    scenarioStats: [{num:'1h',desc:'average response delay at work'},{num:'3',desc:'messages missed per meeting'},{num:'0',desc:'missed with pamelo running'}],
+    scenarioUtil: "pamelo reads every message while you're busy, logs every order and payment, and follows up automatically — your side hustle keeps running even when you can't respond.",
+    howItWorks: {
+      heading: 'Set it up once. It runs while you work.',
+      steps: [
+        { h4: 'Connect in 5 minutes',                         p: "Get your pamelo WhatsApp number and link Instagram. Your customers keep messaging you the same way — nothing changes on their end." },
+        { h4: 'pamelo handles messages while you are busy',   p: 'Every message, voice note and image is read and logged automatically. You come back to organised conversations — no frantic catching up needed.' },
+        { h4: 'Payments confirmed, debts chased, done',       p: "pamelo confirms payments in the chat, sends debt reminders on schedule, and follows up with customers — all under your name, while you're at work." }
+      ]
+    },
+    pricingKeywords: ['whatsapp','instagram','ai message','debt','follow-up','payment','everything'],
+    fdHeading: "Stop missing sales while you're at work",
+    fdSubtext: "Join 100,000+ entrepreneurs. Set up in 5 minutes — pamelo handles the rest.",
+    fdBtn: "Start for free — it only takes 5 minutes"
+  },
+  sell_more: {
+    pill: '<span class="pill-dot"></span>100,000+ entrepreneurs',
+    h1: 'Your business deserves<br/>better than <em>missed sales</em>',
+    sub: 'Join over 100,000 entrepreneurs using pamelo to sell more. Connect WhatsApp and Instagram — pamelo handles every message, payment, and follow-up automatically.',
+    proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
+    heroCta: 'Sell more with Pamelo',
+    scenarioText: "A customer DMs: <em>\"How much is this?\"</em> You're with someone else. Three hours later you reply. They write back: <em>\"I already bought it elsewhere.\"</em>",
+    scenarioStats: [{num:'3h',desc:'average DM reply delay'},{num:'60%',desc:'of late replies go cold'},{num:'0',desc:'leads missed with pamelo'}],
+    scenarioUtil: "pamelo replies instantly, captures every lead, and follows up automatically — so you never lose a sale to a slow response.",
+    featHeading: 'Everything you need to sell more.',
+    feats: ['inbox','profiles','followup','payment'],
+    featCopy: {
+      inbox:    { h4: 'WhatsApp & Instagram, one inbox',    p: 'Your customers message you as normal. pamelo reads every message on both channels and builds your customer list automatically.' },
+      profiles: { h4: 'Every customer remembered',         p: 'Names, orders, amounts, what they owe — all extracted from your DMs. Every returning customer recognised instantly.' },
+      followup: { h4: 'Turn customers into repeat buyers', p: 'Delivery confirmations, feedback requests, re-engagement nudges — set up once and let pamelo grow your repeat sales automatically.' },
+      payment:  { h4: 'Confirm payments in the chat',      p: 'Customer sends a screenshot or types "sent" — pamelo verifies the transfer and replies "Payment received ✓". Bank app stays closed.' }
+    },
+    howItWorks: {
+      heading: 'Set up in 5 minutes, then watch sales grow.',
+      steps: [
+        { h4: 'Connect your channels',          p: 'Link WhatsApp and Instagram in under 5 minutes. Every message from every channel lands in one place — no more switching between apps.' },
+        { h4: 'Every lead captured automatically', p: 'pamelo reads every message, builds customer profiles, and tracks orders — so no lead ever slips through without a follow-up.' },
+        { h4: 'More sales, less effort',         p: 'Automated follow-ups re-engage customers. Payment confirmations close sales faster. Re-engagement sequences bring back buyers who went quiet.' }
+      ]
+    },
+    pricingKeywords: ['whatsapp','instagram','ai message','profiles','follow-up','payment','ad campaign','everything','team member','priority'],
+    fdHeading: 'Sell more, starting today',
+    fdSubtext: 'Join 100,000+ entrepreneurs. Get set up in 5 minutes.',
+    fdBtn: "Join the waitlist — it's free"
+  }
+};
+
+function _detectAdGroup() {
+  var params = new URLSearchParams(window.location.search);
+  var content = (params.get('utm_content') || '').toLowerCase().replace(/-/g, '_');
+  var fromUrl = null;
+  if (content === 'side_hustle') fromUrl = 'side_hustle';
+  else if (content === 'sell_more') fromUrl = 'sell_more';
+  if (fromUrl) {
+    try { localStorage.setItem(_LS_KEY, fromUrl); } catch(e) {}
+    return { group: fromUrl, source: 'url' };
+  }
+  try {
+    var stored = localStorage.getItem(_LS_KEY);
+    if (stored === 'side_hustle' || stored === 'sell_more') return { group: stored, source: 'stored' };
+  } catch(e) {}
+  return { group: 'default', source: 'organic' };
+}
+
+function _applyVariant(group) {
+  var v = _VARIANTS[group];
+  if (!v) return;
+
+  // Hero
+  var pill    = document.getElementById('hero-pill');
+  var h1      = document.getElementById('hero-h1');
+  var sub     = document.getElementById('hero-sub');
+  var proofT  = document.getElementById('proof-t');
+  var heroCta = document.getElementById('hero-cta');
+  if (pill)    pill.innerHTML      = v.pill;
+  if (h1)      h1.innerHTML        = v.h1;
+  if (sub)     sub.textContent     = v.sub;
+  if (proofT)  proofT.textContent  = v.proofText;
+  if (heroCta) heroCta.textContent = v.heroCta;
+
+  // Scenario — only override if the variant defines different content
+  if (v.scenarioText) {
+    var scText = document.getElementById('scenario-text');
+    var scUtil = document.getElementById('scenario-util');
+    if (scText) scText.innerHTML   = v.scenarioText;
+    if (scUtil) scUtil.textContent = v.scenarioUtil;
+    if (v.scenarioStats) {
+      v.scenarioStats.forEach(function(s, i) {
+        var n = document.getElementById('stat-' + (i + 1) + '-num');
+        var d = document.getElementById('stat-' + (i + 1) + '-desc');
+        if (n) n.textContent = s.num;
+        if (d) d.textContent = s.desc;
+      });
+    }
+  }
+
+  // How it works
+  if (v.howItWorks) {
+    var hiwH = document.getElementById('hiw-heading');
+    if (hiwH) hiwH.textContent = v.howItWorks.heading;
+    v.howItWorks.steps.forEach(function(s, i) {
+      var h4el = document.getElementById('hiw-' + (i + 1) + '-h4');
+      var pel  = document.getElementById('hiw-' + (i + 1) + '-p');
+      if (h4el) h4el.textContent = s.h4;
+      if (pel)  pel.textContent  = s.p;
+    });
+  }
+
+  // Features grid — remove irrelevant tiles, update copy, sync dots
+  var grid = document.getElementById('feat-grid');
+  if (grid && v.feats) {
+    Array.prototype.slice.call(grid.querySelectorAll('.feat-tile')).forEach(function(tile) {
+      if (v.feats.indexOf(tile.getAttribute('data-feat')) === -1) tile.parentNode.removeChild(tile);
+    });
+    v.feats.forEach(function(feat) {
+      var tile = grid.querySelector('[data-feat="' + feat + '"]');
+      if (!tile) return;
+      var copy = v.featCopy && v.featCopy[feat];
+      if (copy) {
+        var h4el = tile.querySelector('h4');
+        var pel  = tile.querySelector('p');
+        if (h4el && copy.h4) h4el.textContent = copy.h4;
+        if (pel  && copy.p)  pel.textContent  = copy.p;
+      }
+      grid.appendChild(tile);
+    });
+    var dotsWrap = document.getElementById('feat-dots');
+    if (dotsWrap) {
+      dotsWrap.querySelectorAll('.dot').forEach(function(d, i) {
+        d.style.display = i < v.feats.length ? '' : 'none';
+        d.classList.toggle('active', i === 0);
+      });
+    }
+    var featH = document.getElementById('feat-heading');
+    if (featH) featH.textContent = v.featHeading;
+  }
+
+  // Pricing — show only features relevant to this group, hide the rest
+  document.querySelectorAll('.feat-list li').forEach(function(li) {
+    var text = li.textContent.trim().toLowerCase();
+    var show = false;
+    for (var i = 0; i < v.pricingKeywords.length; i++) {
+      if (text.indexOf(v.pricingKeywords[i]) !== -1) { show = true; break; }
+    }
+    li.style.display = show ? '' : 'none';
+  });
+
+  // Final CTA
+  var fdHeading = document.getElementById('fd-heading');
+  var fdSubtext = document.getElementById('fd-subtext');
+  var fdBtn     = document.getElementById('fd-btn');
+  var fdNote    = document.getElementById('fd-note-text');
+  if (fdHeading) fdHeading.textContent = v.fdHeading;
+  if (fdSubtext) fdSubtext.textContent = v.fdSubtext;
+  if (fdBtn)     fdBtn.textContent     = v.fdBtn;
+  if (fdNote)    fdNote.textContent    = v.fdSubtext;
+}
+
+// Skeleton stays up while variant is applied, then fades — no flicker on any load
+(function() {
+  var result = _detectAdGroup();
+  currentVariant = result.group;
+  if (result.group !== 'default') {
+    _applyVariant(result.group);
+    posthog.capture('ad_group_applied', { group: result.group, source: result.source });
+  }
+  hideSkeleton();
+})();
 
 function navCta() {
   posthog.capture('nav_cta_clicked', { variant: currentVariant });
+  document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+}
+
+function heroCta() {
+  posthog.capture('hero_cta_clicked', { variant: currentVariant });
   document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -843,6 +1038,18 @@ function getSelectedOrders() {
 
 // Pill selection highlight — scoped per group to avoid cross-group deselection
 document.addEventListener('DOMContentLoaded', function() {
+  // Hide nav CTA while hero CTA is visible; reveal on scroll past
+  (function() {
+    var navBtn = document.getElementById('nav-cta');
+    var heroCta = document.getElementById('hero-cta');
+    if (!navBtn || !heroCta) return;
+    navBtn.classList.add('nav-cta-hidden');
+    if (!window.IntersectionObserver) { navBtn.classList.remove('nav-cta-hidden'); return; }
+    new IntersectionObserver(function(entries) {
+      navBtn.classList.toggle('nav-cta-hidden', entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(heroCta);
+  })();
+
   ['channel-group', 'orders-group'].forEach(function(groupId) {
     var group = document.getElementById(groupId);
     if (!group) return;
