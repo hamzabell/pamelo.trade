@@ -768,7 +768,7 @@ footer small{font-size:12px;color:var(--ink3)}
         </div>
         <span class="field-error" id="orders-error">Please select your order volume</span>
       </div>
-      <button class="btn-cta" id="fd-btn" onclick="submitFakeDoor()">Join the waitlist — it's free</button>
+      <button class="btn-cta" id="fd-btn" onclick="submitFakeDoor()">Get early access — it's free</button>
       <div class="form-note" id="fd-note">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5.5" rx="1.5" stroke="#9898B8" stroke-width="1.2"/><path d="M4 5.5V4a2 2 0 014 0v1.5" stroke="#9898B8" stroke-width="1.2" stroke-linecap="round"/></svg>
         <span id="fd-note-text">No spam. We'll only reach out when pamelo is ready.</span>
@@ -825,6 +825,8 @@ var _VARIANTS = {
     sub: "Customers message while you're in meetings or commuting. pamelo handles replies, confirms every payment, and follows up — so you never lose a sale because you were busy.",
     proofText: "Side hustlers & entrepreneurs from Lagos, Abuja & Port Harcourt on the waitlist",
     heroCta: "Keep my side hustle running",
+    navCta: "Start for free",
+    planCta: "Start for free",
     featHeading: 'Four tools. Built around your schedule.',
     feats: ['inbox','payment','debt','followup'],
     featCopy: {
@@ -855,6 +857,8 @@ var _VARIANTS = {
     sub: 'Join over 100,000 entrepreneurs using pamelo to sell more. Connect WhatsApp and Instagram — pamelo handles every message, payment, and follow-up automatically.',
     proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
     heroCta: 'Sell more with Pamelo',
+    navCta: 'Sell more with Pamelo',
+    planCta: 'Sell more with Pamelo',
     scenarioText: "A customer DMs: <em>\"How much is this?\"</em> You're with someone else. Three hours later you reply. They write back: <em>\"I already bought it elsewhere.\"</em>",
     scenarioStats: [{num:'3h',desc:'average DM reply delay'},{num:'60%',desc:'of late replies go cold'},{num:'0',desc:'leads missed with pamelo'}],
     scenarioUtil: "pamelo replies instantly, captures every lead, and follows up automatically — so you never lose a sale to a slow response.",
@@ -913,6 +917,16 @@ function _applyVariant(group) {
   if (sub)     sub.textContent     = v.sub;
   if (proofT)  proofT.textContent  = v.proofText;
   if (heroCta) heroCta.textContent = v.heroCta;
+
+  // Nav + pricing CTAs
+  var navCtaBtn = document.getElementById('nav-cta');
+  if (navCtaBtn && v.navCta) navCtaBtn.textContent = v.navCta;
+  if (v.planCta) {
+    var btnSolo     = document.getElementById('btn-solo');
+    var btnBusiness = document.getElementById('btn-business');
+    if (btnSolo)     btnSolo.textContent     = v.planCta;
+    if (btnBusiness) btnBusiness.textContent = v.planCta;
+  }
 
   // Scenario — only override if the variant defines different content
   if (v.scenarioText) {
