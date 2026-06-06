@@ -887,7 +887,10 @@ var _VARIANTS = {
 
 function _detectAdGroup() {
   var params = new URLSearchParams(window.location.search);
-  var content = (params.get('utm_content') || '').toLowerCase().replace(/-/g, '_');
+  // Check 'pg' first — a custom param Facebook Ads Manager won't auto-override.
+  // Fall back to utm_content for backwards compatibility.
+  var raw = params.get('pg') || params.get('utm_content') || '';
+  var content = raw.toLowerCase().replace(/-/g, '_');
   var fromUrl = null;
   if (content === 'side_hustle') fromUrl = 'side_hustle';
   else if (content === 'sell_more') fromUrl = 'sell_more';
