@@ -882,6 +882,41 @@ var _VARIANTS = {
     fdHeading: 'Sell more, starting today',
     fdSubtext: 'Join 100,000+ entrepreneurs. Get set up in 5 minutes.',
     fdBtn: "Join the waitlist — it's free"
+  },
+  ban_proof: {
+    pill: '<span class="pill-dot"></span>Ban-proof your customer base',
+    h1: 'One Instagram ban<br/>shouldn\'t <em>end your business</em>',
+    sub: 'Your followers, your DMs, your entire customer list — all locked inside an account Instagram can disable overnight, with no warning. pamelo keeps every customer, conversation and order safe outside Instagram, so a ban can\'t take them with it.',
+    proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
+    heroCta: 'Lock in early access',
+    navCta: 'Get early access',
+    planCta: 'Get early access',
+    scenarioText: 'Ada woke up to <em>"Your account has been disabled."</em> Two years of followers, every customer DM, every order — gone by breakfast. No warning. No appeal that worked. Her customers had no other way to reach her.',
+    scenarioStats: [
+      { num: '2 yrs',     desc: 'spent building her following' },
+      { num: '1 morning', desc: 'to lose all of it' },
+      { num: '0',         desc: 'customer contacts she could take' }
+    ],
+    scenarioUtil: 'If Ada\'s customers had lived in pamelo — names, numbers, order history, all saved outside Instagram — one WhatsApp message could have brought every one of them back. The ban would\'ve been an inconvenience, not the end.',
+    featHeading: 'Three tools that keep your business yours.',
+    feats: ['profiles','inbox','followup'],
+    featCopy: {
+      profiles: { h4: 'Your customer list, saved outside Instagram', p: 'Every name, number, order and balance is pulled from your DMs into pamelo automatically. Even if your account vanishes, your customer base stays with you.' },
+      inbox:    { h4: 'A WhatsApp line they can always reach',       p: 'pamelo gives you a WhatsApp channel alongside Instagram. If one platform goes down, the conversation — and the customer — carries on somewhere you control.' },
+      followup: { h4: 'Bring everyone back in one message',          p: 'With every customer saved, an automated follow-up can re-activate your whole list at once — so a lost account never means a lost business.' }
+    },
+    howItWorks: {
+      heading: 'Set up your backup before you need it.',
+      steps: [
+        { h4: 'Connect your channels',              p: 'Link Instagram and your pamelo WhatsApp number in under 5 minutes. Nothing changes for your customers — they message you the same way.' },
+        { h4: 'Every customer saved automatically', p: 'As messages come in, pamelo extracts each customer\'s name, contact and order history into a list that lives outside Instagram — yours to keep.' },
+        { h4: 'If the worst happens, you rebound',   p: 'Account disabled? Your customer base is intact in pamelo. One follow-up reaches all of them on WhatsApp — and your business keeps running.' }
+      ]
+    },
+    pricingKeywords: ['whatsapp','instagram','profiles','follow-up','everything'],
+    fdHeading: 'Don\'t wait for the ban to wish you\'d backed up',
+    fdSubtext: 'Join 100,000+ entrepreneurs on the waitlist. Lock in early access and be ready before it happens to you.',
+    fdBtn: 'Lock in early access — it\'s free'
   }
 };
 
@@ -894,13 +929,14 @@ function _detectAdGroup() {
   var fromUrl = null;
   if (content === 'side_hustle') fromUrl = 'side_hustle';
   else if (content === 'sell_more') fromUrl = 'sell_more';
+  else if (content === 'ban_proof') fromUrl = 'ban_proof';
   if (fromUrl) {
     try { localStorage.setItem(_LS_KEY, fromUrl); } catch(e) {}
     return { group: fromUrl, source: 'url' };
   }
   try {
     var stored = localStorage.getItem(_LS_KEY);
-    if (stored === 'side_hustle' || stored === 'sell_more') return { group: stored, source: 'stored' };
+    if (stored === 'side_hustle' || stored === 'sell_more' || stored === 'ban_proof') return { group: stored, source: 'stored' };
   } catch(e) {}
   return { group: 'default', source: 'organic' };
 }
