@@ -332,6 +332,21 @@ footer small{font-size:12px;color:var(--ink3)}
 /* HERO TRUST STRIP */
 .hero-trust{font-size:12px;color:var(--ink3);line-height:1.9;margin-top:12px}
 
+/* CHANNEL DIALOG */
+.dialog-overlay{position:fixed;inset:0;background:rgba(13,13,28,.55);z-index:200;display:flex;align-items:center;justify-content:center;padding:22px;opacity:0;pointer-events:none;transition:opacity .2s}
+.dialog-overlay.open{opacity:1;pointer-events:all}
+.dialog-card{background:#fff;border-radius:var(--r);padding:28px 24px;width:100%;max-width:360px;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.12)}
+.dialog-close{position:absolute;top:14px;right:14px;background:none;border:none;cursor:pointer;color:var(--ink3);padding:4px;line-height:1;font-size:18px}
+.dialog-close:hover{color:var(--ink)}
+.dialog-title{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:6px;letter-spacing:-.4px}
+.dialog-sub{font-size:13px;color:var(--ink2);margin-bottom:20px;line-height:1.55}
+.ch-opt{width:100%;display:flex;align-items:center;gap:14px;border:1.5px solid var(--bd);border-radius:var(--rsm);padding:14px 16px;background:#fff;cursor:pointer;font-family:inherit;margin-bottom:10px;transition:all .15s;text-align:left}
+.ch-opt:last-of-type{margin-bottom:0}
+.ch-opt:hover{border-color:var(--p);background:var(--p-lt)}
+.ch-opt-ico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch-opt-name{font-size:14px;font-weight:700;color:var(--ink)}
+.ch-opt-hint{font-size:12px;color:var(--ink3);margin-top:2px}
+
 /* CHANNEL PILLS */
 .pill-group{display:flex;gap:8px;flex-wrap:wrap}
 .pill-opt{display:flex;align-items:center;gap:6px;border:1.5px solid var(--bd);border-radius:20px;padding:8px 14px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink2);background:var(--bg);cursor:pointer;transition:all .15s;user-select:none}
@@ -417,7 +432,7 @@ footer small{font-size:12px;color:var(--ink3)}
       </svg>
       <div class="logotype">pame<em>lo</em></div>
     </div>
-    <button class="btn-nav" id="nav-cta" onclick="navCta()">Get early access</button>
+    <button class="btn-nav" id="nav-cta" onclick="navCta()">I'm interested</button>
   </nav>
 </div>
 
@@ -426,7 +441,7 @@ footer small{font-size:12px;color:var(--ink3)}
   <div class="pill" id="hero-pill"><span class="pill-dot"></span>Built for Nigerian vendors</div>
   <p class="h1" id="hero-h1">Your WhatsApp and Instagram,<br/>finally <em>organised</em></p>
   <p class="hero-sub" id="hero-sub">Connect your WhatsApp and Instagram. pamelo builds your customer records, confirms every payment, and chases every debt — automatically.</p>
-  <button class="btn-cta" id="hero-cta" onclick="heroCta()" style="margin-top:28px;width:auto">Get early access</button>
+  <button class="btn-cta" id="hero-cta" onclick="heroCta()" style="margin-top:28px;width:auto">I'm interested</button>
   <p class="hero-trust" style="margin-top:12px">Official Meta Business APIs &middot; We never read or sell your data &middot; Export and leave anytime</p>
 
 </section>
@@ -620,7 +635,7 @@ footer small{font-size:12px;color:var(--ink3)}
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#FFFBEB"/><path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Cross-platform ad campaigns        </li>
       </ul>
-      <button class="plan-btn b-out" id="btn-solo" onclick="pricingCta('solo')">Get early access</button>
+      <button class="plan-btn b-out" id="btn-solo" onclick="pricingCta('solo')">I'm interested</button>
       <p class="plan-foot">Less than the cost of one lost sale a month</p>
     </div>
 
@@ -668,7 +683,7 @@ footer small{font-size:12px;color:var(--ink3)}
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#FFFBEB"/><path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Cross-platform ad campaigns with AI lead capture        </li>
       </ul>
-      <button class="plan-btn b-fill" id="btn-business" onclick="pricingCta('business')">Get early access</button>
+      <button class="plan-btn b-fill" id="btn-business" onclick="pricingCta('business')">I'm interested</button>
       <p class="plan-foot">&#8358;48,000 per seat vs &#8358;60,000 solo &mdash; only worth it if you have a team</p>
     </div>
 
@@ -718,62 +733,27 @@ footer small{font-size:12px;color:var(--ink3)}
 
 <!-- FINAL CTA -->
 <section class="final" id="signup">
-  <p class="h2" id="fd-heading">Get early access</p>
-  <p class="sec-sub" id="fd-subtext">No spam. We'll only reach out when pamelo is ready.</p>
+  <p class="h2" id="fd-heading">Ready to get started?</p>
+  <p class="sec-sub" id="fd-subtext">Pick a channel — we'll reply right away.</p>
   <div class="final-form-wrap" id="final-form">
-    <div class="form-card" style="text-align:left">
-      <div class="field">
-        <label for="f-email">Email address</label>
-        <input id="f-email" type="email" placeholder="your@email.com" autocomplete="email"/>
-        <span class="field-error" id="email-error">Please enter a valid email address</span>
+    <button class="ch-opt" onclick="connectChannel('whatsapp')">
+      <div class="ch-opt-ico" style="background:#ECFDF5">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#25D366"/><path d="M11 4.5a6.5 6.5 0 00-5.63 9.76l-.87 3.24 3.32-.85A6.5 6.5 0 1011 4.5z" fill="#fff"/><path d="M8.5 9.2c.1-.3.5-1.2.9-1.2.3 0 .5.1.6.3l.6 1.3c.1.2 0 .4-.1.6l-.4.4c.3.7.8 1.3 1.5 1.7l.5-.4c.2-.1.4-.1.5 0l1.2.6c.2.1.3.4.2.6-.2.6-.9 1.1-1.5 1.1-1.8 0-4-2.2-4-4z" fill="#25D366"/></svg>
       </div>
-      <div class="field">
-        <label for="f-phone">WhatsApp number</label>
-        <input id="f-phone" type="tel" placeholder="08012345678" autocomplete="tel"/>
-        <span class="field-error" id="phone-error">Please enter a valid Nigerian phone number</span>
+      <div>
+        <div class="ch-opt-name">WhatsApp</div>
+        <div class="ch-opt-hint">+234 903 850 1677 &middot; message us directly</div>
       </div>
-      <div class="field">
-        <label>Where do your customers message you?</label>
-        <div class="pill-group" id="channel-group">
-          <label class="pill-opt" id="pill-wa">
-            <input type="radio" name="channel" value="whatsapp"/>
-            WhatsApp only
-          </label>
-          <label class="pill-opt" id="pill-ig">
-            <input type="radio" name="channel" value="instagram"/>
-            Instagram only
-          </label>
-          <label class="pill-opt" id="pill-both">
-            <input type="radio" name="channel" value="both"/>
-            Both
-          </label>
-        </div>
-        <span class="field-error" id="channel-error">Please select a channel</span>
+    </button>
+    <button class="ch-opt" onclick="connectChannel('instagram')">
+      <div class="ch-opt-ico" style="background:#F2EFFE">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="5" stroke="url(#ig2)" stroke-width="1.6"/><circle cx="11" cy="11" r="3.5" stroke="url(#ig2)" stroke-width="1.6"/><circle cx="15.5" cy="6.5" r="1" fill="#C13584"/><defs><linearGradient id="ig2" x1="3" y1="19" x2="19" y2="3" gradientUnits="userSpaceOnUse"><stop stop-color="#F58529"/><stop offset=".5" stop-color="#C13584"/><stop offset="1" stop-color="#833AB4"/></linearGradient></defs></svg>
       </div>
-      <div class="field">
-        <label>How many orders do you handle per week?</label>
-        <div class="pill-group" id="orders-group">
-          <label class="pill-opt" id="pill-ord-low">
-            <input type="radio" name="orders" value="1-10"/>
-            1–10
-          </label>
-          <label class="pill-opt" id="pill-ord-mid">
-            <input type="radio" name="orders" value="10-50"/>
-            10–50
-          </label>
-          <label class="pill-opt" id="pill-ord-high">
-            <input type="radio" name="orders" value="50+"/>
-            50+
-          </label>
-        </div>
-        <span class="field-error" id="orders-error">Please select your order volume</span>
+      <div>
+        <div class="ch-opt-name">Instagram</div>
+        <div class="ch-opt-hint">Send us a DM</div>
       </div>
-      <button class="btn-cta" id="fd-btn" onclick="submitFakeDoor()">Get early access — it's free</button>
-      <div class="form-note" id="fd-note">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="5.5" width="8" height="5.5" rx="1.5" stroke="#9898B8" stroke-width="1.2"/><path d="M4 5.5V4a2 2 0 014 0v1.5" stroke="#9898B8" stroke-width="1.2" stroke-linecap="round"/></svg>
-        <span id="fd-note-text">No spam. We'll only reach out when pamelo is ready.</span>
-      </div>
-    </div>
+    </button>
   </div>
 </section>
 
@@ -801,9 +781,70 @@ footer small{font-size:12px;color:var(--ink3)}
   <small>Lagos, Nigeria &middot; 2026</small>
 </footer>
 
+<!-- CHANNEL SELECT DIALOG -->
+<div class="dialog-overlay" id="channel-dialog" onclick="overlayClose(event)">
+  <div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialog-ttl">
+    <button class="dialog-close" onclick="closeChannelDialog()" aria-label="Close">&times;</button>
+    <p class="dialog-title" id="dialog-ttl">How would you like to connect?</p>
+    <p class="dialog-sub" id="dialog-sub">Pick a channel — we'll come to you.</p>
+    <button class="ch-opt" onclick="connectChannel('whatsapp')">
+      <div class="ch-opt-ico" style="background:#ECFDF5">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#25D366"/><path d="M11 4.5a6.5 6.5 0 00-5.63 9.76l-.87 3.24 3.32-.85A6.5 6.5 0 1011 4.5z" fill="#fff"/><path d="M8.5 9.2c.1-.3.5-1.2.9-1.2.3 0 .5.1.6.3l.6 1.3c.1.2 0 .4-.1.6l-.4.4c.3.7.8 1.3 1.5 1.7l.5-.4c.2-.1.4-.1.5 0l1.2.6c.2.1.3.4.2.6-.2.6-.9 1.1-1.5 1.1-1.8 0-4-2.2-4-4z" fill="#25D366"/></svg>
+      </div>
+      <div>
+        <div class="ch-opt-name">WhatsApp</div>
+        <div class="ch-opt-hint">+234 903 850 1677</div>
+      </div>
+    </button>
+    <button class="ch-opt" onclick="connectChannel('instagram')">
+      <div class="ch-opt-ico" style="background:#F2EFFE">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="5" stroke="url(#ig1)" stroke-width="1.6"/><circle cx="11" cy="11" r="3.5" stroke="url(#ig1)" stroke-width="1.6"/><circle cx="15.5" cy="6.5" r="1" fill="#C13584"/><defs><linearGradient id="ig1" x1="3" y1="19" x2="19" y2="3" gradientUnits="userSpaceOnUse"><stop stop-color="#F58529"/><stop offset=".5" stop-color="#C13584"/><stop offset="1" stop-color="#833AB4"/></linearGradient></defs></svg>
+      </div>
+      <div>
+        <div class="ch-opt-name">Instagram</div>
+        <div class="ch-opt-hint">Send us a DM</div>
+      </div>
+    </button>
+  </div>
+</div>
+
 <script>
 var currentVariant = 'default';
 var selectedPlan = null;
+
+// ponytail: update PAMELO_IG when the Instagram handle is ready
+var PAMELO_IG = 'https://ig.me/m/pamelo.trade';
+
+var _PLAN_LABELS = { solo: 'Solo plan (₦60,000/year)', business: 'Business plan (₦48,000/user/year)' };
+
+function openChannelDialog() {
+  var sub = document.getElementById('dialog-sub');
+  if (sub) {
+    sub.textContent = selectedPlan
+      ? 'You\'re interested in the ' + _PLAN_LABELS[selectedPlan] + ' — pick a channel and we\'ll DM you.'
+      : 'Pick a channel — we\'ll come to you.';
+  }
+  posthog.capture('interested_clicked', { plan: selectedPlan, variant: currentVariant });
+  document.getElementById('channel-dialog').classList.add('open');
+}
+function closeChannelDialog() {
+  document.getElementById('channel-dialog').classList.remove('open');
+}
+function overlayClose(e) {
+  if (e.target.id === 'channel-dialog') closeChannelDialog();
+}
+function connectChannel(ch) {
+  var msg = selectedPlan
+    ? 'Hi, I\'m interested in the Pamelo ' + _PLAN_LABELS[selectedPlan] + '.'
+    : 'Hi, I\'m interested in learning more about Pamelo.';
+  posthog.capture('channel_selected', { channel: ch, plan: selectedPlan, variant: currentVariant });
+  closeChannelDialog();
+  if (ch === 'whatsapp') {
+    window.open('https://wa.me/2349038501677?text=' + encodeURIComponent(msg), '_blank');
+  } else {
+    window.open(PAMELO_IG, '_blank');
+  }
+}
 
 var _skelDone = false;
 function hideSkeleton() {
@@ -819,104 +860,77 @@ function hideSkeleton() {
 var _LS_KEY = 'pamelo_ad_group';
 
 var _VARIANTS = {
-  side_hustle: {
-    pill: '<span class="pill-dot"></span>Built for side hustlers',
-    h1: 'Your side hustle keeps running,<br/>even during your <em>9–5</em>',
-    sub: "Customers message while you're in meetings or commuting. pamelo handles replies, confirms every payment, and follows up — so you never lose a sale because you were busy.",
-    proofText: "Side hustlers & entrepreneurs from Lagos, Abuja & Port Harcourt on the waitlist",
-    heroCta: "Keep my side hustle running",
-    navCta: "Start for free",
-    planCta: "Start for free",
-    featHeading: 'Four tools. Built around your schedule.',
-    feats: ['inbox','payment','debt','followup'],
-    featCopy: {
-      inbox:    { h4: 'Never miss a customer message',            p: "Customers message on WhatsApp and Instagram while you're at work. pamelo logs every text, voice note and image — you catch up when you're free." },
-      payment:  { h4: 'Get paid without touching your bank app', p: 'Customer sends a screenshot or types "sent" — pamelo confirms the payment in the same chat thread. No app switching needed.' },
-      debt:     { h4: 'Track who owes you, automatically',       p: 'Log an unpaid balance and pamelo sends polite, scheduled reminders under your name. No awkward follow-ups from you.' },
-      followup: { h4: 'Follow up automatically',                 p: "Delivery confirmations, re-engagement nudges — set up once, runs in your tone while you're busy." }
-    },
-    scenarioText: "You're in a meeting. Three customers message — two orders, one payment. You can't look. An hour later you reply. Two of them have already moved on.",
-    scenarioStats: [{num:'1h',desc:'average response delay at work'},{num:'3',desc:'messages missed per meeting'},{num:'0',desc:'missed with pamelo running'}],
-    scenarioUtil: "pamelo reads every message while you're busy, logs every order and payment, and follows up automatically — your side hustle keeps running even when you can't respond.",
-    howItWorks: {
-      heading: 'Set it up once. It runs while you work.',
-      steps: [
-        { h4: 'Connect in 5 minutes',                         p: "Get your pamelo WhatsApp number and link Instagram. Your customers keep messaging you the same way — nothing changes on their end." },
-        { h4: 'pamelo handles messages while you are busy',   p: 'Every message, voice note and image is read and logged automatically. You come back to organised conversations — no frantic catching up needed.' },
-        { h4: 'Payments confirmed, debts chased, done',       p: "pamelo confirms payments in the chat, sends debt reminders on schedule, and follows up with customers — all under your name, while you're at work." }
-      ]
-    },
-    pricingKeywords: ['whatsapp','instagram','ai message','debt','follow-up','payment','everything'],
-    fdHeading: "Stop missing sales while you're at work",
-    fdSubtext: "Join 100,000+ entrepreneurs. Set up in 5 minutes — pamelo handles the rest.",
-    fdBtn: "Start for free — it only takes 5 minutes"
-  },
-  sell_more: {
-    pill: '<span class="pill-dot"></span>100,000+ entrepreneurs',
-    h1: 'Your business deserves<br/>better than <em>missed sales</em>',
-    sub: 'Join over 100,000 entrepreneurs using pamelo to sell more. Connect WhatsApp and Instagram — pamelo handles every message, payment, and follow-up automatically.',
-    proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
-    heroCta: 'Sell more with Pamelo',
-    navCta: 'Sell more with Pamelo',
-    planCta: 'Sell more with Pamelo',
-    scenarioText: "A customer DMs: <em>\"How much is this?\"</em> You're with someone else. Three hours later you reply. They write back: <em>\"I already bought it elsewhere.\"</em>",
-    scenarioStats: [{num:'3h',desc:'average DM reply delay'},{num:'60%',desc:'of late replies go cold'},{num:'0',desc:'leads missed with pamelo'}],
-    scenarioUtil: "pamelo replies instantly, captures every lead, and follows up automatically — so you never lose a sale to a slow response.",
-    featHeading: 'Everything you need to sell more.',
-    feats: ['inbox','profiles','followup','payment'],
-    featCopy: {
-      inbox:    { h4: 'WhatsApp & Instagram, one inbox',    p: 'Your customers message you as normal. pamelo reads every message on both channels and builds your customer list automatically.' },
-      profiles: { h4: 'Every customer remembered',         p: 'Names, orders, amounts, what they owe — all extracted from your DMs. Every returning customer recognised instantly.' },
-      followup: { h4: 'Turn customers into repeat buyers', p: 'Delivery confirmations, feedback requests, re-engagement nudges — set up once and let pamelo grow your repeat sales automatically.' },
-      payment:  { h4: 'Confirm payments in the chat',      p: 'Customer sends a screenshot or types "sent" — pamelo verifies the transfer and replies "Payment received ✓". Bank app stays closed.' }
-    },
-    howItWorks: {
-      heading: 'Set up in 5 minutes, then watch sales grow.',
-      steps: [
-        { h4: 'Connect your channels',          p: 'Link WhatsApp and Instagram in under 5 minutes. Every message from every channel lands in one place — no more switching between apps.' },
-        { h4: 'Every lead captured automatically', p: 'pamelo reads every message, builds customer profiles, and tracks orders — so no lead ever slips through without a follow-up.' },
-        { h4: 'More sales, less effort',         p: 'Automated follow-ups re-engage customers. Payment confirmations close sales faster. Re-engagement sequences bring back buyers who went quiet.' }
-      ]
-    },
-    pricingKeywords: ['whatsapp','instagram','ai message','profiles','follow-up','payment','ad campaign','everything','team member','priority'],
-    fdHeading: 'Sell more, starting today',
-    fdSubtext: 'Join 100,000+ entrepreneurs. Get set up in 5 minutes.',
-    fdBtn: "Join the waitlist — it's free"
-  },
-  ban_proof: {
+  data_backup: {
+    title: 'Never Lose Your Customers — pamelo',
     pill: '<span class="pill-dot"></span>Ban-proof your customer base',
-    h1: 'One Instagram ban<br/>shouldn\'t <em>end your business</em>',
-    sub: 'Your followers, your DMs, your entire customer list — all locked inside an account Instagram can disable overnight, with no warning. pamelo keeps every customer, conversation and order safe outside Instagram, so a ban can\'t take them with it.',
+    h1: 'Never Lose Your<br/><em>Customers</em>',
+    sub: 'Banned today. Back in business tomorrow. Pamelo backs up your customer conversations — so a banned account never means a lost customer.',
     proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
-    heroCta: 'Lock in early access',
-    navCta: 'Get early access',
-    planCta: 'Get early access',
-    scenarioText: 'Ada woke up to <em>"Your account has been disabled."</em> Two years of followers, every customer DM, every order — gone by breakfast. No warning. No appeal that worked. Her customers had no other way to reach her.',
+    heroCta: 'Back up my customers',
+    navCta: 'I\'m interested',
+    planCta: 'I\'m interested',
+    scenarioText: 'Ada woke up to <em>"Your account has been disabled."</em> Two years of followers, every customer DM, every order — gone by breakfast. No warning. No appeal that worked.',
     scenarioStats: [
       { num: '2 yrs',     desc: 'spent building her following' },
       { num: '1 morning', desc: 'to lose all of it' },
       { num: '0',         desc: 'customer contacts she could take' }
     ],
-    scenarioUtil: 'If Ada\'s customers had lived in pamelo — names, numbers, order history, all saved outside Instagram — one WhatsApp message could have brought every one of them back. The ban would\'ve been an inconvenience, not the end.',
-    featHeading: 'Three tools that keep your business yours.',
-    feats: ['profiles','inbox','followup'],
+    scenarioUtil: "If Ada's customers had lived in pamelo — names, numbers, order history — one WhatsApp message could have brought every one of them back. The ban would've been an inconvenience, not the end.",
+    featHeading: 'Your customers, saved outside Instagram.',
+    feats: ['profiles', 'inbox', 'followup'],
     featCopy: {
-      profiles: { h4: 'Your customer list, saved outside Instagram', p: 'Every name, number, order and balance is pulled from your DMs into pamelo automatically. Even if your account vanishes, your customer base stays with you.' },
-      inbox:    { h4: 'A WhatsApp line they can always reach',       p: 'pamelo gives you a WhatsApp channel alongside Instagram. If one platform goes down, the conversation — and the customer — carries on somewhere you control.' },
-      followup: { h4: 'Bring everyone back in one message',          p: 'With every customer saved, an automated follow-up can re-activate your whole list at once — so a lost account never means a lost business.' }
+      profiles: { h4: 'Mini-CRM: your customer list, always yours',    p: 'Every name, number, order and payment history pulled from your DMs into pamelo automatically. Even if your account vanishes, your customer base stays with you.' },
+      inbox:    { h4: 'Messages backed up across channels',             p: 'pamelo gives you a WhatsApp line alongside Instagram. If one platform goes down, your conversations carry on somewhere you control.' },
+      followup: { h4: 'Bring everyone back in one message',             p: 'With every customer saved, an automated follow-up can re-activate your whole list at once — so a lost account never means a lost business.' }
     },
     howItWorks: {
       heading: 'Set up your backup before you need it.',
       steps: [
-        { h4: 'Connect your channels',              p: 'Link Instagram and your pamelo WhatsApp number in under 5 minutes. Nothing changes for your customers — they message you the same way.' },
-        { h4: 'Every customer saved automatically', p: 'As messages come in, pamelo extracts each customer\'s name, contact and order history into a list that lives outside Instagram — yours to keep.' },
-        { h4: 'If the worst happens, you rebound',   p: 'Account disabled? Your customer base is intact in pamelo. One follow-up reaches all of them on WhatsApp — and your business keeps running.' }
+        { h4: 'Connect your channels',              p: 'Link Instagram and your pamelo WhatsApp number in under 5 minutes. Nothing changes for your customers.' },
+        { h4: 'Every customer saved automatically', p: "As messages come in, pamelo extracts each customer's name, contact and order history into a list that lives outside Instagram." },
+        { h4: 'If the worst happens, you rebound',  p: "Account disabled? Your customer base is intact in pamelo. One follow-up reaches all of them on WhatsApp — your business keeps running." }
       ]
     },
-    pricingKeywords: ['whatsapp','instagram','profiles','follow-up','everything'],
-    fdHeading: 'Don\'t wait for the ban to wish you\'d backed up',
-    fdSubtext: 'Join 100,000+ entrepreneurs on the waitlist. Lock in early access and be ready before it happens to you.',
-    fdBtn: 'Lock in early access — it\'s free'
+    pricingKeywords: ['whatsapp', 'instagram', 'profiles', 'follow-up', 'everything'],
+    fdHeading: "Don't wait for the ban to wish you'd backed up",
+    fdSubtext: 'Join the waitlist. Lock in early access and be ready before it happens.',
+    fdBtn: "Back up my customers — it's free"
+  },
+  auto_followup: {
+    title: 'Automated Follow-ups — 80% automated. 100% personal. — pamelo',
+    pill: '<span class="pill-dot"></span>80% automated. 100% personal.',
+    h1: 'Automated Follow-ups —<br/><em>80% automated. 100% personal.</em>',
+    sub: "Your time is too valuable to spend on repetitive follow-up messages. Pamelo handles the 80% — the check-ins, the surveys, the reminders, and follow-ups — so you can focus on the 20% that actually moves your business forward.",
+    proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
+    heroCta: 'Automate my follow-ups',
+    navCta: 'I\'m interested',
+    planCta: 'I\'m interested',
+    scenarioText: "You finished the order. Now you're sending the same delivery message, the same feedback request, the same <em>\"just checking in\"</em> — to every single customer. Manually. Every time.",
+    scenarioStats: [
+      { num: '80%', desc: 'of follow-ups are the same message' },
+      { num: '3h',  desc: 'lost weekly to manual follow-ups' },
+      { num: '0',   desc: 'repetitive messages with pamelo' }
+    ],
+    scenarioUtil: "pamelo sends your check-ins, delivery confirmations, surveys, and reminders automatically — personalised with each customer's name and order details, in your voice.",
+    featHeading: 'Set up once. Follow up forever.',
+    feats: ['followup', 'profiles', 'debt'],
+    featCopy: {
+      followup: { h4: 'Automated follow-up sequences',           p: 'Delivery confirmations, feedback requests, re-engagement nudges — set up once, runs in your tone on your schedule. Never send the same message manually again.' },
+      profiles: { h4: 'Mini-CRM: the data that makes it personal', p: "Every customer's name, order history and payment record is stored in pamelo — so every automated message is personalised, not generic." },
+      debt:     { h4: 'Debt reminders, automated too',            p: 'Log an unpaid balance and pamelo sends polite, scheduled reminders under your name. No awkward chasing.' }
+    },
+    howItWorks: {
+      heading: 'Set up sequences once. They run forever.',
+      steps: [
+        { h4: 'Connect your channels',           p: 'Link WhatsApp and Instagram in under 5 minutes. Your customers message you as normal.' },
+        { h4: 'pamelo learns every customer',    p: "Every message is parsed automatically. Names, orders, and amounts are stored in your Mini-CRM — the data that makes every follow-up personal." },
+        { h4: 'Your sequences run on their own', p: 'Delivery confirmations, feedback requests, re-engagement nudges — all sent automatically, in your voice, while you focus on selling.' }
+      ]
+    },
+    pricingKeywords: ['whatsapp', 'instagram', 'profiles', 'follow-up', 'debt', 'everything'],
+    fdHeading: 'Stop sending the same messages manually',
+    fdSubtext: 'Join the waitlist. Get early access to automated follow-ups.',
+    fdBtn: "Automate my follow-ups — it's free"
   }
 };
 
@@ -927,16 +941,15 @@ function _detectAdGroup() {
   var raw = params.get('pg') || params.get('utm_content') || '';
   var content = raw.toLowerCase().replace(/-/g, '_');
   var fromUrl = null;
-  if (content === 'side_hustle') fromUrl = 'side_hustle';
-  else if (content === 'sell_more') fromUrl = 'sell_more';
-  else if (content === 'ban_proof') fromUrl = 'ban_proof';
+  if (content === 'data_backup')       fromUrl = 'data_backup';
+  else if (content === 'auto_followup') fromUrl = 'auto_followup';
   if (fromUrl) {
     try { localStorage.setItem(_LS_KEY, fromUrl); } catch(e) {}
     return { group: fromUrl, source: 'url' };
   }
   try {
     var stored = localStorage.getItem(_LS_KEY);
-    if (stored === 'side_hustle' || stored === 'sell_more' || stored === 'ban_proof') return { group: stored, source: 'stored' };
+    if (stored === 'data_backup' || stored === 'auto_followup') return { group: stored, source: 'stored' };
   } catch(e) {}
   return { group: 'default', source: 'organic' };
 }
@@ -944,6 +957,8 @@ function _detectAdGroup() {
 function _applyVariant(group) {
   var v = _VARIANTS[group];
   if (!v) return;
+
+  if (v.title) document.title = v.title;
 
   // Hero
   var pill    = document.getElementById('hero-pill');
@@ -1051,45 +1066,27 @@ function _applyVariant(group) {
   currentVariant = result.group;
   if (result.group !== 'default') {
     _applyVariant(result.group);
-    posthog.capture('ad_group_applied', { group: result.group, source: result.source });
+    posthog.capture('ab_test_variant_viewed', { ab_test: 'feature_messaging_v1', variant: result.group, source: result.source });
   }
   hideSkeleton();
 })();
 
 function navCta() {
   posthog.capture('nav_cta_clicked', { variant: currentVariant });
-  document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+  openChannelDialog();
 }
 
 function heroCta() {
   posthog.capture('hero_cta_clicked', { variant: currentVariant });
-  document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+  openChannelDialog();
 }
-
 
 function pricingCta(plan) {
   selectedPlan = plan;
   posthog.capture('pricing_cta_clicked', { plan: plan, variant: currentVariant, source: 'pricing_section' });
-  document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+  openChannelDialog();
 }
 
-function getSelectedChannel() {
-  var radios = document.querySelectorAll('input[name="channel"]');
-  for (var i = 0; i < radios.length; i++) {
-    if (radios[i].checked) return radios[i].value;
-  }
-  return null;
-}
-
-function getSelectedOrders() {
-  var radios = document.querySelectorAll('input[name="orders"]');
-  for (var i = 0; i < radios.length; i++) {
-    if (radios[i].checked) return radios[i].value;
-  }
-  return null;
-}
-
-// Pill selection highlight — scoped per group to avoid cross-group deselection
 document.addEventListener('DOMContentLoaded', function() {
   // Hide nav CTA while hero CTA is visible; reveal on scroll past
   (function() {
@@ -1102,89 +1099,8 @@ document.addEventListener('DOMContentLoaded', function() {
       navBtn.classList.toggle('nav-cta-hidden', entries[0].isIntersecting);
     }, { threshold: 0 }).observe(heroCta);
   })();
-
-  ['channel-group', 'orders-group'].forEach(function(groupId) {
-    var group = document.getElementById(groupId);
-    if (!group) return;
-    var pills = group.querySelectorAll('.pill-opt');
-    pills.forEach(function(pill) {
-      pill.addEventListener('click', function() {
-        pills.forEach(function(p) { p.classList.remove('selected'); });
-        pill.classList.add('selected');
-        var errorId = groupId === 'channel-group' ? 'channel-error' : 'orders-error';
-        document.getElementById(errorId).style.display = 'none';
-      });
-    });
-  });
 });
 
-function submitFakeDoor() {
-  var emailInput = document.getElementById('f-email');
-  var phoneInput = document.getElementById('f-phone');
-  var emailError = document.getElementById('email-error');
-  var phoneError = document.getElementById('phone-error');
-  var channelError = document.getElementById('channel-error');
-  var ordersError = document.getElementById('orders-error');
-  var email = emailInput.value.trim();
-  var phone = phoneInput.value.trim();
-  var channel = getSelectedChannel();
-  var orders = getSelectedOrders();
-  var valid = true;
-
-  // Validate email
-  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email || !emailRe.test(email)) {
-    emailInput.classList.add('error');
-    emailError.style.display = 'block';
-    valid = false;
-  } else {
-    emailInput.classList.remove('error');
-    emailError.style.display = 'none';
-  }
-
-  // Validate phone — Nigerian formats: 08xx, 07xx, 09xx, +234xx, 234xx
-  var phoneRe = /^(\+?234|0)[789]\d{9}$/;
-  var phoneClean = phone.replace(/[\s\-()]/g, '');
-  if (!phoneClean || !phoneRe.test(phoneClean)) {
-    phoneInput.classList.add('error');
-    phoneError.style.display = 'block';
-    valid = false;
-  } else {
-    phoneInput.classList.remove('error');
-    phoneError.style.display = 'none';
-  }
-
-  // Validate channel
-  if (!channel) {
-    channelError.style.display = 'block';
-    valid = false;
-  } else {
-    channelError.style.display = 'none';
-  }
-
-  // Validate orders
-  if (!orders) {
-    ordersError.style.display = 'block';
-    valid = false;
-  } else {
-    ordersError.style.display = 'none';
-  }
-
-  if (!valid) return;
-
-  posthog.identify(email, { email: email, phone: phone, plan: selectedPlan, channel: channel, orders_per_week: orders, variant: currentVariant });
-  posthog.capture('signup_submitted', {
-    email: email,
-    phone: phone,
-    plan: selectedPlan,
-    plan_selected: selectedPlan !== null,
-    channel: channel,
-    orders_per_week: orders,
-    variant: currentVariant
-  });
-
-  window.location.href = 'thank-you.html';
-}
 
 function toggleFaq(btn) {
   var item = btn.parentElement;
@@ -1195,7 +1111,7 @@ function toggleFaq(btn) {
 
 function talkToSales() {
   posthog.capture('talk_to_sales_clicked', { variant: currentVariant });
-  var wa = 'https://wa.me/234XXXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20the%20pamelo.trade%20Custom%20plan';
+  var wa = 'https://wa.me/2349038501677?text=Hi%2C%20I%27m%20interested%20in%20the%20pamelo.trade%20Custom%20plan';
   window.open(wa, '_blank');
 }
 
