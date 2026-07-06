@@ -1,1221 +1,2831 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="facebook-domain-verification" content="fcjfdj2oxkcmycwk8sutja0okvmn87"/>
-<title>pamelo.trade — Your DMs, finally organised</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='80' height='80' rx='22' fill='url(%23g)'/%3E%3Cpath d='M26 56 L26 24' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M26 24 Q26 18 32 18 L44 18 Q54 18 54 30 Q54 42 44 42 L26 42' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='54' cy='56' r='5' fill='%23C4A8E8'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='80' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0%25' stop-color='%234C35A0'/%3E%3Cstop offset='100%25' stop-color='%232D1B69'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"/>
-<script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Mi Ri init Vi Gi Rr Wi Ji Bi capture calculateEventProperties tn register register_once register_for_session unregister unregister_for_session an getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync un identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty nn Xi createPersonProfile setInternalOrTestUser sn Hi cn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Ki debug Lr rn getPageViewId captureTraceFeedback captureTraceMetric Di".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_ng3upxZMU2Dz4sevUyjMyvbikSTT7MBUpfBkD4MJZfsY', {
-        api_host: 'https://pamelo-atl.pamelo.trade',
-        ui_host: 'https://us.posthog.com',
-        defaults: '2026-01-30',
-        person_profiles: 'identified_only',
-    })
-</script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2579396672508135');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2579396672508135&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"/></noscript>
-<style>
-:root{
-  --ff-display:'Cormorant Garamond',serif;--ff-body:'DM Sans',sans-serif;
-  --ink:#0D0D1C;--ink2:#50507A;--ink3:#9898B8;
-  --p:#7C5CFC;--p-dk:#6344e0;--p-lt:#F2EFFE;--p-bd:#DDD5FD;--white:#fff;
-  --grn:#12B76A;--grn-lt:#ECFDF5;--grn-bd:#A6F4C5;
-  --amb:#F59E0B;--amb-lt:#FFFBEB;
-  --red:#F04438;--red-lt:#FEF3F2;
-  --bg:#F8F8FC;--bd:#E8E8F0;
-  --r:12px;--rsm:8px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
-svg{display:block}
-.w{max-width:500px;margin:0 auto;padding:0 22px}
-.div{height:1px;background:var(--bd);margin:0 22px}
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="facebook-domain-verification" content="fcjfdj2oxkcmycwk8sutja0okvmn87" />
+	<title>pamelo.trade — Your DMs, finally organised</title>
+	<link rel="icon" type="image/svg+xml"
+		href="data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='80' height='80' rx='22' fill='url(%23g)'/%3E%3Cpath d='M26 56 L26 24' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M26 24 Q26 18 32 18 L44 18 Q54 18 54 30 Q54 42 44 42 L26 42' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='54' cy='56' r='5' fill='%23C4A8E8'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='80' y2='80' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0%25' stop-color='%234C35A0'/%3E%3Cstop offset='100%25' stop-color='%232D1B69'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E" />
+	<script>
+		!function (t, e) {var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) {function g(t, e) {var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () {t.push([e].concat(Array.prototype.slice.call(arguments, 0)))}} (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) {var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e}, u.people.toString = function () {return u.toString(1) + ".people (stub)"}, o = "Mi Ri init Vi Gi Rr Wi Ji Bi capture calculateEventProperties tn register register_once register_for_session unregister unregister_for_session an getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync un identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty nn Xi createPersonProfile setInternalOrTestUser sn Hi cn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Ki debug Lr rn getPageViewId captureTraceFeedback captureTraceMetric Di".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a])}, e.__SV = 1)}(document, window.posthog || []);
+		posthog.init('phc_ng3upxZMU2Dz4sevUyjMyvbikSTT7MBUpfBkD4MJZfsY', {
+			api_host: 'https://pamelo-atl.pamelo.trade',
+			ui_host: 'https://us.posthog.com',
+			defaults: '2026-01-30',
+			person_profiles: 'identified_only',
+		})
+	</script>
+	<!-- Meta Pixel Code -->
+	<script>
+		!function (f, b, e, v, n, t, s) {
+			if (f.fbq) return; n = f.fbq = function () {
+				n.callMethod ?
+				n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+			n.queue = []; t = b.createElement(e); t.async = !0;
+			t.src = v; s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '2579396672508135');
+		fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=2579396672508135&ev=PageView&noscript=1" /></noscript>
+	<!-- End Meta Pixel Code -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preload" as="style"
+		href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+		onload="this.onload=null;this.rel='stylesheet'" />
+	<noscript>
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" />
+	</noscript>
+	<style>
+		:root {
+			--ff-display: 'Cormorant Garamond', serif;
+			--ff-body: 'DM Sans', sans-serif;
+			--ink: #0D0D1C;
+			--ink2: #50507A;
+			--ink3: #9898B8;
+			--p: #7C5CFC;
+			--p-dk: #6344e0;
+			--p-lt: #F2EFFE;
+			--p-bd: #DDD5FD;
+			--white: #fff;
+			--grn: #12B76A;
+			--grn-lt: #ECFDF5;
+			--grn-bd: #A6F4C5;
+			--amb: #F59E0B;
+			--amb-lt: #FFFBEB;
+			--red: #F04438;
+			--red-lt: #FEF3F2;
+			--bg: #F8F8FC;
+			--bd: #E8E8F0;
+			--r: 12px;
+			--rsm: 8px;
+		}
 
-/* NAV */
-.nav-shell{border-bottom:1px solid var(--bd);background:var(--white);position:sticky;top:0;z-index:50}
-.nav{max-width:500px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logomark{display:flex;align-items:center;gap:8px;min-width:0;flex-shrink:1}
-.logotype{font-family:var(--ff-display);font-size:18px;font-weight:300;letter-spacing:-0.5px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.logotype em{font-style:italic;color:var(--p)}
-.btn-nav{background:var(--p);color:#fff;border:none;border-radius:var(--rsm);padding:9px 16px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s;white-space:nowrap;flex-shrink:0}
-.btn-nav:hover{background:var(--p-dk)}
-#nav-cta{transition:opacity .2s,visibility .2s}
-#nav-cta.nav-cta-hidden{opacity:0;visibility:hidden}
-@media(max-width:360px){
-  .logotype{font-size:14px}
-  .btn-nav{padding:8px 12px;font-size:12px}
-}
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0
+		}
 
-/* HERO */
-.hero{padding:56px 22px 52px;max-width:500px;margin:0 auto}
-.pill{display:inline-flex;align-items:center;gap:6px;background:var(--p-lt);border:1px solid var(--p-bd);color:var(--p-dk);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:22px}
-.pill-dot{width:6px;height:6px;border-radius:50%;background:var(--p);animation:blink 2s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-.h1{font-size:clamp(30px,8vw,40px);font-weight:800;line-height:1.1;letter-spacing:-1.2px;color:var(--ink);margin-bottom:16px}
-.h1 em{font-style:normal;color:var(--p)}
-.hero-sub{font-size:16px;color:var(--ink2);line-height:1.7;margin-bottom:36px;max-width:420px}
+		html {
+			scroll-behavior: smooth;
+			-webkit-text-size-adjust: 100%
+		}
 
-/* FORM CARD */
-.form-card{background:var(--bg);border:1.5px solid var(--bd);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:14px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{font-size:12px;font-weight:700;color:var(--ink2);letter-spacing:.01em}
-.field input{height:46px;border:1.5px solid var(--bd);border-radius:var(--rsm);padding:0 14px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;transition:border-color .15s;background:var(--white)}
-.field input:focus{border-color:var(--p);background:var(--white)}
-.field input::placeholder{color:var(--ink3)}
-.opt-label{font-size:11px;color:var(--ink3);font-weight:400;margin-left:3px}
-.btn-cta{min-height:48px;height:auto;background:var(--p);color:#fff;border:none;border-radius:var(--rsm);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s,transform .1s;width:100%;padding:13px 20px;line-height:1.3;white-space:normal;text-align:center}
-.btn-cta:hover{background:var(--p-dk)}
-.btn-cta:active{transform:scale(.99)}
-.form-note{display:flex;align-items:center;justify-content:center;gap:5px;font-size:12px;color:var(--ink3)}
-.success-box{display:none;background:var(--grn-lt);border:1.5px solid var(--grn-bd);border-radius:var(--rsm);padding:14px 16px;font-size:14px;color:#065F46;text-align:center;line-height:1.5}
+		body {
+			font-family: 'DM Sans', sans-serif;
+			font-size: 15px;
+			line-height: 1.6;
+			color: var(--ink);
+			background: var(--white);
+			-webkit-font-smoothing: antialiased
+		}
 
-/* PROOF */
-.proof{padding:20px 22px;max-width:500px;margin:0 auto;display:flex;align-items:center;gap:12px}
-.avs{display:flex}
-.av{width:27px;height:27px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;margin-left:-7px;flex-shrink:0}
-.av:first-child{margin-left:0}
-.proof-t{font-size:13px;color:var(--ink2);line-height:1.45}
-.proof-t b{color:var(--ink);font-weight:700}
+		svg {
+			display: block
+		}
 
-/* SECTIONS */
-.sec{padding:52px 22px;max-width:500px;margin:0 auto}
-.sec-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--p);margin-bottom:10px}
-.h2{font-size:23px;font-weight:800;letter-spacing:-.6px;color:var(--ink);line-height:1.2;margin-bottom:10px}
-.sec-sub{font-size:15px;color:var(--ink2);line-height:1.7}
+		.w {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 0 22px
+		}
 
-/* FAQ ACCORDION */
-.faq-list{border:1.5px solid var(--bd);border-radius:var(--r);overflow:hidden;margin-top:16px}
-.faq-item{border-bottom:1px solid var(--bd)}
-.faq-item:last-child{border-bottom:none}
-.faq-q{width:100%;background:none;border:none;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--ink);text-align:left;line-height:1.4}
-.faq-q:hover{background:var(--bg)}
-.faq-chevron{flex-shrink:0;transition:transform .25s ease;color:var(--ink3)}
-.faq-item.open .faq-chevron{transform:rotate(180deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
-.faq-item.open .faq-a{max-height:200px}
-.faq-a-inner{padding:0 18px 16px;font-size:14px;color:var(--ink2);line-height:1.65}
+		.div {
+			height: 1px;
+			background: var(--bd);
+			margin: 0 22px
+		}
 
-/* PAIN GRID */
-.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
-.pain-card{background:var(--white);border:1px solid var(--bd);border-radius:var(--r);padding:18px}
-.pain-ico{width:36px;height:36px;border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.pain-card h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px}
-.pain-card p{font-size:12px;color:var(--ink2);line-height:1.6}
+		/* NAV */
+		.nav-shell {
+			border-bottom: 1px solid var(--bd);
+			background: var(--white);
+			position: sticky;
+			top: 0;
+			z-index: 50
+		}
 
-/* CHANNEL CARDS */
-.ch-list{display:flex;flex-direction:column;gap:10px;margin-top:26px}
-.ch-card{background:var(--white);border:1px solid var(--bd);border-radius:var(--r);padding:20px;display:flex;gap:14px;align-items:flex-start}
-.ch-ico{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ch-body h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.ch-body p{font-size:13px;color:var(--ink2);line-height:1.6}
-.ch-tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;margin-top:8px;background:var(--grn-lt);color:#065F46}
+		.nav {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 12px 16px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 12px
+		}
 
-/* STEPS */
-.steps{margin-top:26px;display:flex;flex-direction:column}
-.step{display:flex;gap:14px;padding-bottom:26px;position:relative}
-.step:last-child{padding-bottom:0}
-.step-rail{position:absolute;left:13px;top:30px;bottom:0;width:1px;background:var(--bd)}
-.step:last-child .step-rail{display:none}
-.step-num{width:27px;height:27px;border-radius:50%;background:var(--p-lt);border:1.5px solid var(--p-bd);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--p);flex-shrink:0;position:relative;z-index:1}
-.step-body{padding-top:2px}
-.step-body h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.step-body p{font-size:13px;color:var(--ink2);line-height:1.6}
+		.logomark {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			min-width: 0;
+			flex-shrink: 1
+		}
 
-/* QUOTE */
-.quote-shell{padding:0 22px 52px;max-width:500px;margin:0 auto}
-.quote-card{background:var(--p-lt);border:1px solid var(--p-bd);border-radius:var(--r);padding:24px}
-.quote-text{font-size:15px;color:#3B2A8A;line-height:1.7;margin-bottom:18px}
-.q-row{display:flex;align-items:center;gap:12px}
-.q-av{width:38px;height:38px;border-radius:50%;background:var(--p);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
-.q-name{font-size:13px;font-weight:700;color:var(--ink)}
-.q-role{font-size:12px;color:var(--ink3)}
+		.logotype {
+			font-family: var(--ff-display);
+			font-size: 18px;
+			font-weight: 300;
+			letter-spacing: -0.5px;
+			color: var(--ink);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis
+		}
 
-/* PRICING */
-.pricing-shell{background:var(--bg);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
-.plans{display:flex;flex-direction:column;gap:16px;margin-top:26px}
-.plan{background:var(--white);border:1.5px solid var(--bd);border-radius:var(--r);padding:24px;position:relative}
-.plan.hi{border-color:var(--p)}
-.plan.dim{background:var(--bg)}
-.best-tag{position:absolute;top:-11px;left:18px;background:var(--p);color:#fff;font-size:11px;font-weight:700;padding:3px 11px;border-radius:20px}
-.plan-tier{font-size:12px;font-weight:700;color:var(--ink3);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
-.plan-price{font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-1px;line-height:1}
-.plan-price-note{font-size:12px;color:var(--ink3);margin-top:3px}
-.plan-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;margin:10px 0 18px;white-space:nowrap}
-@media(max-width:639px){.plan-tag{white-space:normal;display:block;border-radius:var(--rsm);padding:6px 10px;text-align:center}}
-.tag-grn{background:var(--grn-lt);color:#065F46}
-.tag-purple{background:var(--p-lt);color:var(--p-dk)}
-.tag-dim{background:var(--bd);color:var(--ink2)}
-.feat-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
-.feat-list li{font-size:13px;color:var(--ink);display:flex;align-items:flex-start;gap:9px;line-height:1.45}
-.feat-list li svg{flex-shrink:0;margin-top:2px}
-.feat-list .dim-feat{color:var(--ink2)}
-.plan-btn{width:100%;height:44px;border-radius:var(--rsm);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;letter-spacing:-.1px}
-.b-out{background:var(--white);color:var(--p);border:1.5px solid var(--p)}
-.b-out:hover{background:var(--p-lt)}
-.b-fill{background:var(--p);color:#fff;border:none}
-.b-fill:hover{background:var(--p-dk)}
-.b-ghost{background:var(--white);color:var(--ink2);border:1.5px solid var(--bd)}
-.b-ghost:hover{background:var(--bg);border-color:var(--ink3)}
-.plan-foot{font-size:11px;color:var(--ink3);margin-top:10px;line-height:1.5}
-.pricing-note{font-size:12px;color:var(--ink3);margin-top:16px;text-align:center}
+		.logotype em {
+			font-style: italic;
+			color: var(--p)
+		}
 
-/* FINAL */
-.final{padding:56px 22px 68px;max-width:500px;margin:0 auto;text-align:center}
-.final .h2{margin-bottom:10px}
-.final .sec-sub{margin-bottom:30px}
-.final-form-wrap{max-width:400px;margin:0 auto}
+		.btn-nav {
+			background: var(--p);
+			color: #fff;
+			border: none;
+			border-radius: var(--rsm);
+			padding: 9px 16px;
+			font-family: inherit;
+			font-size: 13px;
+			font-weight: 600;
+			cursor: pointer;
+			transition: background .15s;
+			white-space: nowrap;
+			flex-shrink: 0
+		}
 
-/* FOOTER */
-footer{border-top:1px solid var(--bd);padding:24px 22px;max-width:500px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
-.foot-logo{display:flex;align-items:center;gap:8px}
-.foot-type{font-size:14px;font-weight:800;color:var(--ink);letter-spacing:-.3px}
-.foot-type span{color:var(--p)}
-footer small{font-size:12px;color:var(--ink3)}
-.foot-links{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
-.foot-links a{font-size:12px;color:var(--ink3);text-decoration:none;transition:color .15s}
-.foot-links a:hover{color:var(--ink)}
+		.btn-nav:hover {
+			background: var(--p-dk)
+		}
 
-/* check icon shorthand */
-.ck-grn{display:inline-block}
-.ck-p{display:inline-block}
+		#nav-cta {
+			transition: opacity .2s, visibility .2s
+		}
 
-/* FULL-BLEED SECTION (how-it-works, etc.) */
-.sec-full{background:var(--bg);max-width:100%;padding:52px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+		#nav-cta.nav-cta-hidden {
+			opacity: 0;
+			visibility: hidden
+		}
 
-/* NEW BADGE */
-.new-badge{display:inline-block;background:var(--amb-lt);color:#92400e;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle;margin-left:6px;white-space:nowrap}
+		@media(max-width:360px) {
+			.logotype {
+				font-size: 14px
+			}
 
-/* PARTNERS SECTION */
-.partners-section{background:var(--ink);padding:52px 0}
-.partners-section .sec-label{color:rgba(255,255,255,0.4)}
-.partners-section .h2{color:var(--white)}
-.partners-section .sec-sub{color:rgba(255,255,255,0.5)}
-.partner-cards{display:flex;flex-direction:column;gap:14px;margin-top:28px}
-.partner-card-dark{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r);padding:24px}
-.partner-avatar{width:44px;height:44px;border-radius:50%;background:var(--p);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;margin-bottom:18px;flex-shrink:0}
-.partner-quote-text{font-family:var(--ff-display);font-size:16px;font-style:italic;font-weight:400;line-height:1.65;color:var(--white);margin-bottom:18px}
-.partner-name-dark{font-size:13px;font-weight:700;color:var(--white)}
-.partner-role-dark{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
-.partner-ig-link{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:var(--grn-bd);font-size:12px;font-weight:500;text-decoration:none}
-.partner-ig-link:hover{opacity:.7}
+			.btn-nav {
+				padding: 8px 12px;
+				font-size: 12px
+			}
+		}
 
-/* SCENARIO SECTION */
-.scenario-text{font-family:var(--ff-display);font-size:clamp(18px,3.5vw,26px);font-style:italic;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.85);margin:22px 0 40px}
-.scenario-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:40px}
-.scenario-stat{padding-left:16px;border-left:1px solid rgba(255,255,255,0.1)}
-.scenario-stat:first-child{padding-left:0;border-left:none}
-.stat-num{display:block;font-size:clamp(28px,7vw,56px);font-weight:800;color:#86efac;line-height:1;letter-spacing:-1px;margin-bottom:6px}
-.stat-desc{display:block;font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5}
-.scenario-util{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.8;border-top:1px solid rgba(255,255,255,0.1);padding-top:28px}
-@media(min-width:640px){
-  .scenario-stat{padding-left:32px}
-  .stat-desc{font-size:13px}
-}
+		/* HERO */
+		.hero {
+			padding: 56px 22px 52px;
+			max-width: 500px;
+			margin: 0 auto
+		}
 
-/* PRIVACY SECTION */
-.privacy-section{background:var(--p-lt);border-top:1px solid var(--p-bd);border-bottom:1px solid var(--p-bd);padding:52px 0}
-.privacy-section .sec-label{color:var(--p-dk)}
-.privacy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
-.priv-item h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px}
-.priv-item p{font-size:12px;color:var(--ink2);line-height:1.6}
-.priv-icon-wrap{width:38px;height:38px;background:var(--white);border:1px solid var(--p-bd);border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
-.privacy-email{font-size:13px;color:var(--ink2);margin-top:28px}
-.privacy-email a{color:var(--p);text-decoration:none}
-.privacy-email a:hover{text-decoration:underline}
+		.pill {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			background: var(--p-lt);
+			border: 1px solid var(--p-bd);
+			color: var(--p-dk);
+			font-size: 12px;
+			font-weight: 600;
+			padding: 4px 12px;
+			border-radius: 20px;
+			margin-bottom: 22px
+		}
 
-/* RESPONSIVE — tablet ≥640px */
-@media(min-width:640px){
-  .w,.nav,.hero,.sec,.proof,.quote-shell,.final{max-width:660px}
-  footer{max-width:660px}
-  .w{padding:0 36px}
-  .nav{padding:14px 28px}
-  .hero{padding:72px 36px 64px}
-  .sec{padding:64px 36px}
-  .final{padding:72px 36px 80px}
-  .quote-shell{padding:0 36px 64px}
-  .proof{padding:24px 36px}
-  .div{margin:0 36px}
-  .h1{font-size:clamp(36px,6vw,46px)}
-  .h2{font-size:26px}
-  .hero-sub{font-size:17px}
-  .final-form-wrap{max-width:480px}
-  .pain-grid{grid-template-columns:repeat(3,1fr)}
-  /* Full-bleed sections scale */
-  .sec-full{padding:64px 0}
-  .partners-section{padding:64px 0}
-  .privacy-section{padding:64px 0}
-  /* Partners cards side by side */
-  .partner-cards{flex-direction:row}
-  .partner-card-dark{flex:1}
-  /* Privacy grid 4 cols */
-  .privacy-grid{grid-template-columns:repeat(4,1fr)}
-}
+		.pill-dot {
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: var(--p);
+			animation: blink 2s ease-in-out infinite
+		}
 
-/* RESPONSIVE — desktop ≥1024px */
-@media(min-width:1024px){
-  .w,.nav,.hero,.sec,.proof,.quote-shell,.final{max-width:920px}
-  footer{max-width:920px}
-  .w{padding:0 48px}
-  .nav{padding:16px 48px}
-  .hero{padding:100px 48px 80px}
-  .sec{padding:80px 48px}
-  .final{padding:96px 48px 96px}
-  .quote-shell{padding:0 48px 80px}
-  .proof{padding:28px 48px}
-  .div{margin:0 48px}
-  .h1{font-size:clamp(42px,5vw,58px)}
-  .h2{font-size:32px}
-  .hero-sub{font-size:18px;max-width:640px}
-  /* Pain grid: 3 columns */
-  .pain-grid{grid-template-columns:repeat(3,1fr)}
-  /* Channel cards: side by side */
-  .ch-list{flex-direction:row}
-  .ch-card{flex:1}
-  /* Pricing: side by side */
-  .plans{flex-direction:row;flex-wrap:wrap;gap:16px}
-  .plan{flex:1;min-width:280px}
-  /* Form */
-  .final-form-wrap{max-width:560px}
-  /* Full-bleed sections scale */
-  .sec-full{padding:80px 0}
-  .partners-section{padding:80px 0}
-  .privacy-section{padding:80px 0}
-  /* Partners cards side by side */
-  .partner-cards{flex-direction:row}
-  .partner-card-dark{flex:1}
-  /* Privacy grid 4 cols */
-  .privacy-grid{grid-template-columns:repeat(4,1fr)}
-}
+		@keyframes blink {
 
-/* FEATURE GRID */
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
-.feat-tile{background:var(--white);border:1px solid var(--bd);border-radius:var(--r);padding:18px}
-.feat-ico{width:36px;height:36px;border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
-.feat-tile h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.35}
-.feat-tile p{font-size:12px;color:var(--ink2);line-height:1.6}
-@media(min-width:640px){.feat-grid{grid-template-columns:repeat(3,1fr)}}
+			0%,
+			100% {
+				opacity: 1
+			}
 
-/* FEATURE CAROUSEL — mobile only */
-@media(max-width:639px){
-  .feat-grid{display:flex!important;overflow-x:scroll;scroll-snap-type:x mandatory;scroll-padding-left:22px;gap:12px;margin:26px -22px 0;padding:2px 22px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .feat-grid::-webkit-scrollbar{display:none}
-  .feat-tile{flex:0 0 82vw;max-width:290px;scroll-snap-align:start}
-}
-.feat-dots{display:none;justify-content:center;align-items:center;gap:7px;margin-top:16px}
-@media(max-width:639px){.feat-dots{display:flex}}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--bd);border:none;padding:0;cursor:pointer;transition:width .25s ease,background .25s ease,border-radius .25s ease;flex-shrink:0;-webkit-appearance:none}
-.dot.active{background:var(--p);width:20px;border-radius:3px}
+			50% {
+				opacity: .25
+			}
+		}
 
-/* HERO TRUST STRIP */
-.hero-trust{font-size:12px;color:var(--ink3);line-height:1.9;margin-top:12px}
+		.h1 {
+			font-size: clamp(30px, 8vw, 40px);
+			font-weight: 800;
+			line-height: 1.1;
+			letter-spacing: -1.2px;
+			color: var(--ink);
+			margin-bottom: 16px
+		}
 
-/* CHANNEL DIALOG */
-.dialog-overlay{position:fixed;inset:0;background:rgba(13,13,28,.55);z-index:200;display:flex;align-items:center;justify-content:center;padding:22px;opacity:0;pointer-events:none;transition:opacity .2s}
-.dialog-overlay.open{opacity:1;pointer-events:all}
-.dialog-card{background:#fff;border-radius:var(--r);padding:28px 24px;width:100%;max-width:360px;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.12)}
-.dialog-close{position:absolute;top:14px;right:14px;background:none;border:none;cursor:pointer;color:var(--ink3);padding:4px;line-height:1;font-size:18px}
-.dialog-close:hover{color:var(--ink)}
-.dialog-title{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:6px;letter-spacing:-.4px}
-.dialog-sub{font-size:13px;color:var(--ink2);margin-bottom:20px;line-height:1.55}
-.ch-opt{width:100%;display:flex;align-items:center;gap:14px;border:1.5px solid var(--bd);border-radius:var(--rsm);padding:14px 16px;background:#fff;cursor:pointer;font-family:inherit;margin-bottom:10px;transition:all .15s;text-align:left}
-.ch-opt:last-of-type{margin-bottom:0}
-.ch-opt:hover{border-color:var(--p);background:var(--p-lt)}
-.ch-opt-ico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ch-opt-name{font-size:14px;font-weight:700;color:var(--ink)}
-.ch-opt-hint{font-size:12px;color:var(--ink3);margin-top:2px}
+		.h1 em {
+			font-style: normal;
+			color: var(--p)
+		}
 
-/* CHANNEL PILLS */
-.pill-group{display:flex;gap:8px;flex-wrap:wrap}
-.pill-opt{display:flex;align-items:center;gap:6px;border:1.5px solid var(--bd);border-radius:20px;padding:8px 14px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink2);background:var(--bg);cursor:pointer;transition:all .15s;user-select:none}
-.pill-opt input{display:none}
-.pill-opt.selected{border-color:var(--p);background:var(--p-lt);color:var(--p-dk)}
-.field-error{font-size:11px;color:var(--red);margin-top:4px;display:none}
-.field input.error{border-color:var(--red)}
-.ch-trust{font-size:11px;color:var(--ink3);margin-top:6px}
+		.hero-sub {
+			font-size: 16px;
+			color: var(--ink2);
+			line-height: 1.7;
+			margin-bottom: 36px;
+			max-width: 420px
+		}
 
-/* SKELETON */
-#skel{position:fixed;inset:0;z-index:9999;background:#fff;pointer-events:none}
-.sk{background:linear-gradient(90deg,var(--bd) 25%,#f0f0f8 50%,var(--bd) 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:6px}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-#skel-nav{border-bottom:1px solid var(--bd);padding:12px 22px;display:flex;align-items:center;justify-content:space-between;max-width:500px;margin:0 auto}
-#skel-body{max-width:500px;margin:0 auto;padding:56px 22px 0}
-.sk-h1{height:clamp(33px,8.8vw,44px)}
-.sk-sub{height:27px}
-#skel-div{height:1px;background:var(--bd);margin:0 22px}
-#skel-proof{max-width:500px;margin:0 auto;padding:20px 22px;display:flex;align-items:center;gap:12px}
-#skel-avs{display:flex}
-@media(min-width:640px){
-  #skel-nav{max-width:660px;padding:14px 28px}
-  #skel-body{max-width:660px;padding:72px 36px 0}
-  .sk-h1{height:clamp(40px,6.6vw,51px)}
-  .sk-sub{height:29px}
-  #skel-div{margin:0 36px}
-  #skel-proof{max-width:660px;padding:24px 36px}
-}
-@media(min-width:1024px){
-  #skel-nav{max-width:920px;padding:16px 48px}
-  #skel-body{max-width:920px;padding:100px 48px 0}
-  .sk-h1{height:clamp(46px,5.5vw,64px)}
-  .sk-sub{height:31px}
-  #skel-div{margin:0 48px}
-  #skel-proof{max-width:920px;padding:28px 48px}
-}
-</style>
+		/* FORM CARD */
+		.form-card {
+			background: var(--bg);
+			border: 1.5px solid var(--bd);
+			border-radius: var(--r);
+			padding: 22px;
+			display: flex;
+			flex-direction: column;
+			gap: 14px
+		}
+
+		.field {
+			display: flex;
+			flex-direction: column;
+			gap: 6px
+		}
+
+		.field label {
+			font-size: 12px;
+			font-weight: 700;
+			color: var(--ink2);
+			letter-spacing: .01em
+		}
+
+		.field input {
+			height: 46px;
+			border: 1.5px solid var(--bd);
+			border-radius: var(--rsm);
+			padding: 0 14px;
+			font-family: inherit;
+			font-size: 14px;
+			color: var(--ink);
+			outline: none;
+			transition: border-color .15s;
+			background: var(--white)
+		}
+
+		.field input:focus {
+			border-color: var(--p);
+			background: var(--white)
+		}
+
+		.field input::placeholder {
+			color: var(--ink3)
+		}
+
+		.opt-label {
+			font-size: 11px;
+			color: var(--ink3);
+			font-weight: 400;
+			margin-left: 3px
+		}
+
+		.btn-cta {
+			min-height: 48px;
+			height: auto;
+			background: var(--p);
+			color: #fff;
+			border: none;
+			border-radius: var(--rsm);
+			font-family: inherit;
+			font-size: 15px;
+			font-weight: 700;
+			cursor: pointer;
+			transition: background .15s, transform .1s;
+			width: 100%;
+			padding: 13px 20px;
+			line-height: 1.3;
+			white-space: normal;
+			text-align: center
+		}
+
+		.btn-cta:hover {
+			background: var(--p-dk)
+		}
+
+		.btn-cta:active {
+			transform: scale(.99)
+		}
+
+		.form-note {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 5px;
+			font-size: 12px;
+			color: var(--ink3)
+		}
+
+		.success-box {
+			display: none;
+			background: var(--grn-lt);
+			border: 1.5px solid var(--grn-bd);
+			border-radius: var(--rsm);
+			padding: 14px 16px;
+			font-size: 14px;
+			color: #065F46;
+			text-align: center;
+			line-height: 1.5
+		}
+
+		/* PROOF */
+		.proof {
+			padding: 20px 22px;
+			max-width: 500px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			gap: 12px
+		}
+
+		.avs {
+			display: flex
+		}
+
+		.av {
+			width: 27px;
+			height: 27px;
+			border-radius: 50%;
+			border: 2px solid #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 9px;
+			font-weight: 800;
+			color: #fff;
+			margin-left: -7px;
+			flex-shrink: 0
+		}
+
+		.av:first-child {
+			margin-left: 0
+		}
+
+		.proof-t {
+			font-size: 13px;
+			color: var(--ink2);
+			line-height: 1.45
+		}
+
+		.proof-t b {
+			color: var(--ink);
+			font-weight: 700
+		}
+
+		/* SECTIONS */
+		.sec {
+			padding: 52px 22px;
+			max-width: 500px;
+			margin: 0 auto
+		}
+
+		.sec-label {
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: .08em;
+			text-transform: uppercase;
+			color: var(--p);
+			margin-bottom: 10px
+		}
+
+		.h2 {
+			font-size: 23px;
+			font-weight: 800;
+			letter-spacing: -.6px;
+			color: var(--ink);
+			line-height: 1.2;
+			margin-bottom: 10px
+		}
+
+		.sec-sub {
+			font-size: 15px;
+			color: var(--ink2);
+			line-height: 1.7
+		}
+
+		/* FAQ ACCORDION */
+		.faq-list {
+			border: 1.5px solid var(--bd);
+			border-radius: var(--r);
+			overflow: hidden;
+			margin-top: 16px
+		}
+
+		.faq-item {
+			border-bottom: 1px solid var(--bd)
+		}
+
+		.faq-item:last-child {
+			border-bottom: none
+		}
+
+		.faq-q {
+			width: 100%;
+			background: none;
+			border: none;
+			padding: 16px 18px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 12px;
+			cursor: pointer;
+			font-family: inherit;
+			font-size: 14px;
+			font-weight: 600;
+			color: var(--ink);
+			text-align: left;
+			line-height: 1.4
+		}
+
+		.faq-q:hover {
+			background: var(--bg)
+		}
+
+		.faq-chevron {
+			flex-shrink: 0;
+			transition: transform .25s ease;
+			color: var(--ink3)
+		}
+
+		.faq-item.open .faq-chevron {
+			transform: rotate(180deg)
+		}
+
+		.faq-a {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height .3s ease, padding .3s ease
+		}
+
+		.faq-item.open .faq-a {
+			max-height: 200px
+		}
+
+		.faq-a-inner {
+			padding: 0 18px 16px;
+			font-size: 14px;
+			color: var(--ink2);
+			line-height: 1.65
+		}
+
+		/* PAIN GRID */
+		.pain-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 10px;
+			margin-top: 26px
+		}
+
+		.pain-card {
+			background: var(--white);
+			border: 1px solid var(--bd);
+			border-radius: var(--r);
+			padding: 18px
+		}
+
+		.pain-ico {
+			width: 36px;
+			height: 36px;
+			border-radius: var(--rsm);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 14px
+		}
+
+		.pain-card h4 {
+			font-size: 13px;
+			font-weight: 700;
+			color: var(--ink);
+			margin-bottom: 5px
+		}
+
+		.pain-card p {
+			font-size: 12px;
+			color: var(--ink2);
+			line-height: 1.6
+		}
+
+		/* CHANNEL CARDS */
+		.ch-list {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			margin-top: 26px
+		}
+
+		.ch-card {
+			background: var(--white);
+			border: 1px solid var(--bd);
+			border-radius: var(--r);
+			padding: 20px;
+			display: flex;
+			gap: 14px;
+			align-items: flex-start
+		}
+
+		.ch-ico {
+			width: 42px;
+			height: 42px;
+			border-radius: 11px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0
+		}
+
+		.ch-body h4 {
+			font-size: 14px;
+			font-weight: 700;
+			color: var(--ink);
+			margin-bottom: 4px
+		}
+
+		.ch-body p {
+			font-size: 13px;
+			color: var(--ink2);
+			line-height: 1.6
+		}
+
+		.ch-tag {
+			display: inline-block;
+			font-size: 11px;
+			font-weight: 600;
+			padding: 2px 9px;
+			border-radius: 20px;
+			margin-top: 8px;
+			background: var(--grn-lt);
+			color: #065F46
+		}
+
+		/* STEPS */
+		.steps {
+			margin-top: 26px;
+			display: flex;
+			flex-direction: column
+		}
+
+		.step {
+			display: flex;
+			gap: 14px;
+			padding-bottom: 26px;
+			position: relative
+		}
+
+		.step:last-child {
+			padding-bottom: 0
+		}
+
+		.step-rail {
+			position: absolute;
+			left: 13px;
+			top: 30px;
+			bottom: 0;
+			width: 1px;
+			background: var(--bd)
+		}
+
+		.step:last-child .step-rail {
+			display: none
+		}
+
+		.step-num {
+			width: 27px;
+			height: 27px;
+			border-radius: 50%;
+			background: var(--p-lt);
+			border: 1.5px solid var(--p-bd);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			font-weight: 800;
+			color: var(--p);
+			flex-shrink: 0;
+			position: relative;
+			z-index: 1
+		}
+
+		.step-body {
+			padding-top: 2px
+		}
+
+		.step-body h4 {
+			font-size: 14px;
+			font-weight: 700;
+			color: var(--ink);
+			margin-bottom: 4px
+		}
+
+		.step-body p {
+			font-size: 13px;
+			color: var(--ink2);
+			line-height: 1.6
+		}
+
+		/* QUOTE */
+		.quote-shell {
+			padding: 0 22px 52px;
+			max-width: 500px;
+			margin: 0 auto
+		}
+
+		.quote-card {
+			background: var(--p-lt);
+			border: 1px solid var(--p-bd);
+			border-radius: var(--r);
+			padding: 24px
+		}
+
+		.quote-text {
+			font-size: 15px;
+			color: #3B2A8A;
+			line-height: 1.7;
+			margin-bottom: 18px
+		}
+
+		.q-row {
+			display: flex;
+			align-items: center;
+			gap: 12px
+		}
+
+		.q-av {
+			width: 38px;
+			height: 38px;
+			border-radius: 50%;
+			background: var(--p);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			font-weight: 800;
+			color: #fff;
+			flex-shrink: 0
+		}
+
+		.q-name {
+			font-size: 13px;
+			font-weight: 700;
+			color: var(--ink)
+		}
+
+		.q-role {
+			font-size: 12px;
+			color: var(--ink3)
+		}
+
+		/* PRICING */
+		.pricing-shell {
+			background: var(--bg);
+			border-top: 1px solid var(--bd);
+			border-bottom: 1px solid var(--bd)
+		}
+
+		.plans {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			margin-top: 26px
+		}
+
+		.plan {
+			background: var(--white);
+			border: 1.5px solid var(--bd);
+			border-radius: var(--r);
+			padding: 24px;
+			position: relative
+		}
+
+		.plan.hi {
+			border-color: var(--p)
+		}
+
+		.plan.dim {
+			background: var(--bg)
+		}
+
+		.best-tag {
+			position: absolute;
+			top: -11px;
+			left: 18px;
+			background: var(--p);
+			color: #fff;
+			font-size: 11px;
+			font-weight: 700;
+			padding: 3px 11px;
+			border-radius: 20px
+		}
+
+		.plan-tier {
+			font-size: 12px;
+			font-weight: 700;
+			color: var(--ink3);
+			letter-spacing: .04em;
+			text-transform: uppercase;
+			margin-bottom: 6px
+		}
+
+		.plan-price {
+			font-size: 32px;
+			font-weight: 800;
+			color: var(--ink);
+			letter-spacing: -1px;
+			line-height: 1
+		}
+
+		.plan-price-note {
+			font-size: 12px;
+			color: var(--ink3);
+			margin-top: 3px
+		}
+
+		.plan-tag {
+			display: inline-block;
+			font-size: 11px;
+			font-weight: 600;
+			padding: 3px 9px;
+			border-radius: 20px;
+			margin: 10px 0 18px;
+			white-space: nowrap
+		}
+
+		@media(max-width:639px) {
+			.plan-tag {
+				white-space: normal;
+				display: block;
+				border-radius: var(--rsm);
+				padding: 6px 10px;
+				text-align: center
+			}
+		}
+
+		.tag-grn {
+			background: var(--grn-lt);
+			color: #065F46
+		}
+
+		.tag-purple {
+			background: var(--p-lt);
+			color: var(--p-dk)
+		}
+
+		.tag-dim {
+			background: var(--bd);
+			color: var(--ink2)
+		}
+
+		.feat-list {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			gap: 9px;
+			margin-bottom: 20px
+		}
+
+		.feat-list li {
+			font-size: 13px;
+			color: var(--ink);
+			display: flex;
+			align-items: flex-start;
+			gap: 9px;
+			line-height: 1.45
+		}
+
+		.feat-list li svg {
+			flex-shrink: 0;
+			margin-top: 2px
+		}
+
+		.feat-list .dim-feat {
+			color: var(--ink2)
+		}
+
+		.plan-btn {
+			width: 100%;
+			height: 44px;
+			border-radius: var(--rsm);
+			font-family: inherit;
+			font-size: 14px;
+			font-weight: 700;
+			cursor: pointer;
+			transition: all .15s;
+			letter-spacing: -.1px
+		}
+
+		.b-out {
+			background: var(--white);
+			color: var(--p);
+			border: 1.5px solid var(--p)
+		}
+
+		.b-out:hover {
+			background: var(--p-lt)
+		}
+
+		.b-fill {
+			background: var(--p);
+			color: #fff;
+			border: none
+		}
+
+		.b-fill:hover {
+			background: var(--p-dk)
+		}
+
+		.b-ghost {
+			background: var(--white);
+			color: var(--ink2);
+			border: 1.5px solid var(--bd)
+		}
+
+		.b-ghost:hover {
+			background: var(--bg);
+			border-color: var(--ink3)
+		}
+
+		.plan-foot {
+			font-size: 11px;
+			color: var(--ink3);
+			margin-top: 10px;
+			line-height: 1.5
+		}
+
+		.pricing-note {
+			font-size: 12px;
+			color: var(--ink3);
+			margin-top: 16px;
+			text-align: center
+		}
+
+		/* FINAL */
+		.final {
+			padding: 56px 22px 68px;
+			max-width: 500px;
+			margin: 0 auto;
+			text-align: center
+		}
+
+		.final .h2 {
+			margin-bottom: 10px
+		}
+
+		.final .sec-sub {
+			margin-bottom: 30px
+		}
+
+		.final-form-wrap {
+			max-width: 400px;
+			margin: 0 auto
+		}
+
+		/* FOOTER */
+		footer {
+			border-top: 1px solid var(--bd);
+			padding: 24px 22px;
+			max-width: 500px;
+			margin: 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 12px;
+			justify-content: space-between
+		}
+
+		.foot-logo {
+			display: flex;
+			align-items: center;
+			gap: 8px
+		}
+
+		.foot-type {
+			font-size: 14px;
+			font-weight: 800;
+			color: var(--ink);
+			letter-spacing: -.3px
+		}
+
+		.foot-type span {
+			color: var(--p)
+		}
+
+		footer small {
+			font-size: 12px;
+			color: var(--ink3)
+		}
+
+		.foot-links {
+			display: flex;
+			gap: 18px;
+			flex-wrap: wrap;
+			align-items: center
+		}
+
+		.foot-links a {
+			font-size: 12px;
+			color: var(--ink3);
+			text-decoration: none;
+			transition: color .15s
+		}
+
+		.foot-links a:hover {
+			color: var(--ink)
+		}
+
+		/* check icon shorthand */
+		.ck-grn {
+			display: inline-block
+		}
+
+		.ck-p {
+			display: inline-block
+		}
+
+		/* FULL-BLEED SECTION (how-it-works, etc.) */
+		.sec-full {
+			background: var(--bg);
+			max-width: 100%;
+			padding: 52px 0;
+			border-top: 1px solid var(--bd);
+			border-bottom: 1px solid var(--bd)
+		}
+
+		/* NEW BADGE */
+		.new-badge {
+			display: inline-block;
+			background: var(--amb-lt);
+			color: #92400e;
+			font-size: 10px;
+			font-weight: 700;
+			padding: 2px 7px;
+			border-radius: 10px;
+			letter-spacing: .05em;
+			text-transform: uppercase;
+			vertical-align: middle;
+			margin-left: 6px;
+			white-space: nowrap
+		}
+
+		/* PARTNERS SECTION */
+		.partners-section {
+			background: var(--ink);
+			padding: 52px 0
+		}
+
+		.partners-section .sec-label {
+			color: rgba(255, 255, 255, 0.4)
+		}
+
+		.partners-section .h2 {
+			color: var(--white)
+		}
+
+		.partners-section .sec-sub {
+			color: rgba(255, 255, 255, 0.5)
+		}
+
+		.partner-cards {
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+			margin-top: 28px
+		}
+
+		.partner-card-dark {
+			background: rgba(255, 255, 255, 0.07);
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			border-radius: var(--r);
+			padding: 24px
+		}
+
+		.partner-avatar {
+			width: 44px;
+			height: 44px;
+			border-radius: 50%;
+			background: var(--p);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			font-weight: 800;
+			color: #fff;
+			margin-bottom: 18px;
+			flex-shrink: 0
+		}
+
+		.partner-quote-text {
+			font-family: var(--ff-display);
+			font-size: 16px;
+			font-style: italic;
+			font-weight: 400;
+			line-height: 1.65;
+			color: var(--white);
+			margin-bottom: 18px
+		}
+
+		.partner-name-dark {
+			font-size: 13px;
+			font-weight: 700;
+			color: var(--white)
+		}
+
+		.partner-role-dark {
+			font-size: 12px;
+			color: rgba(255, 255, 255, 0.45);
+			margin-top: 2px
+		}
+
+		.partner-ig-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+			margin-top: 10px;
+			color: var(--grn-bd);
+			font-size: 12px;
+			font-weight: 500;
+			text-decoration: none
+		}
+
+		.partner-ig-link:hover {
+			opacity: .7
+		}
+
+		/* SCENARIO SECTION */
+		.scenario-text {
+			font-family: var(--ff-display);
+			font-size: clamp(18px, 3.5vw, 26px);
+			font-style: italic;
+			font-weight: 300;
+			line-height: 1.8;
+			color: rgba(255, 255, 255, 0.85);
+			margin: 22px 0 40px
+		}
+
+		.scenario-stats-row {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 0;
+			margin-bottom: 40px
+		}
+
+		.scenario-stat {
+			padding-left: 16px;
+			border-left: 1px solid rgba(255, 255, 255, 0.1)
+		}
+
+		.scenario-stat:first-child {
+			padding-left: 0;
+			border-left: none
+		}
+
+		.stat-num {
+			display: block;
+			font-size: clamp(28px, 7vw, 56px);
+			font-weight: 800;
+			color: #86efac;
+			line-height: 1;
+			letter-spacing: -1px;
+			margin-bottom: 6px
+		}
+
+		.stat-desc {
+			display: block;
+			font-size: 11px;
+			color: rgba(255, 255, 255, 0.4);
+			line-height: 1.5
+		}
+
+		.scenario-util {
+			font-size: 14px;
+			color: rgba(255, 255, 255, 0.5);
+			line-height: 1.8;
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+			padding-top: 28px
+		}
+
+		@media(min-width:640px) {
+			.scenario-stat {
+				padding-left: 32px
+			}
+
+			.stat-desc {
+				font-size: 13px
+			}
+		}
+
+		/* PRIVACY SECTION */
+		.privacy-section {
+			background: var(--p-lt);
+			border-top: 1px solid var(--p-bd);
+			border-bottom: 1px solid var(--p-bd);
+			padding: 52px 0
+		}
+
+		.privacy-section .sec-label {
+			color: var(--p-dk)
+		}
+
+		.privacy-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 16px;
+			margin-top: 28px
+		}
+
+		.priv-item h4 {
+			font-size: 13px;
+			font-weight: 700;
+			color: var(--ink);
+			margin-bottom: 5px
+		}
+
+		.priv-item p {
+			font-size: 12px;
+			color: var(--ink2);
+			line-height: 1.6
+		}
+
+		.priv-icon-wrap {
+			width: 38px;
+			height: 38px;
+			background: var(--white);
+			border: 1px solid var(--p-bd);
+			border-radius: var(--rsm);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 12px
+		}
+
+		.privacy-email {
+			font-size: 13px;
+			color: var(--ink2);
+			margin-top: 28px
+		}
+
+		.privacy-email a {
+			color: var(--p);
+			text-decoration: none
+		}
+
+		.privacy-email a:hover {
+			text-decoration: underline
+		}
+
+		/* RESPONSIVE — tablet ≥640px */
+		@media(min-width:640px) {
+
+			.w,
+			.nav,
+			.hero,
+			.sec,
+			.proof,
+			.quote-shell,
+			.final {
+				max-width: 660px
+			}
+
+			footer {
+				max-width: 660px
+			}
+
+			.w {
+				padding: 0 36px
+			}
+
+			.nav {
+				padding: 14px 28px
+			}
+
+			.hero {
+				padding: 72px 36px 64px
+			}
+
+			.sec {
+				padding: 64px 36px
+			}
+
+			.final {
+				padding: 72px 36px 80px
+			}
+
+			.quote-shell {
+				padding: 0 36px 64px
+			}
+
+			.proof {
+				padding: 24px 36px
+			}
+
+			.div {
+				margin: 0 36px
+			}
+
+			.h1 {
+				font-size: clamp(36px, 6vw, 46px)
+			}
+
+			.h2 {
+				font-size: 26px
+			}
+
+			.hero-sub {
+				font-size: 17px
+			}
+
+			.final-form-wrap {
+				max-width: 480px
+			}
+
+			.pain-grid {
+				grid-template-columns: repeat(3, 1fr)
+			}
+
+			/* Full-bleed sections scale */
+			.sec-full {
+				padding: 64px 0
+			}
+
+			.partners-section {
+				padding: 64px 0
+			}
+
+			.privacy-section {
+				padding: 64px 0
+			}
+
+			/* Partners cards side by side */
+			.partner-cards {
+				flex-direction: row
+			}
+
+			.partner-card-dark {
+				flex: 1
+			}
+
+			/* Privacy grid 4 cols */
+			.privacy-grid {
+				grid-template-columns: repeat(4, 1fr)
+			}
+		}
+
+		/* RESPONSIVE — desktop ≥1024px */
+		@media(min-width:1024px) {
+
+			.w,
+			.nav,
+			.hero,
+			.sec,
+			.proof,
+			.quote-shell,
+			.final {
+				max-width: 920px
+			}
+
+			footer {
+				max-width: 920px
+			}
+
+			.w {
+				padding: 0 48px
+			}
+
+			.nav {
+				padding: 16px 48px
+			}
+
+			.hero {
+				padding: 100px 48px 80px
+			}
+
+			.sec {
+				padding: 80px 48px
+			}
+
+			.final {
+				padding: 96px 48px 96px
+			}
+
+			.quote-shell {
+				padding: 0 48px 80px
+			}
+
+			.proof {
+				padding: 28px 48px
+			}
+
+			.div {
+				margin: 0 48px
+			}
+
+			.h1 {
+				font-size: clamp(42px, 5vw, 58px)
+			}
+
+			.h2 {
+				font-size: 32px
+			}
+
+			.hero-sub {
+				font-size: 18px;
+				max-width: 640px
+			}
+
+			/* Pain grid: 3 columns */
+			.pain-grid {
+				grid-template-columns: repeat(3, 1fr)
+			}
+
+			/* Channel cards: side by side */
+			.ch-list {
+				flex-direction: row
+			}
+
+			.ch-card {
+				flex: 1
+			}
+
+			/* Pricing: side by side */
+			.plans {
+				flex-direction: row;
+				flex-wrap: wrap;
+				gap: 16px
+			}
+
+			.plan {
+				flex: 1;
+				min-width: 280px
+			}
+
+			/* Form */
+			.final-form-wrap {
+				max-width: 560px
+			}
+
+			/* Full-bleed sections scale */
+			.sec-full {
+				padding: 80px 0
+			}
+
+			.partners-section {
+				padding: 80px 0
+			}
+
+			.privacy-section {
+				padding: 80px 0
+			}
+
+			/* Partners cards side by side */
+			.partner-cards {
+				flex-direction: row
+			}
+
+			.partner-card-dark {
+				flex: 1
+			}
+
+			/* Privacy grid 4 cols */
+			.privacy-grid {
+				grid-template-columns: repeat(4, 1fr)
+			}
+		}
+
+		/* FEATURE GRID */
+		.feat-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 12px;
+			margin-top: 26px
+		}
+
+		.feat-tile {
+			background: var(--white);
+			border: 1px solid var(--bd);
+			border-radius: var(--r);
+			padding: 18px
+		}
+
+		.feat-ico {
+			width: 36px;
+			height: 36px;
+			border-radius: var(--rsm);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 12px
+		}
+
+		.feat-tile h4 {
+			font-size: 13px;
+			font-weight: 700;
+			color: var(--ink);
+			margin-bottom: 5px;
+			line-height: 1.35
+		}
+
+		.feat-tile p {
+			font-size: 12px;
+			color: var(--ink2);
+			line-height: 1.6
+		}
+
+		@media(min-width:640px) {
+			.feat-grid {
+				grid-template-columns: repeat(3, 1fr)
+			}
+		}
+
+		/* FEATURE CAROUSEL — mobile only */
+		@media(max-width:639px) {
+			.feat-grid {
+				display: flex !important;
+				overflow-x: scroll;
+				scroll-snap-type: x mandatory;
+				scroll-padding-left: 22px;
+				gap: 12px;
+				margin: 26px -22px 0;
+				padding: 2px 22px 8px;
+				scrollbar-width: none;
+				-webkit-overflow-scrolling: touch
+			}
+
+			.feat-grid::-webkit-scrollbar {
+				display: none
+			}
+
+			.feat-tile {
+				flex: 0 0 82vw;
+				max-width: 290px;
+				scroll-snap-align: start
+			}
+		}
+
+		.feat-dots {
+			display: none;
+			justify-content: center;
+			align-items: center;
+			gap: 7px;
+			margin-top: 16px
+		}
+
+		@media(max-width:639px) {
+			.feat-dots {
+				display: flex
+			}
+		}
+
+		.dot {
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background: var(--bd);
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			transition: width .25s ease, background .25s ease, border-radius .25s ease;
+			flex-shrink: 0;
+			-webkit-appearance: none
+		}
+
+		.dot.active {
+			background: var(--p);
+			width: 20px;
+			border-radius: 3px
+		}
+
+		/* HERO TRUST STRIP */
+		.hero-trust {
+			font-size: 12px;
+			color: var(--ink3);
+			line-height: 1.9;
+			margin-top: 12px
+		}
+
+		/* CHANNEL DIALOG */
+		.dialog-overlay {
+			position: fixed;
+			inset: 0;
+			background: rgba(13, 13, 28, .55);
+			z-index: 200;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 22px;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity .2s
+		}
+
+		.dialog-overlay.open {
+			opacity: 1;
+			pointer-events: all
+		}
+
+		.dialog-card {
+			background: #fff;
+			border-radius: var(--r);
+			padding: 28px 24px;
+			width: 100%;
+			max-width: 360px;
+			position: relative;
+			box-shadow: 0 8px 32px rgba(0, 0, 0, .12)
+		}
+
+		.dialog-close {
+			position: absolute;
+			top: 14px;
+			right: 14px;
+			background: none;
+			border: none;
+			cursor: pointer;
+			color: var(--ink3);
+			padding: 4px;
+			line-height: 1;
+			font-size: 18px
+		}
+
+		.dialog-close:hover {
+			color: var(--ink)
+		}
+
+		.dialog-title {
+			font-size: 18px;
+			font-weight: 800;
+			color: var(--ink);
+			margin-bottom: 6px;
+			letter-spacing: -.4px
+		}
+
+		.dialog-sub {
+			font-size: 13px;
+			color: var(--ink2);
+			margin-bottom: 20px;
+			line-height: 1.55
+		}
+
+		.ch-opt {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			border: 1.5px solid var(--bd);
+			border-radius: var(--rsm);
+			padding: 14px 16px;
+			background: #fff;
+			cursor: pointer;
+			font-family: inherit;
+			margin-bottom: 10px;
+			transition: all .15s;
+			text-align: left
+		}
+
+		.ch-opt:last-of-type {
+			margin-bottom: 0
+		}
+
+		.ch-opt:hover {
+			border-color: var(--p);
+			background: var(--p-lt)
+		}
+
+		.ch-opt-ico {
+			width: 38px;
+			height: 38px;
+			border-radius: 9px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0
+		}
+
+		.ch-opt-name {
+			font-size: 14px;
+			font-weight: 700;
+			color: var(--ink)
+		}
+
+		.ch-opt-hint {
+			font-size: 12px;
+			color: var(--ink3);
+			margin-top: 2px
+		}
+
+		/* CHANNEL PILLS */
+		.pill-group {
+			display: flex;
+			gap: 8px;
+			flex-wrap: wrap
+		}
+
+		.pill-opt {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			border: 1.5px solid var(--bd);
+			border-radius: 20px;
+			padding: 8px 14px;
+			font-family: inherit;
+			font-size: 13px;
+			font-weight: 600;
+			color: var(--ink2);
+			background: var(--bg);
+			cursor: pointer;
+			transition: all .15s;
+			user-select: none
+		}
+
+		.pill-opt input {
+			display: none
+		}
+
+		.pill-opt.selected {
+			border-color: var(--p);
+			background: var(--p-lt);
+			color: var(--p-dk)
+		}
+
+		.field-error {
+			font-size: 11px;
+			color: var(--red);
+			margin-top: 4px;
+			display: none
+		}
+
+		.field input.error {
+			border-color: var(--red)
+		}
+
+		.ch-trust {
+			font-size: 11px;
+			color: var(--ink3);
+			margin-top: 6px
+		}
+
+		/* SKELETON */
+		#skel {
+			position: fixed;
+			inset: 0;
+			z-index: 9999;
+			background: #fff;
+			pointer-events: none
+		}
+
+		.sk {
+			background: linear-gradient(90deg, var(--bd) 25%, #f0f0f8 50%, var(--bd) 75%);
+			background-size: 200% 100%;
+			animation: shimmer 1.4s infinite;
+			border-radius: 6px
+		}
+
+		@keyframes shimmer {
+			0% {
+				background-position: 200% 0
+			}
+
+			100% {
+				background-position: -200% 0
+			}
+		}
+
+		#skel-nav {
+			border-bottom: 1px solid var(--bd);
+			padding: 12px 22px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			max-width: 500px;
+			margin: 0 auto
+		}
+
+		#skel-body {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 56px 22px 0
+		}
+
+		.sk-h1 {
+			height: clamp(33px, 8.8vw, 44px)
+		}
+
+		.sk-sub {
+			height: 27px
+		}
+
+		#skel-div {
+			height: 1px;
+			background: var(--bd);
+			margin: 0 22px
+		}
+
+		#skel-proof {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px 22px;
+			display: flex;
+			align-items: center;
+			gap: 12px
+		}
+
+		#skel-avs {
+			display: flex
+		}
+
+		@media(min-width:640px) {
+			#skel-nav {
+				max-width: 660px;
+				padding: 14px 28px
+			}
+
+			#skel-body {
+				max-width: 660px;
+				padding: 72px 36px 0
+			}
+
+			.sk-h1 {
+				height: clamp(40px, 6.6vw, 51px)
+			}
+
+			.sk-sub {
+				height: 29px
+			}
+
+			#skel-div {
+				margin: 0 36px
+			}
+
+			#skel-proof {
+				max-width: 660px;
+				padding: 24px 36px
+			}
+		}
+
+		@media(min-width:1024px) {
+			#skel-nav {
+				max-width: 920px;
+				padding: 16px 48px
+			}
+
+			#skel-body {
+				max-width: 920px;
+				padding: 100px 48px 0
+			}
+
+			.sk-h1 {
+				height: clamp(46px, 5.5vw, 64px)
+			}
+
+			.sk-sub {
+				height: 31px
+			}
+
+			#skel-div {
+				margin: 0 48px
+			}
+
+			#skel-proof {
+				max-width: 920px;
+				padding: 28px 48px
+			}
+		}
+	</style>
 </head>
+
 <body>
 
-<!-- SKELETON OVERLAY (visible until variant resolved) -->
-<div id="skel">
-  <div id="skel-nav">
-    <div class="sk" style="width:110px;height:22px"></div>
-    <div class="sk" style="width:108px;height:36px;border-radius:8px"></div>
-  </div>
-  <div id="skel-body">
-    <div class="sk" style="width:172px;height:24px;border-radius:20px;margin-bottom:22px"></div>
-    <div class="sk sk-h1" style="width:88%;margin-bottom:6px"></div>
-    <div class="sk sk-h1" style="width:60%;margin-bottom:20px"></div>
-    <div class="sk sk-sub" style="width:100%;margin-bottom:8px"></div>
-    <div class="sk sk-sub" style="width:96%;margin-bottom:8px"></div>
-    <div class="sk sk-sub" style="width:86%;margin-bottom:8px"></div>
-    <div class="sk sk-sub" style="width:72%;margin-bottom:36px"></div>
-  </div>
-  <div id="skel-div"></div>
-  <div id="skel-proof">
-    <div id="skel-avs">
-      <div class="sk" style="width:27px;height:27px;border-radius:50%"></div>
-      <div class="sk" style="width:27px;height:27px;border-radius:50%;margin-left:-7px"></div>
-      <div class="sk" style="width:27px;height:27px;border-radius:50%;margin-left:-7px"></div>
-      <div class="sk" style="width:27px;height:27px;border-radius:50%;margin-left:-7px"></div>
-    </div>
-    <div class="sk" style="width:220px;height:13px"></div>
-  </div>
-</div>
+	<!-- SKELETON OVERLAY (visible until variant resolved) -->
+	<div id="skel">
+		<div id="skel-nav">
+			<div class="sk" style="width:110px;height:22px"></div>
+			<div class="sk" style="width:108px;height:36px;border-radius:8px"></div>
+		</div>
+		<div id="skel-body">
+			<div class="sk" style="width:172px;height:24px;border-radius:20px;margin-bottom:22px"></div>
+			<div class="sk sk-h1" style="width:88%;margin-bottom:6px"></div>
+			<div class="sk sk-h1" style="width:60%;margin-bottom:20px"></div>
+			<div class="sk sk-sub" style="width:100%;margin-bottom:8px"></div>
+			<div class="sk sk-sub" style="width:96%;margin-bottom:8px"></div>
+			<div class="sk sk-sub" style="width:86%;margin-bottom:8px"></div>
+			<div class="sk sk-sub" style="width:72%;margin-bottom:36px"></div>
+		</div>
+		<div id="skel-div"></div>
+		<div id="skel-proof">
+			<div id="skel-avs">
+				<div class="sk" style="width:27px;height:27px;border-radius:50%"></div>
+				<div class="sk" style="width:27px;height:27px;border-radius:50%;margin-left:-7px"></div>
+				<div class="sk" style="width:27px;height:27px;border-radius:50%;margin-left:-7px"></div>
+				<div class="sk" style="width:27px;height:27px;border-radius:50%;margin-left:-7px"></div>
+			</div>
+			<div class="sk" style="width:220px;height:13px"></div>
+		</div>
+	</div>
 
-<!-- NAV -->
-<div class="nav-shell">
-  <nav class="nav">
-    <div class="logomark">
-      <svg width="30" height="30" viewBox="0 0 80 80" fill="none">
-        <rect width="80" height="80" rx="22" fill="url(#navg)"/>
-        <path d="M26 56 L26 24" stroke="white" stroke-width="4" stroke-linecap="round"/>
-        <path d="M26 24 Q26 18 32 18 L44 18 Q54 18 54 30 Q54 42 44 42 L26 42" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="54" cy="56" r="5" fill="#C4A8E8"/>
-        <defs>
-          <linearGradient id="navg" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#4C35A0"/>
-            <stop offset="100%" stop-color="#2D1B69"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      <div class="logotype">pame<em>lo</em></div>
-    </div>
-    <button class="btn-nav" id="nav-cta" onclick="navCta()">I'm interested</button>
-  </nav>
-</div>
+	<!-- NAV -->
+	<div class="nav-shell">
+		<nav class="nav">
+			<div class="logomark">
+				<svg width="30" height="30" viewBox="0 0 80 80" fill="none">
+					<rect width="80" height="80" rx="22" fill="url(#navg)" />
+					<path d="M26 56 L26 24" stroke="white" stroke-width="4" stroke-linecap="round" />
+					<path d="M26 24 Q26 18 32 18 L44 18 Q54 18 54 30 Q54 42 44 42 L26 42" stroke="white" stroke-width="4"
+						stroke-linecap="round" stroke-linejoin="round" fill="none" />
+					<circle cx="54" cy="56" r="5" fill="#C4A8E8" />
+					<defs>
+						<linearGradient id="navg" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+							<stop offset="0%" stop-color="#4C35A0" />
+							<stop offset="100%" stop-color="#2D1B69" />
+						</linearGradient>
+					</defs>
+				</svg>
+				<div class="logotype">pame<em>lo</em></div>
+			</div>
+			<button class="btn-nav" id="nav-cta" onclick="navCta()">I'm interested</button>
+		</nav>
+	</div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="pill" id="hero-pill"><span class="pill-dot"></span>Built for Nigerian vendors</div>
-  <p class="h1" id="hero-h1">Your WhatsApp and Instagram,<br/>finally <em>organised</em></p>
-  <p class="hero-sub" id="hero-sub">Connect your WhatsApp and Instagram. pamelo builds your customer records, confirms every payment, and chases every debt — automatically.</p>
-  <button class="btn-cta" id="hero-cta" onclick="heroCta()" style="margin-top:28px;width:auto">I'm interested</button>
-  <p class="hero-trust" style="margin-top:12px">Official Meta Business APIs &middot; We never read or sell your data &middot; Export and leave anytime</p>
+	<!-- HERO -->
+	<section class="hero">
+		<div class="pill" id="hero-pill"><span class="pill-dot"></span>Built for Nigerian vendors</div>
+		<p class="h1" id="hero-h1">Your WhatsApp and Instagram,<br />finally <em>organised</em></p>
+		<p class="hero-sub" id="hero-sub">Connect your WhatsApp and Instagram. pamelo builds your customer records, confirms
+			every payment, and chases every debt — automatically.</p>
+		<button class="btn-cta" id="hero-cta" onclick="heroCta()" style="margin-top:28px;width:auto">I'm interested</button>
+		<p class="hero-trust" style="margin-top:12px">Official Meta Business APIs &middot; We never read or sell your data
+			&middot; Export and leave anytime</p>
 
-</section>
+	</section>
 
-<div class="div"></div>
+	<div class="div"></div>
 
-<!-- PROOF -->
-<div class="proof">
-  <div class="avs">
-    <div class="av" style="background:#7C5CFC">TI</div>
-    <div class="av" style="background:#F59E0B">CH</div>
-    <div class="av" style="background:#12B76A">AM</div>
-    <div class="av" style="background:#0891B2">FB</div>
-  </div>
-  <p class="proof-t" id="proof-t">Vendors from Lagos, Abuja &amp; Port Harcourt on the waitlist</p>
-</div>
+	<!-- PROOF -->
+	<div class="proof">
+		<div class="avs">
+			<div class="av" style="background:#7C5CFC">TI</div>
+			<div class="av" style="background:#F59E0B">CH</div>
+			<div class="av" style="background:#12B76A">AM</div>
+			<div class="av" style="background:#0891B2">FB</div>
+		</div>
+		<p class="proof-t" id="proof-t">Vendors from Lagos, Abuja &amp; Port Harcourt on the waitlist</p>
+	</div>
 
-<div class="div"></div>
+	<div class="div"></div>
 
-<!-- FEATURES -->
-<section class="sec">
-  <div class="sec-label">What pamelo does</div>
-  <p class="h2" id="feat-heading">Six tools. One inbox.<br/>Zero switching between apps.</p>
-  <div class="feat-carousel-wrap">
-  <div class="feat-grid" id="feat-grid">
-    <div class="feat-tile" data-feat="inbox">
-      <div class="feat-ico" style="background:#ECFDF5">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="9.5" cy="9.5" r="7.5" stroke="#12B76A" stroke-width="1.4"/><path d="M6.5 10.3c.4.9 1.3 1.8 2.7 2.3l.3-.4c.3-.4.9-.3 1.3.1l.6.6c.3.3.3.8 0 1.1-1 .9-3.4.4-5.2-1.5-1.8-1.9-2.3-4.3-1.2-5.2.3-.3.8-.3 1.1 0l.6.6c.3.3.4.9.1 1.2l-.3.2z" stroke="#12B76A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="12.5" y="3" width="5" height="5" rx="1.5" stroke="#12B76A" stroke-width="1.2"/><circle cx="15" cy="5.5" r="1" fill="#12B76A"/></svg>
-      </div>
-      <h4>WhatsApp &amp; Instagram inbox</h4>
-      <p>Your customers message you as normal. pamelo reads every text, voice note and image on both channels and logs it automatically.</p>
-    </div>
-    <div class="feat-tile" data-feat="profiles">
-      <div class="feat-ico" style="background:#F2EFFE">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="7" r="3.5" stroke="#7C5CFC" stroke-width="1.4"/><path d="M2 17c0-3.3 2.7-6 6-6" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/><path d="M13 12l1.5 1.5L17 10" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Customer profiles that build themselves</h4>
-      <p>Names, orders, amounts, addresses, what they owe — all extracted from your DMs. Every returning customer recognised instantly.</p>
-    </div>
-    <div class="feat-tile" data-feat="debt">
-      <div class="feat-ico" style="background:#FFFBEB">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2.5a5.5 5.5 0 015.5 5.5c0 3.5-5.5 9.5-5.5 9.5S4.5 11.5 4.5 8A5.5 5.5 0 0110 2.5z" stroke="#F59E0B" stroke-width="1.4"/><circle cx="10" cy="8" r="1.8" fill="#F59E0B"/></svg>
-      </div>
-      <h4>Debt chasing on autopilot</h4>
-      <p>Log an unpaid balance and pamelo sends polite, scheduled WhatsApp reminders under your name. No awkward follow-ups from you.</p>
-    </div>
-    <div class="feat-tile" data-feat="followup">
-      <div class="feat-ico" style="background:#F2EFFE">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 9h9M3 13h6" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round"/><circle cx="15.5" cy="13.5" r="3" stroke="#7C5CFC" stroke-width="1.4"/><path d="M14.2 13.5l1 1 1.8-1.8" stroke="#7C5CFC" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Automated follow&#8209;up sequences</h4>
-      <p>Delivery confirmations, feedback requests, re-engagement nudges — set up once, runs in your tone, on your schedule.</p>
-    </div>
-    <div class="feat-tile" data-feat="payment">
-      <div class="feat-ico" style="background:#FFFBEB">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="16" height="10" rx="2" stroke="#F59E0B" stroke-width="1.4"/><path d="M2 10h16" stroke="#F59E0B" stroke-width="1.4"/><path d="M5.5 13.5h2M9.5 13.5h4" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/><path d="M7 6V4.5a3 3 0 016 0V6" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round"/></svg>
-      </div>
-      <h4>In-chat payment confirmation</h4>
-      <p>Customer sends a screenshot or types "sent" — pamelo verifies the transfer and replies "Payment received ✓" in the same thread. Bank app stays closed.</p>
-    </div>
-    <div class="feat-tile" data-feat="ads">
-      <div class="feat-ico" style="background:#F2EFFE">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3.5 14.5l2-2m0 0l1.3-4 4-1.3-1.3 4-4 1.3z" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="5" r="2.5" stroke="#7C5CFC" stroke-width="1.4"/></svg>
-      </div>
-      <h4>Cross-platform ad campaigns</h4>
-      <p>Run ads on Instagram, Facebook and TikTok from pamelo. Every lead that responds is auto-captured as a customer — same inbox, same AI.</p>
-    </div>
-  </div>
-  <div class="feat-dots" id="feat-dots">
-    <button class="dot active" aria-label="Feature 1"></button>
-    <button class="dot" aria-label="Feature 2"></button>
-    <button class="dot" aria-label="Feature 3"></button>
-    <button class="dot" aria-label="Feature 4"></button>
-    <button class="dot" aria-label="Feature 5"></button>
-    <button class="dot" aria-label="Feature 6"></button>
-  </div>
-  </div>
-</section>
+	<!-- FEATURES -->
+	<section class="sec">
+		<div class="sec-label">What pamelo does</div>
+		<p class="h2" id="feat-heading">Six tools. One inbox.<br />Zero switching between apps.</p>
+		<div class="feat-carousel-wrap">
+			<div class="feat-grid" id="feat-grid">
+				<div class="feat-tile" data-feat="inbox">
+					<div class="feat-ico" style="background:#ECFDF5">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<circle cx="9.5" cy="9.5" r="7.5" stroke="#12B76A" stroke-width="1.4" />
+							<path
+								d="M6.5 10.3c.4.9 1.3 1.8 2.7 2.3l.3-.4c.3-.4.9-.3 1.3.1l.6.6c.3.3.3.8 0 1.1-1 .9-3.4.4-5.2-1.5-1.8-1.9-2.3-4.3-1.2-5.2.3-.3.8-.3 1.1 0l.6.6c.3.3.4.9.1 1.2l-.3.2z"
+								stroke="#12B76A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+							<rect x="12.5" y="3" width="5" height="5" rx="1.5" stroke="#12B76A" stroke-width="1.2" />
+							<circle cx="15" cy="5.5" r="1" fill="#12B76A" />
+						</svg>
+					</div>
+					<h4>WhatsApp &amp; Instagram inbox</h4>
+					<p>Your customers message you as normal. pamelo reads every text, voice note and image on both channels and
+						logs it automatically.</p>
+				</div>
+				<div class="feat-tile" data-feat="profiles">
+					<div class="feat-ico" style="background:#F2EFFE">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<circle cx="8" cy="7" r="3.5" stroke="#7C5CFC" stroke-width="1.4" />
+							<path d="M2 17c0-3.3 2.7-6 6-6" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round" />
+							<path d="M13 12l1.5 1.5L17 10" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+					</div>
+					<h4>Customer profiles that build themselves</h4>
+					<p>Names, orders, amounts, addresses, what they owe — all extracted from your DMs. Every returning customer
+						recognised instantly.</p>
+				</div>
+				<div class="feat-tile" data-feat="debt">
+					<div class="feat-ico" style="background:#FFFBEB">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<path d="M10 2.5a5.5 5.5 0 015.5 5.5c0 3.5-5.5 9.5-5.5 9.5S4.5 11.5 4.5 8A5.5 5.5 0 0110 2.5z"
+								stroke="#F59E0B" stroke-width="1.4" />
+							<circle cx="10" cy="8" r="1.8" fill="#F59E0B" />
+						</svg>
+					</div>
+					<h4>Debt chasing on autopilot</h4>
+					<p>Log an unpaid balance and pamelo sends polite, scheduled WhatsApp reminders under your name. No awkward
+						follow-ups from you.</p>
+				</div>
+				<div class="feat-tile" data-feat="followup">
+					<div class="feat-ico" style="background:#F2EFFE">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<path d="M3 5h14M3 9h9M3 13h6" stroke="#7C5CFC" stroke-width="1.4" stroke-linecap="round" />
+							<circle cx="15.5" cy="13.5" r="3" stroke="#7C5CFC" stroke-width="1.4" />
+							<path d="M14.2 13.5l1 1 1.8-1.8" stroke="#7C5CFC" stroke-width="1.2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+					</div>
+					<h4>Automated follow&#8209;up sequences</h4>
+					<p>Delivery confirmations, feedback requests, re-engagement nudges — set up once, runs in your tone, on your
+						schedule.</p>
+				</div>
+				<div class="feat-tile" data-feat="payment">
+					<div class="feat-ico" style="background:#FFFBEB">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<rect x="2" y="6" width="16" height="10" rx="2" stroke="#F59E0B" stroke-width="1.4" />
+							<path d="M2 10h16" stroke="#F59E0B" stroke-width="1.4" />
+							<path d="M5.5 13.5h2M9.5 13.5h4" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round" />
+							<path d="M7 6V4.5a3 3 0 016 0V6" stroke="#F59E0B" stroke-width="1.4" stroke-linecap="round" />
+						</svg>
+					</div>
+					<h4>In-chat payment confirmation</h4>
+					<p>Customer sends a screenshot or types "sent" — pamelo verifies the transfer and replies "Payment received ✓"
+						in the same thread. Bank app stays closed.</p>
+				</div>
+				<div class="feat-tile" data-feat="ads">
+					<div class="feat-ico" style="background:#F2EFFE">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+							<path d="M3.5 14.5l2-2m0 0l1.3-4 4-1.3-1.3 4-4 1.3z" stroke="#7C5CFC" stroke-width="1.4"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<circle cx="15" cy="5" r="2.5" stroke="#7C5CFC" stroke-width="1.4" />
+						</svg>
+					</div>
+					<h4>Cross-platform ad campaigns</h4>
+					<p>Run ads on Instagram, Facebook and TikTok from pamelo. Every lead that responds is auto-captured as a
+						customer — same inbox, same AI.</p>
+				</div>
+			</div>
+			<div class="feat-dots" id="feat-dots">
+				<button class="dot active" aria-label="Feature 1"></button>
+				<button class="dot" aria-label="Feature 2"></button>
+				<button class="dot" aria-label="Feature 3"></button>
+				<button class="dot" aria-label="Feature 4"></button>
+				<button class="dot" aria-label="Feature 5"></button>
+				<button class="dot" aria-label="Feature 6"></button>
+			</div>
+		</div>
+	</section>
 
-<div class="div"></div>
+	<div class="div"></div>
 
-<!-- HOW IT WORKS -->
-<section class="sec-full">
-  <div class="w">
-    <div class="sec-label">How it works</div>
-    <p class="h2" id="hiw-heading">Set up in 5 minutes, then it runs itself</p>
-    <div class="steps">
-      <div class="step">
-        <div style="position:relative;flex-shrink:0"><div class="step-num">1</div><div class="step-rail"></div></div>
-        <div class="step-body">
-          <h4 id="hiw-1-h4">Connect your channels</h4>
-          <p id="hiw-1-p">Get your pamelo WhatsApp number and link your Instagram account in under 5 minutes. Your customers keep messaging you the same way they always have.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div style="position:relative;flex-shrink:0"><div class="step-num">2</div><div class="step-rail"></div></div>
-        <div class="step-body">
-          <h4 id="hiw-2-h4">AI reads and organises everything</h4>
-          <p id="hiw-2-p">Every message, voice note and image is parsed automatically. Names, orders, prices, addresses and balances are extracted — customer profiles build themselves without you touching anything.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div style="position:relative;flex-shrink:0"><div class="step-num">3</div><div class="step-rail"></div></div>
-        <div class="step-body">
-          <h4 id="hiw-3-h4">Everything else runs itself</h4>
-          <p id="hiw-3-p">Payments confirmed in the chat thread. Debts chased on schedule. Follow-ups sent under your name. You just sell — pamelo handles the rest.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+	<!-- HOW IT WORKS -->
+	<section class="sec-full">
+		<div class="w">
+			<div class="sec-label">How it works</div>
+			<p class="h2" id="hiw-heading">Set up in 5 minutes, then it runs itself</p>
+			<div class="steps">
+				<div class="step">
+					<div style="position:relative;flex-shrink:0">
+						<div class="step-num">1</div>
+						<div class="step-rail"></div>
+					</div>
+					<div class="step-body">
+						<h4 id="hiw-1-h4">Connect your channels</h4>
+						<p id="hiw-1-p">Get your pamelo WhatsApp number and link your Instagram account in under 5 minutes. Your
+							customers keep messaging you the same way they always have.</p>
+					</div>
+				</div>
+				<div class="step">
+					<div style="position:relative;flex-shrink:0">
+						<div class="step-num">2</div>
+						<div class="step-rail"></div>
+					</div>
+					<div class="step-body">
+						<h4 id="hiw-2-h4">AI reads and organises everything</h4>
+						<p id="hiw-2-p">Every message, voice note and image is parsed automatically. Names, orders, prices,
+							addresses and balances are extracted — customer profiles build themselves without you touching anything.
+						</p>
+					</div>
+				</div>
+				<div class="step">
+					<div style="position:relative;flex-shrink:0">
+						<div class="step-num">3</div>
+						<div class="step-rail"></div>
+					</div>
+					<div class="step-body">
+						<h4 id="hiw-3-h4">Everything else runs itself</h4>
+						<p id="hiw-3-p">Payments confirmed in the chat thread. Debts chased on schedule. Follow-ups sent under your
+							name. You just sell — pamelo handles the rest.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-<div class="div"></div>
+	<div class="div"></div>
 
-<!-- SCENARIO SECTION -->
-<div class="partners-section">
-  <div class="w">
-    <div class="sec-label">The daily reality</div>
-    <p class="h2" id="scenario-h2">Sound familiar?</p>
-    <p class="scenario-text" id="scenario-text">She sends: <em>"I've transferred."</em> You close WhatsApp. Open your bank app. Nothing yet. You go back: <em>"Let me check, it hasn't landed."</em> She replies: <em>"I sent it o."</em> You wait. Check again. It's there.</p>
-    <div class="scenario-stats-row">
-      <div class="scenario-stat">
-        <span class="stat-num" id="stat-1-num">9</span>
-        <span class="stat-desc" id="stat-1-desc">messages for one payment</span>
-      </div>
-      <div class="scenario-stat">
-        <span class="stat-num" id="stat-2-num">3</span>
-        <span class="stat-desc" id="stat-2-desc">app switches</span>
-      </div>
-      <div class="scenario-stat">
-        <span class="stat-num" id="stat-3-num">11</span>
-        <span class="stat-desc" id="stat-3-desc">more customers still waiting</span>
-      </div>
-    </div>
-    <p class="scenario-util" id="scenario-util">pamelo confirms the payment in the chat the moment it lands — and sends your follow-ups automatically, so you never have to be the one asking.</p>
-  </div>
-</div>
+	<!-- SCENARIO SECTION -->
+	<div class="partners-section">
+		<div class="w">
+			<div class="sec-label">The daily reality</div>
+			<p class="h2" id="scenario-h2">Sound familiar?</p>
+			<p class="scenario-text" id="scenario-text">She sends: <em>"I've transferred."</em> You close WhatsApp. Open your
+				bank app. Nothing yet. You go back: <em>"Let me check, it hasn't landed."</em> She replies: <em>"I sent it
+					o."</em> You wait. Check again. It's there.</p>
+			<div class="scenario-stats-row">
+				<div class="scenario-stat">
+					<span class="stat-num" id="stat-1-num">9</span>
+					<span class="stat-desc" id="stat-1-desc">messages for one payment</span>
+				</div>
+				<div class="scenario-stat">
+					<span class="stat-num" id="stat-2-num">3</span>
+					<span class="stat-desc" id="stat-2-desc">app switches</span>
+				</div>
+				<div class="scenario-stat">
+					<span class="stat-num" id="stat-3-num">11</span>
+					<span class="stat-desc" id="stat-3-desc">more customers still waiting</span>
+				</div>
+			</div>
+			<p class="scenario-util" id="scenario-util">pamelo confirms the payment in the chat the moment it lands — and
+				sends your follow-ups automatically, so you never have to be the one asking.</p>
+		</div>
+	</div>
 
-<div class="div"></div>
+	<div class="div"></div>
 
-<!-- PRICING -->
-<div id="pricing-wrap">
-<div class="pricing-shell">
-<section class="sec">
-  <div class="sec-label">Pricing</div>
-  <p class="h2">One bank transfer a year</p>
-  <p class="sec-sub">No monthly card charges. No failed debits. WhatsApp and Instagram included on every plan.</p>
+	<!-- PRICING -->
+	<div id="pricing-wrap">
+		<div class="pricing-shell">
+			<section class="sec">
+				<div class="sec-label">Pricing</div>
+				<p class="h2">One bank transfer a year</p>
+				<p class="sec-sub">No monthly card charges. No failed debits. WhatsApp and Instagram included on every plan.</p>
 
-  <div class="plans">
+				<div class="plans">
 
-    <!-- SOLO -->
-    <div class="plan">
-      <div class="plan-tier">Solo</div>
-      <div class="plan-price">&#8358;60,000</div>
-      <div class="plan-price-note">per year &middot; 1 user</div>
-      <div class="plan-tag tag-grn">&#8358;5,000 / month</div>
-      <ul class="feat-list">
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          WhatsApp business line
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Instagram DM sync
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          AI message parsing (text, voice, images)
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          500 customer profiles
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Debt tracker &amp; manual reminders
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Automated follow-up sequences
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#ECFDF5"/><path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Daily sales ledger
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#FFFBEB"/><path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Virtual account payment collection
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#FFFBEB"/><path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Cross-platform ad campaigns        </li>
-      </ul>
-      <button class="plan-btn b-out" id="btn-solo" onclick="pricingCta('solo')">I'm interested</button>
-      <p class="plan-foot">Less than the cost of one lost sale a month</p>
-    </div>
+					<!-- SOLO -->
+					<div class="plan">
+						<div class="plan-tier">Solo</div>
+						<div class="plan-price">&#8358;60,000</div>
+						<div class="plan-price-note">per year &middot; 1 user</div>
+						<div class="plan-tag tag-grn">&#8358;5,000 / month</div>
+						<ul class="feat-list">
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#ECFDF5" />
+									<path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								WhatsApp business line
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#ECFDF5" />
+									<path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Instagram DM sync
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#ECFDF5" />
+									<path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								AI message parsing (text, voice, images)
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#ECFDF5" />
+									<path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								500 customer profiles
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#ECFDF5" />
+									<path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Debt tracker &amp; manual reminders
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#ECFDF5" />
+									<path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Automated follow-up sequences
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#ECFDF5" />
+									<path d="M4.5 7l2 2 3-3" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Daily sales ledger
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#FFFBEB" />
+									<path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Virtual account payment collection
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#FFFBEB" />
+									<path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Cross-platform ad campaigns
+							</li>
+						</ul>
+						<button class="plan-btn b-out" id="btn-solo" onclick="pricingCta('solo')">I'm interested</button>
+						<p class="plan-foot">Less than the cost of one lost sale a month</p>
+					</div>
 
-    <!-- BUSINESS -->
-    <div class="plan hi">
-      <div class="best-tag">Best value for teams</div>
-      <div class="plan-tier">Business</div>
-      <div class="plan-price">&#8358;48,000</div>
-      <div class="plan-price-note">per user / year &middot; minimum 2 users</div>
-      <div class="plan-tag tag-purple">&#8358;4,000 per user / month &mdash; for vendors with staff or partners</div>
-      <ul class="feat-list">
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Everything in Solo
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Unlimited customer profiles
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Automated debt reminders
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Custom follow-up sequences (delivery, feedback, re-engagement)
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Message opt-out management
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Unlimited team members
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#F2EFFE"/><path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Priority support
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#FFFBEB"/><path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Smart payment collection &amp; in-chat confirmations
-        </li>
-        <li>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" fill="#FFFBEB"/><path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Cross-platform ad campaigns with AI lead capture        </li>
-      </ul>
-      <button class="plan-btn b-fill" id="btn-business" onclick="pricingCta('business')">I'm interested</button>
-      <p class="plan-foot">&#8358;48,000 per seat vs &#8358;60,000 solo &mdash; only worth it if you have a team</p>
-    </div>
+					<!-- BUSINESS -->
+					<div class="plan hi">
+						<div class="best-tag">Best value for teams</div>
+						<div class="plan-tier">Business</div>
+						<div class="plan-price">&#8358;48,000</div>
+						<div class="plan-price-note">per user / year &middot; minimum 2 users</div>
+						<div class="plan-tag tag-purple">&#8358;4,000 per user / month &mdash; for vendors with staff or partners
+						</div>
+						<ul class="feat-list">
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#F2EFFE" />
+									<path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Everything in Solo
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#F2EFFE" />
+									<path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Unlimited customer profiles
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#F2EFFE" />
+									<path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Automated debt reminders
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#F2EFFE" />
+									<path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Custom follow-up sequences (delivery, feedback, re-engagement)
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#F2EFFE" />
+									<path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Message opt-out management
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#F2EFFE" />
+									<path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Unlimited team members
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#F2EFFE" />
+									<path d="M4.5 7l2 2 3-3" stroke="#7C5CFC" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Priority support
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#FFFBEB" />
+									<path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Smart payment collection &amp; in-chat confirmations
+							</li>
+							<li>
+								<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+									<circle cx="7" cy="7" r="6" fill="#FFFBEB" />
+									<path d="M4.5 7l2 2 3-3" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Cross-platform ad campaigns with AI lead capture
+							</li>
+						</ul>
+						<button class="plan-btn b-fill" id="btn-business" onclick="pricingCta('business')">I'm interested</button>
+						<p class="plan-foot">&#8358;48,000 per seat vs &#8358;60,000 solo &mdash; only worth it if you have a team
+						</p>
+					</div>
 
-  </div>
-  <p class="pricing-note" id="pricing-note">Pay once a year by Paystack or bank transfer</p>
-</section>
-</div>
-</div>
+				</div>
+				<p class="pricing-note" id="pricing-note">Pay once a year by Paystack or bank transfer</p>
+			</section>
+		</div>
+	</div>
 
-<div class="div"></div>
+	<div class="div"></div>
 
-<!-- PRIVACY FAQ -->
-<section class="sec" style="padding-top:52px;padding-bottom:52px">
-  <p class="sec-label">Privacy</p>
-  <div class="faq-list">
-    <div class="faq-item open">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="true">
-        Will pamelo read my private messages?
-        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="faq-a">
-        <p class="faq-a-inner">No. pamelo only reads messages in your business inbox via the official Meta Business API. Your personal WhatsApp and DMs are never touched.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-        Is my data safe?
-        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="faq-a">
-        <p class="faq-a-inner">Yes. All data is encrypted in transit and at rest. We never sell or share your customer data with third parties.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-        Do I need to install anything?
-        <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="faq-a">
-        <p class="faq-a-inner">Yes. pamelo has a mobile app where you manage your orders and conversations. Connecting your WhatsApp Business or Instagram account takes just a few minutes from inside the app.</p>
-      </div>
-    </div>
-  </div>
-</section>
+	<!-- PRIVACY FAQ -->
+	<section class="sec" style="padding-top:52px;padding-bottom:52px">
+		<p class="sec-label">Privacy</p>
+		<div class="faq-list">
+			<div class="faq-item open">
+				<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="true">
+					Will pamelo read my private messages?
+					<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+						<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+				</button>
+				<div class="faq-a">
+					<p class="faq-a-inner">No. pamelo only reads messages in your business inbox via the official Meta Business
+						API. Your personal WhatsApp and DMs are never touched.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+					Is my data safe?
+					<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+						<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+				</button>
+				<div class="faq-a">
+					<p class="faq-a-inner">Yes. All data is encrypted in transit and at rest. We never sell or share your customer
+						data with third parties.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+					Do I need to install anything?
+					<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+						<path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg>
+				</button>
+				<div class="faq-a">
+					<p class="faq-a-inner">Yes. pamelo has a mobile app where you manage your orders and conversations. Connecting
+						your WhatsApp Business or Instagram account takes just a few minutes from inside the app.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-<div class="div"></div>
+	<div class="div"></div>
 
-<!-- FINAL CTA -->
-<section class="final" id="signup">
-  <p class="h2" id="fd-heading">Ready to get started?</p>
-  <p class="sec-sub" id="fd-subtext">Pick a channel — we'll reply right away.</p>
-  <div class="final-form-wrap" id="final-form">
-    <button class="ch-opt" onclick="connectChannel('whatsapp')">
-      <div class="ch-opt-ico" style="background:#ECFDF5">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#25D366"/><path d="M11 4.5a6.5 6.5 0 00-5.63 9.76l-.87 3.24 3.32-.85A6.5 6.5 0 1011 4.5z" fill="#fff"/><path d="M8.5 9.2c.1-.3.5-1.2.9-1.2.3 0 .5.1.6.3l.6 1.3c.1.2 0 .4-.1.6l-.4.4c.3.7.8 1.3 1.5 1.7l.5-.4c.2-.1.4-.1.5 0l1.2.6c.2.1.3.4.2.6-.2.6-.9 1.1-1.5 1.1-1.8 0-4-2.2-4-4z" fill="#25D366"/></svg>
-      </div>
-      <div>
-        <div class="ch-opt-name">WhatsApp</div>
-        <div class="ch-opt-hint">+234 903 850 1677 &middot; message us directly</div>
-      </div>
-    </button>
-    <button class="ch-opt" onclick="connectChannel('instagram')">
-      <div class="ch-opt-ico" style="background:#F2EFFE">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="5" stroke="url(#ig2)" stroke-width="1.6"/><circle cx="11" cy="11" r="3.5" stroke="url(#ig2)" stroke-width="1.6"/><circle cx="15.5" cy="6.5" r="1" fill="#C13584"/><defs><linearGradient id="ig2" x1="3" y1="19" x2="19" y2="3" gradientUnits="userSpaceOnUse"><stop stop-color="#F58529"/><stop offset=".5" stop-color="#C13584"/><stop offset="1" stop-color="#833AB4"/></linearGradient></defs></svg>
-      </div>
-      <div>
-        <div class="ch-opt-name">Instagram</div>
-        <div class="ch-opt-hint">Send us a DM</div>
-      </div>
-    </button>
-  </div>
-</section>
+	<!-- FINAL CTA -->
+	<section class="final" id="signup">
+		<p class="h2" id="fd-heading">Ready to get started?</p>
+		<p class="sec-sub" id="fd-subtext">Pick a channel — we'll reply right away.</p>
+		<div class="final-form-wrap" id="final-form">
+			<button class="ch-opt" onclick="connectChannel('whatsapp')">
+				<div class="ch-opt-ico" style="background:#ECFDF5">
+					<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+						<circle cx="11" cy="11" r="10" fill="#25D366" />
+						<path d="M11 4.5a6.5 6.5 0 00-5.63 9.76l-.87 3.24 3.32-.85A6.5 6.5 0 1011 4.5z" fill="#fff" />
+						<path
+							d="M8.5 9.2c.1-.3.5-1.2.9-1.2.3 0 .5.1.6.3l.6 1.3c.1.2 0 .4-.1.6l-.4.4c.3.7.8 1.3 1.5 1.7l.5-.4c.2-.1.4-.1.5 0l1.2.6c.2.1.3.4.2.6-.2.6-.9 1.1-1.5 1.1-1.8 0-4-2.2-4-4z"
+							fill="#25D366" />
+					</svg>
+				</div>
+				<div>
+					<div class="ch-opt-name">WhatsApp</div>
+					<div class="ch-opt-hint">+234 903 850 1677 &middot; message us directly</div>
+				</div>
+			</button>
+			<button class="ch-opt" onclick="connectChannel('instagram')">
+				<div class="ch-opt-ico" style="background:#F2EFFE">
+					<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+						<rect x="3" y="3" width="16" height="16" rx="5" stroke="url(#ig2)" stroke-width="1.6" />
+						<circle cx="11" cy="11" r="3.5" stroke="url(#ig2)" stroke-width="1.6" />
+						<circle cx="15.5" cy="6.5" r="1" fill="#C13584" />
+						<defs>
+							<linearGradient id="ig2" x1="3" y1="19" x2="19" y2="3" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#F58529" />
+								<stop offset=".5" stop-color="#C13584" />
+								<stop offset="1" stop-color="#833AB4" />
+							</linearGradient>
+						</defs>
+					</svg>
+				</div>
+				<div>
+					<div class="ch-opt-name">Instagram</div>
+					<div class="ch-opt-hint">Send us a DM</div>
+				</div>
+			</button>
+		</div>
+	</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="foot-logo">
-    <svg width="24" height="24" viewBox="0 0 80 80" fill="none">
-      <rect width="80" height="80" rx="22" fill="url(#footg)"/>
-      <path d="M26 56 L26 24" stroke="white" stroke-width="4" stroke-linecap="round"/>
-      <path d="M26 24 Q26 18 32 18 L44 18 Q54 18 54 30 Q54 42 44 42 L26 42" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <circle cx="54" cy="56" r="5" fill="#C4A8E8"/>
-      <defs>
-        <linearGradient id="footg" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#4C35A0"/>
-          <stop offset="100%" stop-color="#2D1B69"/>
-        </linearGradient>
-      </defs>
-    </svg>
-    <div class="foot-type">pame<em>lo</em></div>
-  </div>
-  <div class="foot-links">
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="mailto:privacy@pamelo.trade">Contact</a>
-  </div>
-  <small>Lagos, Nigeria &middot; 2026</small>
-</footer>
+	<!-- FOOTER -->
+	<footer>
+		<div class="foot-logo">
+			<svg width="24" height="24" viewBox="0 0 80 80" fill="none">
+				<rect width="80" height="80" rx="22" fill="url(#footg)" />
+				<path d="M26 56 L26 24" stroke="white" stroke-width="4" stroke-linecap="round" />
+				<path d="M26 24 Q26 18 32 18 L44 18 Q54 18 54 30 Q54 42 44 42 L26 42" stroke="white" stroke-width="4"
+					stroke-linecap="round" stroke-linejoin="round" fill="none" />
+				<circle cx="54" cy="56" r="5" fill="#C4A8E8" />
+				<defs>
+					<linearGradient id="footg" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+						<stop offset="0%" stop-color="#4C35A0" />
+						<stop offset="100%" stop-color="#2D1B69" />
+					</linearGradient>
+				</defs>
+			</svg>
+			<div class="foot-type">pame<em>lo</em></div>
+		</div>
+		<div class="foot-links">
+			<a href="/privacy.html">Privacy Policy</a>
+			<a href="mailto:privacy@pamelo.trade">Contact</a>
+		</div>
+		<small>Lagos, Nigeria &middot; 2026</small>
+	</footer>
 
-<!-- CHANNEL SELECT DIALOG -->
-<div class="dialog-overlay" id="channel-dialog" onclick="overlayClose(event)">
-  <div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialog-ttl">
-    <button class="dialog-close" onclick="closeChannelDialog()" aria-label="Close">&times;</button>
-    <p class="dialog-title" id="dialog-ttl">How would you like to connect?</p>
-    <p class="dialog-sub" id="dialog-sub">Pick a channel — we'll come to you.</p>
-    <button class="ch-opt" onclick="connectChannel('whatsapp')">
-      <div class="ch-opt-ico" style="background:#ECFDF5">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#25D366"/><path d="M11 4.5a6.5 6.5 0 00-5.63 9.76l-.87 3.24 3.32-.85A6.5 6.5 0 1011 4.5z" fill="#fff"/><path d="M8.5 9.2c.1-.3.5-1.2.9-1.2.3 0 .5.1.6.3l.6 1.3c.1.2 0 .4-.1.6l-.4.4c.3.7.8 1.3 1.5 1.7l.5-.4c.2-.1.4-.1.5 0l1.2.6c.2.1.3.4.2.6-.2.6-.9 1.1-1.5 1.1-1.8 0-4-2.2-4-4z" fill="#25D366"/></svg>
-      </div>
-      <div>
-        <div class="ch-opt-name">WhatsApp</div>
-        <div class="ch-opt-hint">+234 903 850 1677</div>
-      </div>
-    </button>
-    <button class="ch-opt" onclick="connectChannel('instagram')">
-      <div class="ch-opt-ico" style="background:#F2EFFE">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="5" stroke="url(#ig1)" stroke-width="1.6"/><circle cx="11" cy="11" r="3.5" stroke="url(#ig1)" stroke-width="1.6"/><circle cx="15.5" cy="6.5" r="1" fill="#C13584"/><defs><linearGradient id="ig1" x1="3" y1="19" x2="19" y2="3" gradientUnits="userSpaceOnUse"><stop stop-color="#F58529"/><stop offset=".5" stop-color="#C13584"/><stop offset="1" stop-color="#833AB4"/></linearGradient></defs></svg>
-      </div>
-      <div>
-        <div class="ch-opt-name">Instagram</div>
-        <div class="ch-opt-hint">Send us a DM</div>
-      </div>
-    </button>
-  </div>
-</div>
+	<!-- CHANNEL SELECT DIALOG -->
+	<div class="dialog-overlay" id="channel-dialog" onclick="overlayClose(event)">
+		<div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialog-ttl">
+			<button class="dialog-close" onclick="closeChannelDialog()" aria-label="Close">&times;</button>
+			<p class="dialog-title" id="dialog-ttl">How would you like to connect?</p>
+			<p class="dialog-sub" id="dialog-sub">Pick a channel — we'll come to you.</p>
+			<button class="ch-opt" onclick="connectChannel('whatsapp')">
+				<div class="ch-opt-ico" style="background:#ECFDF5">
+					<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+						<circle cx="11" cy="11" r="10" fill="#25D366" />
+						<path d="M11 4.5a6.5 6.5 0 00-5.63 9.76l-.87 3.24 3.32-.85A6.5 6.5 0 1011 4.5z" fill="#fff" />
+						<path
+							d="M8.5 9.2c.1-.3.5-1.2.9-1.2.3 0 .5.1.6.3l.6 1.3c.1.2 0 .4-.1.6l-.4.4c.3.7.8 1.3 1.5 1.7l.5-.4c.2-.1.4-.1.5 0l1.2.6c.2.1.3.4.2.6-.2.6-.9 1.1-1.5 1.1-1.8 0-4-2.2-4-4z"
+							fill="#25D366" />
+					</svg>
+				</div>
+				<div>
+					<div class="ch-opt-name">WhatsApp</div>
+					<div class="ch-opt-hint">+234 903 850 1677</div>
+				</div>
+			</button>
+			<button class="ch-opt" onclick="connectChannel('instagram')">
+				<div class="ch-opt-ico" style="background:#F2EFFE">
+					<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+						<rect x="3" y="3" width="16" height="16" rx="5" stroke="url(#ig1)" stroke-width="1.6" />
+						<circle cx="11" cy="11" r="3.5" stroke="url(#ig1)" stroke-width="1.6" />
+						<circle cx="15.5" cy="6.5" r="1" fill="#C13584" />
+						<defs>
+							<linearGradient id="ig1" x1="3" y1="19" x2="19" y2="3" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#F58529" />
+								<stop offset=".5" stop-color="#C13584" />
+								<stop offset="1" stop-color="#833AB4" />
+							</linearGradient>
+						</defs>
+					</svg>
+				</div>
+				<div>
+					<div class="ch-opt-name">Instagram</div>
+					<div class="ch-opt-hint">Send us a DM</div>
+				</div>
+			</button>
+		</div>
+	</div>
 
-<script>
-var currentVariant = 'default';
-var selectedPlan = null;
+	<script>
+		var currentVariant = 'default';
+		var selectedPlan = null;
 
-// ponytail: update PAMELO_IG when the Instagram handle is ready
-var PAMELO_IG = 'https://ig.me/m/pamelo.trade';
+		// ponytail: update PAMELO_IG when the Instagram handle is ready
+		var PAMELO_IG = 'https://ig.me/m/pamelo.trade';
 
-var _PLAN_LABELS = { solo: 'Solo plan (₦60,000/year)', business: 'Business plan (₦48,000/user/year)' };
+		var _PLAN_LABELS = {solo: 'Solo plan (₦60,000/year)', business: 'Business plan (₦48,000/user/year)'};
 
-function openChannelDialog() {
-  var sub = document.getElementById('dialog-sub');
-  if (sub) {
-    sub.textContent = selectedPlan
-      ? 'You\'re interested in the ' + _PLAN_LABELS[selectedPlan] + ' — pick a channel and we\'ll DM you.'
-      : 'Pick a channel — we\'ll come to you.';
-  }
-  posthog.capture('interested_clicked', { plan: selectedPlan, variant: currentVariant });
-  document.getElementById('channel-dialog').classList.add('open');
-}
-function closeChannelDialog() {
-  document.getElementById('channel-dialog').classList.remove('open');
-}
-function overlayClose(e) {
-  if (e.target.id === 'channel-dialog') closeChannelDialog();
-}
-function connectChannel(ch) {
-  var msg = selectedPlan
-    ? 'Hi, I\'m interested in the Pamelo ' + _PLAN_LABELS[selectedPlan] + '.'
-    : 'Hi, I\'m interested in learning more about Pamelo.';
-  posthog.capture('channel_selected', { channel: ch, plan: selectedPlan, variant: currentVariant });
-  closeChannelDialog();
-  if (ch === 'whatsapp') {
-    window.open('https://wa.me/2349038501677?text=' + encodeURIComponent(msg), '_blank');
-  } else {
-    window.open(PAMELO_IG, '_blank');
-  }
-}
+		function openChannelDialog() {
+			var sub = document.getElementById('dialog-sub');
+			if (sub) {
+				sub.textContent = selectedPlan
+					? 'You\'re interested in the ' + _PLAN_LABELS[selectedPlan] + ' — pick a channel and we\'ll DM you.'
+					: 'Pick a channel — we\'ll come to you.';
+			}
+			posthog.capture('interested_clicked', {plan: selectedPlan, variant: currentVariant});
+			document.getElementById('channel-dialog').classList.add('open');
+		}
+		function closeChannelDialog() {
+			document.getElementById('channel-dialog').classList.remove('open');
+		}
+		function overlayClose(e) {
+			if (e.target.id === 'channel-dialog') closeChannelDialog();
+		}
+		function connectChannel(ch) {
+			var msg = selectedPlan
+				? 'Hi, I\'m interested in the Pamelo ' + _PLAN_LABELS[selectedPlan] + '.'
+				: 'Hi, I\'m interested in learning more about Pamelo.';
+			posthog.capture('channel_selected', {channel: ch, plan: selectedPlan, variant: currentVariant});
+			closeChannelDialog();
+			if (ch === 'whatsapp') {
+				window.open('https://wa.me/2349038501677?text=' + encodeURIComponent(msg), '_blank');
+			} else {
+				window.open(PAMELO_IG, '_blank');
+			}
+		}
 
-var _skelDone = false;
-function hideSkeleton() {
-  if (_skelDone) return;
-  _skelDone = true;
-  var skel = document.getElementById('skel');
-  skel.style.transition = 'opacity 0.15s';
-  skel.style.opacity = '0';
-  setTimeout(function() { skel.style.display = 'none'; }, 150);
-}
+		var _skelDone = false;
+		function hideSkeleton() {
+			if (_skelDone) return;
+			_skelDone = true;
+			var skel = document.getElementById('skel');
+			skel.style.transition = 'opacity 0.15s';
+			skel.style.opacity = '0';
+			setTimeout(function () {skel.style.display = 'none';}, 150);
+		}
 
-// ── AD GROUP DETECTION & VARIANT ────────────────────────────────────
-var _LS_KEY = 'pamelo_ad_group';
+		// ── AD GROUP DETECTION & VARIANT ────────────────────────────────────
+		var _LS_KEY = 'pamelo_ad_group';
 
-var _VARIANTS = {
-  data_backup: {
-    title: 'Never Lose Your Customers — pamelo',
-    pill: '<span class="pill-dot"></span>Ban-proof your customer base',
-    h1: 'Never Lose Your<br/><em>Customers</em>',
-    sub: 'Banned today. Back in business tomorrow. Pamelo backs up your customer conversations — so a banned account never means a lost customer.',
-    proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
-    heroCta: 'Back up my customers',
-    navCta: 'I\'m interested',
-    planCta: 'I\'m interested',
-    scenarioText: 'Ada woke up to <em>"Your account has been disabled."</em> Two years of followers, every customer DM, every order — gone by breakfast. No warning. No appeal that worked.',
-    scenarioStats: [
-      { num: '2 yrs',     desc: 'spent building her following' },
-      { num: '1 morning', desc: 'to lose all of it' },
-      { num: '0',         desc: 'customer contacts she could take' }
-    ],
-    scenarioUtil: "If Ada's customers had lived in pamelo — names, numbers, order history — one WhatsApp message could have brought every one of them back. The ban would've been an inconvenience, not the end.",
-    featHeading: 'Your customers, saved outside Instagram.',
-    feats: ['profiles', 'inbox', 'followup'],
-    featCopy: {
-      profiles: { h4: 'Mini-CRM: your customer list, always yours',    p: 'Every name, number, order and payment history pulled from your DMs into pamelo automatically. Even if your account vanishes, your customer base stays with you.' },
-      inbox:    { h4: 'Messages backed up across channels',             p: 'pamelo gives you a WhatsApp line alongside Instagram. If one platform goes down, your conversations carry on somewhere you control.' },
-      followup: { h4: 'Bring everyone back in one message',             p: 'With every customer saved, an automated follow-up can re-activate your whole list at once — so a lost account never means a lost business.' }
-    },
-    howItWorks: {
-      heading: 'Set up your backup before you need it.',
-      steps: [
-        { h4: 'Connect your channels',              p: 'Link Instagram and your pamelo WhatsApp number in under 5 minutes. Nothing changes for your customers.' },
-        { h4: 'Every customer saved automatically', p: "As messages come in, pamelo extracts each customer's name, contact and order history into a list that lives outside Instagram." },
-        { h4: 'If the worst happens, you rebound',  p: "Account disabled? Your customer base is intact in pamelo. One follow-up reaches all of them on WhatsApp — your business keeps running." }
-      ]
-    },
-    pricingKeywords: ['whatsapp', 'instagram', 'profiles', 'follow-up', 'everything'],
-    fdHeading: "Don't wait for the ban to wish you'd backed up",
-    fdSubtext: 'Join the waitlist. Lock in early access and be ready before it happens.',
-    fdBtn: "Back up my customers — it's free"
-  },
-  auto_followup: {
-    title: 'Automated Follow-ups — 80% automated. 100% personal. — pamelo',
-    pill: '<span class="pill-dot"></span>80% automated. 100% personal.',
-    h1: 'Automated Follow-ups —<br/><em>80% automated. 100% personal.</em>',
-    sub: "Your time is too valuable to spend on repetitive follow-up messages. Pamelo handles the 80% — the check-ins, the surveys, the reminders, and follow-ups — so you can focus on the 20% that actually moves your business forward.",
-    proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
-    heroCta: 'Automate my follow-ups',
-    navCta: 'I\'m interested',
-    planCta: 'I\'m interested',
-    scenarioText: "You finished the order. Now you're sending the same delivery message, the same feedback request, the same <em>\"just checking in\"</em> — to every single customer. Manually. Every time.",
-    scenarioStats: [
-      { num: '80%', desc: 'of follow-ups are the same message' },
-      { num: '3h',  desc: 'lost weekly to manual follow-ups' },
-      { num: '0',   desc: 'repetitive messages with pamelo' }
-    ],
-    scenarioUtil: "pamelo sends your check-ins, delivery confirmations, surveys, and reminders automatically — personalised with each customer's name and order details, in your voice.",
-    featHeading: 'Set up once. Follow up forever.',
-    feats: ['followup', 'profiles', 'debt'],
-    featCopy: {
-      followup: { h4: 'Automated follow-up sequences',           p: 'Delivery confirmations, feedback requests, re-engagement nudges — set up once, runs in your tone on your schedule. Never send the same message manually again.' },
-      profiles: { h4: 'Mini-CRM: the data that makes it personal', p: "Every customer's name, order history and payment record is stored in pamelo — so every automated message is personalised, not generic." },
-      debt:     { h4: 'Debt reminders, automated too',            p: 'Log an unpaid balance and pamelo sends polite, scheduled reminders under your name. No awkward chasing.' }
-    },
-    howItWorks: {
-      heading: 'Set up sequences once. They run forever.',
-      steps: [
-        { h4: 'Connect your channels',           p: 'Link WhatsApp and Instagram in under 5 minutes. Your customers message you as normal.' },
-        { h4: 'pamelo learns every customer',    p: "Every message is parsed automatically. Names, orders, and amounts are stored in your Mini-CRM — the data that makes every follow-up personal." },
-        { h4: 'Your sequences run on their own', p: 'Delivery confirmations, feedback requests, re-engagement nudges — all sent automatically, in your voice, while you focus on selling.' }
-      ]
-    },
-    pricingKeywords: ['whatsapp', 'instagram', 'profiles', 'follow-up', 'debt', 'everything'],
-    fdHeading: 'Stop sending the same messages manually',
-    fdSubtext: 'Join the waitlist. Get early access to automated follow-ups.',
-    fdBtn: "Automate my follow-ups — it's free"
-  }
-};
+		var _VARIANTS = {
+			data_backup: {
+				title: 'Never Lose Your Customers — pamelo',
+				pill: '<span class="pill-dot"></span>Ban-proof your customer base',
+				h1: 'Never Lose Your<br/><em>Customers</em>',
+				sub: 'Banned today. Back in business tomorrow. Pamelo backs up your customer conversations — so a banned account never means a lost customer.',
+				proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
+				heroCta: 'Back up my customers',
+				navCta: 'I\'m interested',
+				planCta: 'I\'m interested',
+				scenarioText: 'Ada woke up to <em>"Your account has been disabled."</em> Two years of followers, every customer DM, every order — gone by breakfast. No warning. No appeal that worked.',
+				scenarioStats: [
+					{num: '2 yrs', desc: 'spent building her following'},
+					{num: '1 morning', desc: 'to lose all of it'},
+					{num: '0', desc: 'customer contacts she could take'}
+				],
+				scenarioUtil: "If Ada's customers had lived in pamelo — names, numbers, order history — one WhatsApp message could have brought every one of them back. The ban would've been an inconvenience, not the end.",
+				featHeading: 'Your customers, saved outside Instagram.',
+				feats: ['profiles', 'inbox', 'followup'],
+				featCopy: {
+					profiles: {h4: 'Mini-CRM: your customer list, always yours', p: 'Every name, number, order and payment history pulled from your DMs into pamelo automatically. Even if your account vanishes, your customer base stays with you.'},
+					inbox: {h4: 'Messages backed up across channels', p: 'pamelo gives you a WhatsApp line alongside Instagram. If one platform goes down, your conversations carry on somewhere you control.'},
+					followup: {h4: 'Bring everyone back in one message', p: 'With every customer saved, an automated follow-up can re-activate your whole list at once — so a lost account never means a lost business.'}
+				},
+				howItWorks: {
+					heading: 'Set up your backup before you need it.',
+					steps: [
+						{h4: 'Connect your channels', p: 'Link Instagram and your pamelo WhatsApp number in under 5 minutes. Nothing changes for your customers.'},
+						{h4: 'Every customer saved automatically', p: "As messages come in, pamelo extracts each customer's name, contact and order history into a list that lives outside Instagram."},
+						{h4: 'If the worst happens, you rebound', p: "Account disabled? Your customer base is intact in pamelo. One follow-up reaches all of them on WhatsApp — your business keeps running."}
+					]
+				},
+				pricingKeywords: ['whatsapp', 'instagram', 'profiles', 'follow-up', 'everything'],
+				fdHeading: "Don't wait for the ban to wish you'd backed up",
+				fdSubtext: 'Join the waitlist. Lock in early access and be ready before it happens.',
+				fdBtn: "Back up my customers — it's free"
+			},
+			auto_followup: {
+				title: 'Automated Follow-ups — 80% automated. 100% personal. — pamelo',
+				pill: '<span class="pill-dot"></span>80% automated. 100% personal.',
+				h1: 'Automated Follow-ups <br/><em>80% automated. 100% personal.</em>',
+				sub: "Your time is too valuable to spend on repetitive follow-up messages. Pamelo handles the 80% — the check-ins, the surveys, the reminders, and follow-ups — so you can focus on the 20% that actually moves your business forward.",
+				proofText: 'Vendors, entrepreneurs & freelancers from across Nigeria on the waitlist',
+				heroCta: 'Automate my follow-ups',
+				navCta: 'I\'m interested',
+				planCta: 'I\'m interested',
+				scenarioText: "You finished the order. Now you're sending the same delivery message, the same feedback request, the same <em>\"just checking in\"</em> — to every single customer. Manually. Every time.",
+				scenarioStats: [
+					{num: '80%', desc: 'of follow-ups are the same message'},
+					{num: '3h', desc: 'lost weekly to manual follow-ups'},
+					{num: '0', desc: 'repetitive messages with pamelo'}
+				],
+				scenarioUtil: "pamelo sends your check-ins, delivery confirmations, surveys, and reminders automatically — personalised with each customer's name and order details, in your voice.",
+				featHeading: 'Set up once. Follow up forever.',
+				feats: ['followup', 'profiles', 'debt'],
+				featCopy: {
+					followup: {h4: 'Automated follow-up sequences', p: 'Delivery confirmations, feedback requests, re-engagement nudges — set up once, runs in your tone on your schedule. Never send the same message manually again.'},
+					profiles: {h4: 'Mini-CRM: the data that makes it personal', p: "Every customer's name, order history and payment record is stored in pamelo — so every automated message is personalised, not generic."},
+					debt: {h4: 'Debt reminders, automated too', p: 'Log an unpaid balance and pamelo sends polite, scheduled reminders under your name. No awkward chasing.'}
+				},
+				howItWorks: {
+					heading: 'Set up sequences once. They run forever.',
+					steps: [
+						{h4: 'Connect your channels', p: 'Link WhatsApp and Instagram in under 5 minutes. Your customers message you as normal.'},
+						{h4: 'pamelo learns every customer', p: "Every message is parsed automatically. Names, orders, and amounts are stored in your Mini-CRM — the data that makes every follow-up personal."},
+						{h4: 'Your sequences run on their own', p: 'Delivery confirmations, feedback requests, re-engagement nudges — all sent automatically, in your voice, while you focus on selling.'}
+					]
+				},
+				pricingKeywords: ['whatsapp', 'instagram', 'profiles', 'follow-up', 'debt', 'everything'],
+				fdHeading: 'Stop sending the same messages manually',
+				fdSubtext: 'Join the waitlist. Get early access to automated follow-ups.',
+				fdBtn: "Automate my follow-ups — it's free"
+			}
+		};
 
-function _detectAdGroup() {
-  var params = new URLSearchParams(window.location.search);
-  // Check 'pg' first — a custom param Facebook Ads Manager won't auto-override.
-  // Fall back to utm_content for backwards compatibility.
-  var raw = params.get('pg') || params.get('utm_content') || '';
-  var content = raw.toLowerCase().replace(/-/g, '_');
-  var fromUrl = null;
-  if (content === 'data_backup')       fromUrl = 'data_backup';
-  else if (content === 'auto_followup') fromUrl = 'auto_followup';
-  if (fromUrl) {
-    try { localStorage.setItem(_LS_KEY, fromUrl); } catch(e) {}
-    return { group: fromUrl, source: 'url' };
-  }
-  try {
-    var stored = localStorage.getItem(_LS_KEY);
-    if (stored === 'data_backup' || stored === 'auto_followup') return { group: stored, source: 'stored' };
-  } catch(e) {}
-  return { group: 'default', source: 'organic' };
-}
+		function _detectAdGroup() {
+			var params = new URLSearchParams(window.location.search);
+			// Check 'pg' first — a custom param Facebook Ads Manager won't auto-override.
+			// Fall back to utm_content for backwards compatibility.
+			var raw = params.get('pg') || params.get('utm_content') || '';
+			var content = raw.toLowerCase().replace(/-/g, '_');
+			var fromUrl = null;
+			if (content === 'data_backup') fromUrl = 'data_backup';
+			else if (content === 'auto_followup') fromUrl = 'auto_followup';
+			if (fromUrl) {
+				try {localStorage.setItem(_LS_KEY, fromUrl);} catch (e) { }
+				return {group: fromUrl, source: 'url'};
+			}
+			try {
+				var stored = localStorage.getItem(_LS_KEY);
+				if (stored === 'data_backup' || stored === 'auto_followup') return {group: stored, source: 'stored'};
+			} catch (e) { }
+			return {group: 'default', source: 'organic'};
+		}
 
-function _applyVariant(group) {
-  var v = _VARIANTS[group];
-  if (!v) return;
+		function _applyVariant(group) {
+			var v = _VARIANTS[group];
+			if (!v) return;
 
-  if (v.title) document.title = v.title;
+			if (v.title) document.title = v.title;
 
-  // Hero
-  var pill    = document.getElementById('hero-pill');
-  var h1      = document.getElementById('hero-h1');
-  var sub     = document.getElementById('hero-sub');
-  var proofT  = document.getElementById('proof-t');
-  var heroCta = document.getElementById('hero-cta');
-  if (pill)    pill.innerHTML      = v.pill;
-  if (h1)      h1.innerHTML        = v.h1;
-  if (sub)     sub.textContent     = v.sub;
-  if (proofT)  proofT.textContent  = v.proofText;
-  if (heroCta) heroCta.textContent = v.heroCta;
+			// Hero
+			var pill = document.getElementById('hero-pill');
+			var h1 = document.getElementById('hero-h1');
+			var sub = document.getElementById('hero-sub');
+			var proofT = document.getElementById('proof-t');
+			var heroCta = document.getElementById('hero-cta');
+			if (pill) pill.innerHTML = v.pill;
+			if (h1) h1.innerHTML = v.h1;
+			if (sub) sub.textContent = v.sub;
+			if (proofT) proofT.textContent = v.proofText;
+			if (heroCta) heroCta.textContent = v.heroCta;
 
-  // Nav + pricing CTAs
-  var navCtaBtn = document.getElementById('nav-cta');
-  if (navCtaBtn && v.navCta) navCtaBtn.textContent = v.navCta;
-  if (v.planCta) {
-    var btnSolo     = document.getElementById('btn-solo');
-    var btnBusiness = document.getElementById('btn-business');
-    if (btnSolo)     btnSolo.textContent     = v.planCta;
-    if (btnBusiness) btnBusiness.textContent = v.planCta;
-  }
+			// Nav + pricing CTAs
+			var navCtaBtn = document.getElementById('nav-cta');
+			if (navCtaBtn && v.navCta) navCtaBtn.textContent = v.navCta;
+			if (v.planCta) {
+				var btnSolo = document.getElementById('btn-solo');
+				var btnBusiness = document.getElementById('btn-business');
+				if (btnSolo) btnSolo.textContent = v.planCta;
+				if (btnBusiness) btnBusiness.textContent = v.planCta;
+			}
 
-  // Scenario — only override if the variant defines different content
-  if (v.scenarioText) {
-    var scText = document.getElementById('scenario-text');
-    var scUtil = document.getElementById('scenario-util');
-    if (scText) scText.innerHTML   = v.scenarioText;
-    if (scUtil) scUtil.textContent = v.scenarioUtil;
-    if (v.scenarioStats) {
-      v.scenarioStats.forEach(function(s, i) {
-        var n = document.getElementById('stat-' + (i + 1) + '-num');
-        var d = document.getElementById('stat-' + (i + 1) + '-desc');
-        if (n) n.textContent = s.num;
-        if (d) d.textContent = s.desc;
-      });
-    }
-  }
+			// Scenario — only override if the variant defines different content
+			if (v.scenarioText) {
+				var scText = document.getElementById('scenario-text');
+				var scUtil = document.getElementById('scenario-util');
+				if (scText) scText.innerHTML = v.scenarioText;
+				if (scUtil) scUtil.textContent = v.scenarioUtil;
+				if (v.scenarioStats) {
+					v.scenarioStats.forEach(function (s, i) {
+						var n = document.getElementById('stat-' + (i + 1) + '-num');
+						var d = document.getElementById('stat-' + (i + 1) + '-desc');
+						if (n) n.textContent = s.num;
+						if (d) d.textContent = s.desc;
+					});
+				}
+			}
 
-  // How it works
-  if (v.howItWorks) {
-    var hiwH = document.getElementById('hiw-heading');
-    if (hiwH) hiwH.textContent = v.howItWorks.heading;
-    v.howItWorks.steps.forEach(function(s, i) {
-      var h4el = document.getElementById('hiw-' + (i + 1) + '-h4');
-      var pel  = document.getElementById('hiw-' + (i + 1) + '-p');
-      if (h4el) h4el.textContent = s.h4;
-      if (pel)  pel.textContent  = s.p;
-    });
-  }
+			// How it works
+			if (v.howItWorks) {
+				var hiwH = document.getElementById('hiw-heading');
+				if (hiwH) hiwH.textContent = v.howItWorks.heading;
+				v.howItWorks.steps.forEach(function (s, i) {
+					var h4el = document.getElementById('hiw-' + (i + 1) + '-h4');
+					var pel = document.getElementById('hiw-' + (i + 1) + '-p');
+					if (h4el) h4el.textContent = s.h4;
+					if (pel) pel.textContent = s.p;
+				});
+			}
 
-  // Features grid — remove irrelevant tiles, update copy, sync dots
-  var grid = document.getElementById('feat-grid');
-  if (grid && v.feats) {
-    Array.prototype.slice.call(grid.querySelectorAll('.feat-tile')).forEach(function(tile) {
-      if (v.feats.indexOf(tile.getAttribute('data-feat')) === -1) tile.parentNode.removeChild(tile);
-    });
-    v.feats.forEach(function(feat) {
-      var tile = grid.querySelector('[data-feat="' + feat + '"]');
-      if (!tile) return;
-      var copy = v.featCopy && v.featCopy[feat];
-      if (copy) {
-        var h4el = tile.querySelector('h4');
-        var pel  = tile.querySelector('p');
-        if (h4el && copy.h4) h4el.textContent = copy.h4;
-        if (pel  && copy.p)  pel.textContent  = copy.p;
-      }
-      grid.appendChild(tile);
-    });
-    var dotsWrap = document.getElementById('feat-dots');
-    if (dotsWrap) {
-      dotsWrap.querySelectorAll('.dot').forEach(function(d, i) {
-        d.style.display = i < v.feats.length ? '' : 'none';
-        d.classList.toggle('active', i === 0);
-      });
-    }
-    var featH = document.getElementById('feat-heading');
-    if (featH) featH.textContent = v.featHeading;
-  }
+			// Features grid — remove irrelevant tiles, update copy, sync dots
+			var grid = document.getElementById('feat-grid');
+			if (grid && v.feats) {
+				Array.prototype.slice.call(grid.querySelectorAll('.feat-tile')).forEach(function (tile) {
+					if (v.feats.indexOf(tile.getAttribute('data-feat')) === -1) tile.parentNode.removeChild(tile);
+				});
+				v.feats.forEach(function (feat) {
+					var tile = grid.querySelector('[data-feat="' + feat + '"]');
+					if (!tile) return;
+					var copy = v.featCopy && v.featCopy[feat];
+					if (copy) {
+						var h4el = tile.querySelector('h4');
+						var pel = tile.querySelector('p');
+						if (h4el && copy.h4) h4el.textContent = copy.h4;
+						if (pel && copy.p) pel.textContent = copy.p;
+					}
+					grid.appendChild(tile);
+				});
+				var dotsWrap = document.getElementById('feat-dots');
+				if (dotsWrap) {
+					dotsWrap.querySelectorAll('.dot').forEach(function (d, i) {
+						d.style.display = i < v.feats.length ? '' : 'none';
+						d.classList.toggle('active', i === 0);
+					});
+				}
+				var featH = document.getElementById('feat-heading');
+				if (featH) featH.textContent = v.featHeading;
+			}
 
-  // Pricing — show only features relevant to this group, hide the rest
-  document.querySelectorAll('.feat-list li').forEach(function(li) {
-    var text = li.textContent.trim().toLowerCase();
-    var show = false;
-    for (var i = 0; i < v.pricingKeywords.length; i++) {
-      if (text.indexOf(v.pricingKeywords[i]) !== -1) { show = true; break; }
-    }
-    li.style.display = show ? '' : 'none';
-  });
+			// Pricing — show only features relevant to this group, hide the rest
+			document.querySelectorAll('.feat-list li').forEach(function (li) {
+				var text = li.textContent.trim().toLowerCase();
+				var show = false;
+				for (var i = 0; i < v.pricingKeywords.length; i++) {
+					if (text.indexOf(v.pricingKeywords[i]) !== -1) {show = true; break;}
+				}
+				li.style.display = show ? '' : 'none';
+			});
 
-  // Final CTA
-  var fdHeading = document.getElementById('fd-heading');
-  var fdSubtext = document.getElementById('fd-subtext');
-  var fdBtn     = document.getElementById('fd-btn');
-  var fdNote    = document.getElementById('fd-note-text');
-  if (fdHeading) fdHeading.textContent = v.fdHeading;
-  if (fdSubtext) fdSubtext.textContent = v.fdSubtext;
-  if (fdBtn)     fdBtn.textContent     = v.fdBtn;
-  if (fdNote)    fdNote.textContent    = v.fdSubtext;
-}
+			// Final CTA
+			var fdHeading = document.getElementById('fd-heading');
+			var fdSubtext = document.getElementById('fd-subtext');
+			var fdBtn = document.getElementById('fd-btn');
+			var fdNote = document.getElementById('fd-note-text');
+			if (fdHeading) fdHeading.textContent = v.fdHeading;
+			if (fdSubtext) fdSubtext.textContent = v.fdSubtext;
+			if (fdBtn) fdBtn.textContent = v.fdBtn;
+			if (fdNote) fdNote.textContent = v.fdSubtext;
+		}
 
-// Skeleton stays up while variant is applied, then fades — no flicker on any load
-(function() {
-  var result = _detectAdGroup();
-  currentVariant = result.group;
-  if (result.group !== 'default') {
-    _applyVariant(result.group);
-    posthog.capture('ab_test_variant_viewed', { ab_test: 'feature_messaging_v1', variant: result.group, source: result.source });
-  }
-  hideSkeleton();
-})();
+		// Skeleton stays up while variant is applied, then fades — no flicker on any load
+		(function () {
+			var result = _detectAdGroup();
+			currentVariant = result.group;
+			if (result.group !== 'default') {
+				_applyVariant(result.group);
+				posthog.capture('ab_test_variant_viewed', {ab_test: 'feature_messaging_v1', variant: result.group, source: result.source});
+			}
+			hideSkeleton();
+		})();
 
-function navCta() {
-  posthog.capture('nav_cta_clicked', { variant: currentVariant });
-  openChannelDialog();
-}
+		function navCta() {
+			posthog.capture('nav_cta_clicked', {variant: currentVariant});
+			openChannelDialog();
+		}
 
-function heroCta() {
-  posthog.capture('hero_cta_clicked', { variant: currentVariant });
-  openChannelDialog();
-}
+		function heroCta() {
+			posthog.capture('hero_cta_clicked', {variant: currentVariant});
+			openChannelDialog();
+		}
 
-function pricingCta(plan) {
-  selectedPlan = plan;
-  posthog.capture('pricing_cta_clicked', { plan: plan, variant: currentVariant, source: 'pricing_section' });
-  openChannelDialog();
-}
+		function pricingCta(plan) {
+			selectedPlan = plan;
+			posthog.capture('pricing_cta_clicked', {plan: plan, variant: currentVariant, source: 'pricing_section'});
+			openChannelDialog();
+		}
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Hide nav CTA while hero CTA is visible; reveal on scroll past
-  (function() {
-    var navBtn = document.getElementById('nav-cta');
-    var heroCta = document.getElementById('hero-cta');
-    if (!navBtn || !heroCta) return;
-    navBtn.classList.add('nav-cta-hidden');
-    if (!window.IntersectionObserver) { navBtn.classList.remove('nav-cta-hidden'); return; }
-    new IntersectionObserver(function(entries) {
-      navBtn.classList.toggle('nav-cta-hidden', entries[0].isIntersecting);
-    }, { threshold: 0 }).observe(heroCta);
-  })();
-});
+		document.addEventListener('DOMContentLoaded', function () {
+			// Hide nav CTA while hero CTA is visible; reveal on scroll past
+			(function () {
+				var navBtn = document.getElementById('nav-cta');
+				var heroCta = document.getElementById('hero-cta');
+				if (!navBtn || !heroCta) return;
+				navBtn.classList.add('nav-cta-hidden');
+				if (!window.IntersectionObserver) {navBtn.classList.remove('nav-cta-hidden'); return;}
+				new IntersectionObserver(function (entries) {
+					navBtn.classList.toggle('nav-cta-hidden', entries[0].isIntersecting);
+				}, {threshold: 0}).observe(heroCta);
+			})();
+		});
 
 
-function toggleFaq(btn) {
-  var item = btn.parentElement;
-  var isOpen = item.classList.contains('open');
-  item.classList.toggle('open', !isOpen);
-  btn.setAttribute('aria-expanded', !isOpen);
-}
+		function toggleFaq(btn) {
+			var item = btn.parentElement;
+			var isOpen = item.classList.contains('open');
+			item.classList.toggle('open', !isOpen);
+			btn.setAttribute('aria-expanded', !isOpen);
+		}
 
-function talkToSales() {
-  posthog.capture('talk_to_sales_clicked', { variant: currentVariant });
-  var wa = 'https://wa.me/2349038501677?text=Hi%2C%20I%27m%20interested%20in%20the%20pamelo.trade%20Custom%20plan';
-  window.open(wa, '_blank');
-}
+		function talkToSales() {
+			posthog.capture('talk_to_sales_clicked', {variant: currentVariant});
+			var wa = 'https://wa.me/2349038501677?text=Hi%2C%20I%27m%20interested%20in%20the%20pamelo.trade%20Custom%20plan';
+			window.open(wa, '_blank');
+		}
 
-// Scroll depth tracking
-var _sd = { 25: 0, 50: 0, 75: 0, 90: 0 };
-window.addEventListener('scroll', function() {
-  var pct = Math.round(window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100);
-  for (var d in _sd) {
-    if (!_sd[d] && pct >= +d) {
-      _sd[d] = 1;
-      posthog.capture('scroll_depth', { pct: +d, variant: currentVariant });
-    }
-  }
-});
-var _t = Date.now();
-window.addEventListener('beforeunload', function() {
-  posthog.capture('page_exit', { secs: Math.round((Date.now() - _t) / 1000), variant: currentVariant });
-});
+		// Scroll depth tracking
+		var _sd = {25: 0, 50: 0, 75: 0, 90: 0};
+		window.addEventListener('scroll', function () {
+			var pct = Math.round(window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100);
+			for (var d in _sd) {
+				if (!_sd[d] && pct >= +d) {
+					_sd[d] = 1;
+					posthog.capture('scroll_depth', {pct: +d, variant: currentVariant});
+				}
+			}
+		});
+		var _t = Date.now();
+		window.addEventListener('beforeunload', function () {
+			posthog.capture('page_exit', {secs: Math.round((Date.now() - _t) / 1000), variant: currentVariant});
+		});
 
-// Feature carousel — mobile only
-(function(){
-  function init(){
-    if(window.innerWidth >= 640) return;
-    var grid = document.getElementById('feat-grid');
-    if(!grid) return;
-    var dotEls = document.querySelectorAll('#feat-dots .dot');
-    var tiles = document.querySelectorAll('#feat-grid .feat-tile');
-    var total = tiles.length;
-    if(!total) return;
-    var cur = 0, timer = null, paused = false;
-    var INTERVAL = 3200;
-    var SNAP_OFFSET = 22; // matches scroll-padding-left and grid padding-left
+		// Feature carousel — mobile only
+		(function () {
+			function init() {
+				if (window.innerWidth >= 640) return;
+				var grid = document.getElementById('feat-grid');
+				if (!grid) return;
+				var dotEls = document.querySelectorAll('#feat-dots .dot');
+				var tiles = document.querySelectorAll('#feat-grid .feat-tile');
+				var total = tiles.length;
+				if (!total) return;
+				var cur = 0, timer = null, paused = false;
+				var INTERVAL = 3200;
+				var SNAP_OFFSET = 22; // matches scroll-padding-left and grid padding-left
 
-    // Scroll so tile[idx]'s left edge sits at SNAP_OFFSET from the visible grid left
-    function scrollToTile(idx, smooth){
-      var gRect = grid.getBoundingClientRect();
-      var tRect = tiles[idx].getBoundingClientRect();
-      var target = Math.max(0, grid.scrollLeft + (tRect.left - gRect.left) - SNAP_OFFSET);
-      if(smooth){
-        grid.scrollTo({ left: target, behavior: 'smooth' });
-      } else {
-        grid.scrollLeft = target;
-      }
-    }
+				// Scroll so tile[idx]'s left edge sits at SNAP_OFFSET from the visible grid left
+				function scrollToTile(idx, smooth) {
+					var gRect = grid.getBoundingClientRect();
+					var tRect = tiles[idx].getBoundingClientRect();
+					var target = Math.max(0, grid.scrollLeft + (tRect.left - gRect.left) - SNAP_OFFSET);
+					if (smooth) {
+						grid.scrollTo({left: target, behavior: 'smooth'});
+					} else {
+						grid.scrollLeft = target;
+					}
+				}
 
-    function setDot(idx){
-      cur = idx;
-      dotEls.forEach(function(d,i){ d.classList.toggle('active', i === idx); });
-    }
+				function setDot(idx) {
+					cur = idx;
+					dotEls.forEach(function (d, i) {d.classList.toggle('active', i === idx);});
+				}
 
-    function advance(){
-      if(paused) return;
-      var next = (cur + 1) % total;
-      if(next === 0){
-        grid.scrollLeft = 0; // instant wrap back to start
-        setDot(0);
-      } else {
-        scrollToTile(next, true);
-        setDot(next);
-      }
-    }
+				function advance() {
+					if (paused) return;
+					var next = (cur + 1) % total;
+					if (next === 0) {
+						grid.scrollLeft = 0; // instant wrap back to start
+						setDot(0);
+					} else {
+						scrollToTile(next, true);
+						setDot(next);
+					}
+				}
 
-    function startTimer(){ clearInterval(timer); timer = setInterval(advance, INTERVAL); }
+				function startTimer() {clearInterval(timer); timer = setInterval(advance, INTERVAL);}
 
-    // Dot taps — handle both touch and click
-    dotEls.forEach(function(d, i){
-      d.addEventListener('touchend', function(e){
-        e.preventDefault();
-        scrollToTile(i, true);
-        setDot(i);
-        startTimer();
-      });
-      d.addEventListener('click', function(){
-        scrollToTile(i, true);
-        setDot(i);
-        startTimer();
-      });
-    });
+				// Dot taps — handle both touch and click
+				dotEls.forEach(function (d, i) {
+					d.addEventListener('touchend', function (e) {
+						e.preventDefault();
+						scrollToTile(i, true);
+						setDot(i);
+						startTimer();
+					});
+					d.addEventListener('click', function () {
+						scrollToTile(i, true);
+						setDot(i);
+						startTimer();
+					});
+				});
 
-    // Hold to pause, release to resume and sync dot to settled tile
-    grid.addEventListener('touchstart', function(){
-      paused = true;
-      clearInterval(timer);
-    }, { passive: true });
+				// Hold to pause, release to resume and sync dot to settled tile
+				grid.addEventListener('touchstart', function () {
+					paused = true;
+					clearInterval(timer);
+				}, {passive: true});
 
-    grid.addEventListener('touchend', function(){
-      paused = false;
-      setTimeout(function(){
-        var gLeft = grid.getBoundingClientRect().left + SNAP_OFFSET;
-        var closest = 0, minDist = Infinity;
-        for(var i = 0; i < total; i++){
-          var dist = Math.abs(tiles[i].getBoundingClientRect().left - gLeft);
-          if(dist < minDist){ minDist = dist; closest = i; }
-        }
-        setDot(closest);
-        startTimer();
-      }, 400);
-    }, { passive: true });
+				grid.addEventListener('touchend', function () {
+					paused = false;
+					setTimeout(function () {
+						var gLeft = grid.getBoundingClientRect().left + SNAP_OFFSET;
+						var closest = 0, minDist = Infinity;
+						for (var i = 0; i < total; i++) {
+							var dist = Math.abs(tiles[i].getBoundingClientRect().left - gLeft);
+							if (dist < minDist) {minDist = dist; closest = i;}
+						}
+						setDot(closest);
+						startTimer();
+					}, 400);
+				}, {passive: true});
 
-    startTimer();
-  }
+				startTimer();
+			}
 
-  window.addEventListener('load', init);
-})();
-</script>
+			window.addEventListener('load', init);
+		})();
+	</script>
 </body>
+
 </html>
